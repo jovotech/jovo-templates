@@ -1,0 +1,44 @@
+{  
+    "invocation":"jovo beta",
+    "intents":[  
+
+    ],
+    "alexa":{  
+        "interactionModel":{  
+            "languageModel":{  
+                "intents":[  
+                    {  
+                        "name":"AMAZON.CancelIntent",
+                        "samples":[  
+
+                        ]
+                    },
+                    {  
+                        "name":"AMAZON.HelpIntent",
+                        "samples":[  
+
+                        ]
+                    },
+                    {  
+                        "name":"AMAZON.StopIntent",
+                        "samples":[  
+
+                        ]
+                    },
+                    {
+                        "name":"AMAZON.ResumeIntent",
+                        "sampels":[
+
+                        ]
+                    },
+                    {
+                        "name":"AMAZON.PauseIntent",
+                        "samples":[
+                            
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

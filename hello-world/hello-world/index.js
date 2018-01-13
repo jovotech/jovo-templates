@@ -1,34 +1,28 @@
 'use strict';
 
-// =================================================================================
-// App Configuration
-// =================================================================================
-
-const app = require('jovo-framework').Jovo;
-const webhook = require('jovo-framework').Webhook;
-
-// Listen for post requests
-webhook.listen(3000, function() {
-    console.log('Local development server listening on port 3000.');
-});
-
-webhook.post('/webhook', function(req, res) {
-    app.handleRequest(req, res, handlers);
-    app.execute();
-});
-
+const {Webhook} = require('jovo-framework');
+const {app} = require('./app/app.js');
 
 // =================================================================================
-// App Logic
+// Server Configuration
 // =================================================================================
 
-const handlers = {
+if (isWebhook()) {
+    const port = process.env.PORT || 3000;
+    Webhook.listen(port, () => {
+        console.log(`Example server listening on port ${port}!`);
+    });
+    Webhook.post('/webhook', (req, res) => {
+        app.handleWebhook(req, res);
+    });
+}
 
-    'LAUNCH': function() {
-        app.toIntent('HelloWorldIntent');
-    },
-
-    'HelloWorldIntent': function() {
-        app.tell('Hello World!');
-    },
+exports.handler = (event, context, callback) => {
+    app.handleLambda(event, context, callback);
 };
+
+
+// will be moved to jovo-framework in final version
+function isWebhook() {
+    return process.argv.indexOf('--webhook') > -1 ? 'webhook' : '';
+}

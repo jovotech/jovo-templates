@@ -4,37 +4,26 @@
 // App Configuration
 // =================================================================================
 
-const app = require('jovo-framework').Jovo;
+const {App} = require('jovo-framework');
 
-let audioPlayer;
-
-app.setConfig({
-    requestLogging: true;
+const config = {
+    logging: true,
     intentMap: {
         'AMAZON.PauseIntent': 'PauseIntent',
-        'AMAZON.ResumeIntent': 'ResumeIntent',
-    },
-    db: {
-        type: 'dynamodb',
-        tableName: 'AudioPlayerTable',
+        'AMAZON.ResumeIntent': 'ResumeIntent'
     }
-});
-
-exports.handler = function(event, context, callback) {
-    app.handleRequest(event, callback, handlers);
-    audioPlayer = app.alexaSkill().audioPlayer();
-    app.execute();
 };
 
+const app = new App(config);
 
 // =================================================================================
 // App Logic
 // =================================================================================
 
-const handlers = {
-
-    'LAUNCH': function() {
-        app.toIntent('PlayIntent');
+app.setHandler({
+    'NEW_SESSION': function() {
+        let audioPlayer = this.alexaSkill().audioPlayer();
+        this.toIntent('PlayIntent');
     },
 
     'PlayIntent': function() {
@@ -47,13 +36,13 @@ const handlers = {
         audioPlayer.stop();
 
         // Save offset to database
-        app.user().data.offset = audioPlayer.getOffsetInMilliseconds();
+        this.user().data.offset = audioPlayer.getOffsetInMilliseconds();
 
-        app.tell('Paused!');
+        this.tell('Paused!');
     },
 
     'ResumeIntent': function() {
-        audioPlayer.setOffsetInMilliseconds(app.user().data.offset)
+        audioPlayer.setOffsetInMilliseconds(this.user().data.offset)
             .play('url', 'token')
             .tell('Resuming!');
     },
@@ -62,24 +51,26 @@ const handlers = {
     'AUDIOPLAYER': {
         'AudioPlayer.PlaybackStarted': function() {
             console.log('AudioPlayer.PlaybackStarted');
-            app.endSession();
+            this.endSession();
         },
 
         'AudioPlayer.PlaybackNearlyFinished': function() {
             console.log('AudioPlayer.PlaybackNearlyFinished');
-            app.endSession();
+            this.endSession();
         },
 
         'AudioPlayer.PlaybackFinished': function() {
             console.log('AudioPlayer.PlaybackFinished');
             audioPlayer.stop();
-            app.endSession();
+            this.endSession();
         },
 
         'AudioPlayer.PlaybackStopped': function() {
             console.log('AudioPlayer.PlaybackStopped');
-            app.endSession();
+            this.endSession();
         },
 
     },
-};
+});
+
+module.exports.app = app;
