@@ -20,9 +20,3 @@ if (isWebhook()) {
 exports.handler = (event, context, callback) => {
     app.handleLambda(event, context, callback);
 };
-
-
-// will be moved to jovo-framework in final version
-function isWebhook() {
-    return process.argv.indexOf('--webhook') > -1 ? 'webhook' : '';
-}
