@@ -22,27 +22,26 @@ const app = new App(config);
 
 app.setHandler({
     'NEW_SESSION': function() {
-        let audioPlayer = this.alexaSkill().audioPlayer();
         this.toIntent('PlayIntent');
     },
 
     'PlayIntent': function() {
-        audioPlayer.setOffsetInMilliseconds(0)
+        this.alexaSkill().audioPlayer().setOffsetInMilliseconds(0)
             .play('url', 'token')
             .tell('Hello World!');
     },
 
     'PauseIntent': function() {
-        audioPlayer.stop();
+        this.alexaSkill().audioPlayer().stop();
 
         // Save offset to database
-        this.user().data.offset = audioPlayer.getOffsetInMilliseconds();
+        this.user().data.offset = this.alexaSkill().audioPlayer().getOffsetInMilliseconds();
 
         this.tell('Paused!');
     },
 
     'ResumeIntent': function() {
-        audioPlayer.setOffsetInMilliseconds(this.user().data.offset)
+        this.alexaSkill().audioPlayer().setOffsetInMilliseconds(this.user().data.offset)
             .play('url', 'token')
             .tell('Resuming!');
     },
@@ -61,7 +60,7 @@ app.setHandler({
 
         'AudioPlayer.PlaybackFinished': function() {
             console.log('AudioPlayer.PlaybackFinished');
-            audioPlayer.stop();
+            this.alexaSkill().audioPlayer().stop();
             this.endSession();
         },
 

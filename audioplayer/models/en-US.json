@@ -1,7 +1,13 @@
 {  
     "invocation":"jovo beta",
     "intents":[  
-
+        {  
+            "name":"PlayIntent",
+            "phrases":[  
+                "Play a song",
+                "Start the song"
+            ]
+        }
     ],
     "alexa":{  
         "interactionModel":{  
