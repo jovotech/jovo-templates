@@ -1,7 +1,0 @@
-{
-  "name": "Jovo Sample App for Heroku",
-  "description": "A sample voice app that works with the Jovo framework and Heroku",
-  "repository": "https://github.com/jovotech/jovo-sample-voice-app-nodejs.git",
-  "logo": "http://node-js-sample.herokuapp.com/node.svg",
-  "keywords": ["amazon-alexa", "google-assistant", "jovo-framework"]
-}
