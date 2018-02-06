@@ -10,11 +10,13 @@ const config = {
     logging: true,
     intentMap: {
         'AMAZON.PauseIntent': 'PauseIntent',
-        'AMAZON.ResumeIntent': 'ResumeIntent'
-    }
+        'AMAZON.ResumeIntent': 'ResumeIntent',
+    },
 };
 
 const app = new App(config);
+
+const song = 'https://s3.amazonaws.com/jovo-songs/song1.mp3';
 
 // =================================================================================
 // App Logic
@@ -27,7 +29,7 @@ app.setHandler({
 
     'PlayIntent': function() {
         this.alexaSkill().audioPlayer().setOffsetInMilliseconds(0)
-            .play('url', 'token')
+            .play(song, 'token')
             .tell('Hello World!');
     },
 
