@@ -44,7 +44,7 @@ app.setHandler({
 
     'ResumeIntent': function() {
         this.alexaSkill().audioPlayer().setOffsetInMilliseconds(this.user().data.offset)
-            .play('url', 'token')
+            .play(song, 'token')
             .tell('Resuming!');
     },
 
