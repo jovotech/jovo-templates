@@ -23,7 +23,7 @@ const song = 'https://s3.amazonaws.com/jovo-songs/song1.mp3';
 // =================================================================================
 
 app.setHandler({
-    'NEW_SESSION': function() {
+    'LAUNCH': function() {
         this.toIntent('PlayIntent');
     },
 
