@@ -23,11 +23,11 @@ app.setHandler({
     },
 
     'HelloWorldIntent': function() {
-        this.ask('Hello World! What is your name?', 'Please tell me your name.');
+        this.ask('Hello World! What\'s your name?', 'Please tell me your name.');
     },
 
     'MyNameIsIntent': function(name) {
-        this.tell('Hey ' + name + ', nice to meet you!');
+        this.tell('Hey ' + name.value + ', nice to meet you!');
     },
 });
 
