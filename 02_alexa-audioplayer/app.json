@@ -1,0 +1,16 @@
+{
+	"alexaSkill": {
+		"nlu": "alexa",
+		"manifest": {
+			"apis": {
+				"custom": {
+				  "interfaces": [
+					{
+					  "type": "AUDIO_PLAYER"
+					}
+				  ]
+				}
+			}
+		}
+	}
+}

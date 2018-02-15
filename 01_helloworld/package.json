@@ -2,18 +2,14 @@
   "name": "jovo-sample-voice-app-nodejs",
   "version": "0.0.1",
   "description": "A sample voice app that works with the Jovo framework",
-  "engines": {
-    "node": "6.12.0"
-  },
   "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "dependencies": {
-    "jovo-framework": "<=1.0.0"
+    "jovo-framework": "^1.0.0"
   },
   "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jovotech/jovo-sample-voice-app-nodejs.git"

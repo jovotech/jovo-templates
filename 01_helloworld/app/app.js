@@ -4,31 +4,31 @@
 // App Configuration
 // =================================================================================
 
-const app = require('jovo-framework').Jovo;
-const webhook = require('jovo-framework').Webhook;
+const {App} = require('jovo-framework');
 
-// Listen for post requests
-webhook.listen(3000, function() {
-    console.log('Local development server listening on port 3000.');
-});
+const config = {
+    logging: true,
+};
 
-webhook.post('/webhook', function(req, res) {
-    app.handleRequest(req, res, handlers);
-    app.execute();
-});
+const app = new App(config);
 
 
 // =================================================================================
 // App Logic
 // =================================================================================
 
-const handlers = {
-
+app.setHandler({
     'LAUNCH': function() {
-        app.toIntent('HelloWorldIntent');
+        this.toIntent('HelloWorldIntent');
     },
 
     'HelloWorldIntent': function() {
-        app.tell('Hello World!');
+        this.ask('Hello World! What\'s your name?', 'Please tell me your name.');
     },
-};
+
+    'MyNameIsIntent': function(name) {
+        this.tell('Hey ' + name.value + ', nice to meet you!');
+    },
+});
+
+module.exports.app = app;
