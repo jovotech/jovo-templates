@@ -1,0 +1,10 @@
+{
+	"name": "DontKnowIntent",
+	"auto": true,
+	"webhookUsed": true,
+	"responses": [
+		{
+			"parameters": []
+		}
+	]
+}

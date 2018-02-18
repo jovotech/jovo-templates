@@ -1,0 +1,5 @@
+{
+	"name": "StopIntent",
+	"auto": true,
+	"webhookUsed": true
+}
