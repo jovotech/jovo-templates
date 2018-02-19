@@ -1,0 +1,131 @@
+{
+	"invocation": "jovo trivia",
+	"intents": [
+		{
+			"name": "AnswerIntent",
+			"phrases": [
+				"the answer is {answer}",
+				"my answer is {answer}",
+				"is it {answer}",
+				"{answer} is my answer",
+				"{answer}"
+			],
+			"inputs": [
+				{
+					"name": "answer",
+					"type": {
+						"alexa": "AMAZON.NUMBER",
+						"dialogflow": "@sys.number"
+					}
+				}
+			]
+		},
+		{
+			"name": "DontKnowIntent",
+			"phrases": [
+				"i don't know",
+				"don't know",
+				"i don't know that one",
+				"dunno",
+				"skip",
+				"i don't know that",
+				"who knows",
+				"i don't know this question"
+			],
+			"inputs": []
+		},
+		{
+			"name": "YesIntent",
+			"phrases": [
+				"yes",
+				"yeah",
+				"yo",
+				"okay",
+				"sure",
+				"absolutely"
+			]
+		},
+		{
+			"name": "NoIntent",
+			"phrases": [
+				"no",
+				"nope",
+				"na"
+			]
+		},
+		{
+			"name": "HelpIntent",
+			"phrases": [
+				"help",
+				"help me",
+				"help please",
+				"can you help me",
+				"can you help",
+				"what can I do",
+				"what can you tell me"
+			]
+		},
+		{
+			"name": "StopIntent",
+			"phrases": [
+				"stop",
+				"stop please",
+				"please stop"
+			]
+		},
+		{
+			"name": "CancelIntent",
+			"phrases": [
+				"cancel",
+				"cancel please",
+				"please cancel"
+			]
+		},
+		{
+			"name": "RepeatIntent",
+			"phrases": [
+				"can you repeat that",
+				"repeat that",
+				"please repeat",
+				"what",
+				"say that again"
+			]
+		}
+	],
+	"alexa": {
+		"interactionModel": {
+			"languageModel": {
+				"intents": [
+					{
+						"name": "AMAZON.CancelIntent",
+						"samples": []
+					},
+					{
+						"name": "AMAZON.HelpIntent",
+						"samples": []
+					},
+					{
+						"name": "AMAZON.StopIntent",
+						"samples": []
+					},
+					{
+						"name": "AMAZON.YesIntent",
+						"samples": []
+					},
+					{
+						"name": "AMAZON.NoIntent",
+						"samples": []
+					},
+					{
+						"name": "AMAZON.StartOverIntent",
+						"samples": []
+					},
+					{
+						"name": "AMAZON.RepeatIntent",
+						"samples": []
+					}
+				]
+			}
+		}
+	}
+}
