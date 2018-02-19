@@ -18,7 +18,7 @@ const config = {
         'AMAZON.StopIntent': 'StopIntent',
         'AMAZON.HelpIntent': 'HelpIntent',
         'AMAZON.CancelIntent': 'CancelIntent',
-    }
+    },
 };
 
 const app = new App(config);
@@ -30,13 +30,13 @@ const app = new App(config);
 
 app.setHandler({
     'LAUNCH': function() {
-        let speechOutput = "";
+        let speechOutput = '';
         speechOutput += this.t('NEW_GAME_MESSAGE', this.t('GAME_NAME')) + this.t('WELCOME_MESSAGE', GAME_LENGTH.toString());
         this.followUpState('StartState').ask(speechOutput);
     },
     'StartState': {
-        'StartGameIntent': function(){
-            let speechOutput = "";
+        'StartGameIntent': function() {
+            let speechOutput = '';
             // Select questions
             const translatedQuestions = this.t('QUESTIONS');
             const gameQuestions = populateGameQuestions(translatedQuestions);
@@ -48,7 +48,7 @@ app.setHandler({
             const spokenQuestion = Object.keys(translatedQuestions[gameQuestions[currentQuestionIndex]])[0];
             let repromptText = this.t('TELL_QUESTION_MESSAGE', '1', spokenQuestion);
 
-            for (let i = 0; i < ANSWER_COUNT; i++){
+            for (let i = 0; i < ANSWER_COUNT; i++) {
                 repromptText += `${i + 1}. ${roundAnswers[i]}. `;
             }
 
@@ -57,11 +57,11 @@ app.setHandler({
             this.setSessionAttributes({
                 questionSpeech: speechOutput,
                 questionReprompt: repromptText,
-                currentQuestionIndex: currentQuestionIndex, 
+                currentQuestionIndex: currentQuestionIndex,
                 correctAnswerIndex: correctAnswerIndex + 1,
                 questions: gameQuestions,
                 score: 0,
-                correctAnswerText: translatedQuestions[gameQuestions[currentQuestionIndex]][Object.keys(translatedQuestions[gameQuestions[currentQuestionIndex]])[0]][0]
+                correctAnswerText: translatedQuestions[gameQuestions[currentQuestionIndex]][Object.keys(translatedQuestions[gameQuestions[currentQuestionIndex]])[0]][0],
             });
 
             this.followUpState('TriviaState').ask(speechOutput, repromptText);
@@ -71,7 +71,7 @@ app.setHandler({
         },
         'NoIntent': function() {
             this.tell(this.t('NO_MESSAGE'));
-        }
+        },
     },
     'TriviaState': {
         'AnswerIntent': function() {
@@ -100,23 +100,21 @@ app.setHandler({
             this.ask(speechOutput, speechOutput);
         },
         'END': function() {
-            // this.getEndReason() only works for Alexa Skills currently. 
-            if (this.isAlexaSkill()){
+            // this.getEndReason() only works for Alexa Skills currently.
+            if (this.isAlexaSkill()) {
                 console.log('Session ended in TriviaState: ' + this.getEndReason());
-            }
-            else{
+            } else {
                 console.log('Session ended in TriviaState');
             }
             this.endSession();
-        }
+        },
     },
     'HelpState': {
         'HelpUser': function(newGame) {
-            let askMessage = "";
-            if (newGame){
+            let askMessage = '';
+            if (newGame) {
                 askMessage = this.t('ASK_MESSAGE_START');
-            }
-            else{
+            } else {
                 askMessage = this.t('REPEAT_QUESTION_MESSAGE') + this.t('STOP_MESSAGE');
             }
             let speechOutput = this.t('HELP_MESSAGE', GAME_LENGTH) + askMessage;
@@ -137,9 +135,8 @@ app.setHandler({
         'YesIntent': function() {
             if (this.getSessionAttribute('questionSpeech') && this.getSessionAttribute('questionReprompt')) {
                 this.toStateIntent('TriviaState', 'RepeatIntent');
-            }
-            else {
-                this.toStateIntent('StartState', 'StartGameIntent', false)
+            } else {
+                this.toStateIntent('StartState', 'StartGameIntent', false);
             }
         },
         'NoIntent': function() {
@@ -150,16 +147,15 @@ app.setHandler({
             this.ask(speechOutput, speechOutput);
         },
         'END': function() {
-            // this.getEndReason() only works for Alexa Skills currently. 
-            if (this.isAlexaSkill()){
+            // this.getEndReason() only works for Alexa Skills currently.
+            if (this.isAlexaSkill()) {
                 console.log('Session ended in HelpState: ' + this.getEndReason());
-            }
-            else{
+            } else {
                 console.log('Session ended in HelpState');
             }
             this.endSession();
-        }
-    }
+        },
+    },
 });
 
 // =================================================================================
@@ -172,7 +168,7 @@ function populateGameQuestions(translatedQuestions) {
 
     let index = translatedQuestions.length;
 
-    if (GAME_LENGTH > index){
+    if (GAME_LENGTH > index) {
         throw new Error('Invalid Game Length. Not enough questions');
     }
     for (let i = 0; i < translatedQuestions.length; i++) {
@@ -225,15 +221,15 @@ function populateRoundAnswers(gameQuestionIndexes, correctAnswerIndex, correctAn
     return answers;
 }
 
-function isAnswerSlotValid(answer){
+function isAnswerSlotValid(answer) {
     console.log(answer.value);
     console.log(parseInt(answer.value));
-    if (answer.value){
+    if (answer.value) {
         return !isNaN(parseInt(answer.value, 10)) && parseInt(answer.value, 10) < (ANSWER_COUNT + 1) && parseInt(answer.value, 10) > 0;
     }
 }
 
-function handleUserGuess(userGaveUp){
+function handleUserGuess(userGaveUp) {
     const answerSlotValid = isAnswerSlotValid(this.getInput('answer'));
     let speechOutput = '';
     let speechOutputAnalysis = '';
@@ -244,12 +240,11 @@ function handleUserGuess(userGaveUp){
     const correctAnswerText = this.getSessionAttribute('correctAnswerText');
     const translatedQuestions = this.t('QUESTIONS');
     console.log(answerSlotValid);
-    if (answerSlotValid && parseInt(this.getInput('answer').value, 10) === this.getSessionAttribute('correctAnswerIndex')){
+    if (answerSlotValid && parseInt(this.getInput('answer').value, 10) === this.getSessionAttribute('correctAnswerIndex')) {
         currentScore++;
         speechOutputAnalysis = this.t('ANSWER_CORRECT_MESSAGE');
-    }
-    else {
-        if (!userGaveUp){
+    } else {
+        if (!userGaveUp) {
             speechOutputAnalysis = this.t('ANSWER_WRONG_MESSAGE');
         }
 
@@ -261,8 +256,7 @@ function handleUserGuess(userGaveUp){
         speechOutput += speechOutputAnalysis + this.t('GAME_OVER_MESSAGE', currentScore.toString(), GAME_LENGTH.toString());
 
         this.tell(speechOutput);
-    }
-    else {
+    } else {
         currentQuestionIndex += 1;
         correctAnswerIndex = Math.floor(Math.random() * (ANSWER_COUNT));
         const spokenQuestion = Object.keys(translatedQuestions[gameQuestions[currentQuestionIndex]])[0];
@@ -284,7 +278,7 @@ function handleUserGuess(userGaveUp){
             correctAnswerIndex: correctAnswerIndex + 1,
             questions: gameQuestions,
             score: currentScore,
-            correctAnswerText: translatedQuestions[gameQuestions[currentQuestionIndex]][Object.keys(translatedQuestions[gameQuestions[currentQuestionIndex]])[0]][0]
+            correctAnswerText: translatedQuestions[gameQuestions[currentQuestionIndex]][Object.keys(translatedQuestions[gameQuestions[currentQuestionIndex]])[0]][0],
         });
         this.followUpState('TriviaState').ask(speechOutput, repromptText);
     }
