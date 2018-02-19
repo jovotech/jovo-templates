@@ -7,7 +7,7 @@ const {app} = require('./app/app.js');
 // Server Configuration
 // =================================================================================
 
-if (isWebhook()) {
+if (app.isWebhook()) {
     const port = process.env.PORT || 3000;
     Webhook.listen(port, () => {
         console.log(`Example server listening on port ${port}!`);
@@ -20,9 +20,3 @@ if (isWebhook()) {
 exports.handler = (event, context, callback) => {
     app.handleLambda(event, context, callback);
 };
-
-
-// will be moved to jovo-framework in final version
-function isWebhook() {
-    return process.argv.indexOf('--webhook') > -1 ? 'webhook' : '';
-}
