@@ -119,7 +119,7 @@
                 ]
             },
             {
-                "Santa only has one female reindeer. Which one is it?": [
+                "Santa only has one female reindeer, which one is it?": [
                     "Vixen",
                     "Clarice",
                     "Cupid",
@@ -259,7 +259,6 @@
         "NO_MESSAGE": "Ok, we\"ll play another time. Goodbye!",
         "TRIVIA_UNHANDLED": "Try saying a number between 1 and %s",
         "HELP_UNHANDLED": "Say yes to continue, or no to end the game.",
-        "START_UNHANDLED": "Say start to start a new game.",
         "NEW_GAME_MESSAGE": "Welcome to %s. ",
         "WELCOME_MESSAGE": "I will ask you %s questions, try to get as many right as you can. Just say the number of the answer. Are you ready?",
         "ANSWER_CORRECT_MESSAGE": "correct. ",

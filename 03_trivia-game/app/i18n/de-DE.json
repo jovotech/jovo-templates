@@ -2,7 +2,7 @@
     "translation": {
         "QUESTIONS": [
             {
-                "Rentiere haben ein sehr dickes Fell. Wie viele Haare pro Quadratzentimeter haben sie?": [
+                "Rentiere haben ein sehr dickes Fell, Wie viele Haare pro Quadratzentimeter haben sie?": [
                     "13,000",
                     "1,200",
                     "5,000",
@@ -12,7 +12,7 @@
                 ]
             },
             {
-                "Der Klassiker aus dem Jahr 1964, Rudolph mit der roten Nase, wurde gedreht in. ": [
+                "Der Klassiker aus dem Jahr 1964, Rudolph mit der roten Nase, wurde gedreht in ": [
                     "Japan",
                     "USA",
                     "Finnland",
@@ -23,7 +23,7 @@
                 ]
             },
             {
-                "Um die Rentiere des Weihnachtsmanns kümmert sich eine der Weihnachtselfen. Wie heißt sie?": [
+                "Wie heißt die Weihnachtselfe, die sich um die Rentiere des Weihnachtsmannes kümmert?": [
                     "Wunorse Openslae",
                     "Alabaster Snowball",
                     "Bushy Evergreen",
@@ -31,7 +31,7 @@
                 ]
             },
             {
-                "Wenn alle Rentiere des Weihnachtsmanns Geweihe hätten, während sie seinen Weihnachtsschlitten ziehen, wären sie alle. ": [
+                "Wenn alle Rentiere des Weihnachtsmanns Geweihe hätten, während sie seinen Weihnachtsschlitten ziehen, wären sie alle ": [
                     "Weiblich",
                     "Männlich",
                     "Weiblich und männlich",
@@ -119,7 +119,7 @@
                 ]
             },
             {
-                "Der Weihnachtsmann hat nur ein weibliches Rentier. Wie heißt es?": [
+                "Der Weihnachtsmann hat nur ein weibliches Rentier, wie heißt es?": [
                     "Blitzen",
                     "Clarice",
                     "Cupid",
@@ -259,9 +259,8 @@
         "NO_MESSAGE": "OK, spielen wir ein andermal. Auf Wiedersehen!",
         "TRIVIA_UNHANDLED": "Sagt eine Zahl beispielsweise zwischen 1 und %s",
         "HELP_UNHANDLED": "Sage ja, um fortzufahren, oder nein, um das Spiel zu beenden.",
-        "START_UNHANDLED": "Du kannst jederzeit ein neues Spiel beginnen, sage einfach „Spiel starten“.",
         "NEW_GAME_MESSAGE": "Willkommen bei %s. ",
-        "WELCOME_MESSAGE": "Ich stelle dir %s Fragen und du versuchst, so viele wie möglich richtig zu beantworten. Sage einfach die Zahl, die zur richtigen Antwort passt. Fangen wir an. ",
+        "WELCOME_MESSAGE": "Ich stelle dir %s Fragen und du versuchst, so viele wie möglich richtig zu beantworten. Sage einfach die Zahl, die zur richtigen Antwort passt. Sollen wir anfangen?",
         "ANSWER_CORRECT_MESSAGE": "Richtig. ",
         "ANSWER_WRONG_MESSAGE": "Falsch. ",
         "CORRECT_ANSWER_MESSAGE": "Die richtige Antwort ist %s: %s. ",

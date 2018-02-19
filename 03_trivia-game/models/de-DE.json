@@ -4,11 +4,12 @@
 		{
 			"name": "AnswerIntent",
 			"phrases": [
-				"the answer is {answer}",
-				"my answer is {answer}",
-				"is it {answer}",
-				"{answer} is my answer",
-				"{answer}"
+				"die Antwort ist {answer}",
+				"meine Antwort ist {answer}",
+				"ist es {answer}",
+				"{answer} ist meine Antwort",
+				"{answer}",
+				"es ist {answer}"
 			],
 			"inputs": [
 				{
@@ -27,14 +28,10 @@
 		{
 			"name": "DontKnowIntent",
 			"phrases": [
-				"i don't know",
-				"don't know",
-				"i don't know that one",
-				"dunno",
-				"skip",
-				"i don't know that",
-				"who knows",
-				"i don't know this question"
+				"ich weiss es nicht",
+				"keine Ahnung",
+				"kein Plan",
+				"weiss nicht"
 			],
 			"inputs": [],
 			"dialogflow": {
@@ -98,10 +95,10 @@
 				"events": [],
 				"userSays": [
 					{
-						"id": "d22765cb-2349-42ed-9be5-f15dc08632ac",
+						"id": "f1764db9-bcae-47cd-9a59-2860306f8b13",
 						"data": [
 							{
-								"text": "cancel",
+								"text": "abbruch",
 								"userDefined": false
 							}
 						],
@@ -110,10 +107,10 @@
 						"isAuto": false
 					},
 					{
-						"id": "320bcc33-d1b6-4e9b-8f07-9c5984adf603",
+						"id": "a48bf864-be01-402d-a795-604621cccf8d",
 						"data": [
 							{
-								"text": "cancel please",
+								"text": "brich ab",
 								"userDefined": false
 							}
 						],
@@ -122,10 +119,10 @@
 						"isAuto": false
 					},
 					{
-						"id": "39c95b05-45db-4736-a87b-65cd0eb97c41",
+						"id": "c0e35184-2d34-410f-8174-d7227b8402ae",
 						"data": [
 							{
-								"text": "please cancel",
+								"text": "bitte brich ab",
 								"userDefined": false
 							}
 						],
@@ -158,10 +155,10 @@
 				"events": [],
 				"userSays": [
 					{
-						"id": "2600e539-7c6f-4d7b-9dae-1af7d94a5547",
+						"id": "a7ab85f1-5954-4d2b-935d-f0b831929f78",
 						"data": [
 							{
-								"text": "help",
+								"text": "Hilfe",
 								"userDefined": false
 							}
 						],
@@ -170,10 +167,10 @@
 						"isAuto": false
 					},
 					{
-						"id": "d974b7ff-ddc4-4a76-9dc1-520c63cf2059",
+						"id": "2fb6dc25-903c-4f6c-af11-da110a310319",
 						"data": [
 							{
-								"text": "help me",
+								"text": "hilf mir",
 								"userDefined": false
 							}
 						],
@@ -182,10 +179,10 @@
 						"isAuto": false
 					},
 					{
-						"id": "ecc3e362-a3a0-4782-82e4-0ad2731092df",
+						"id": "8b877cb3-57b6-4d12-9244-3baed20d8644",
 						"data": [
 							{
-								"text": "help please",
+								"text": "kannst du mir helfen",
 								"userDefined": false
 							}
 						],
@@ -194,10 +191,10 @@
 						"isAuto": false
 					},
 					{
-						"id": "67506b2a-e13b-4d8a-9c64-1f623168226e",
+						"id": "e57cc343-bb9d-4793-9dff-6cae69aa9d19",
 						"data": [
 							{
-								"text": "can you help me",
+								"text": "hilf mir bitte",
 								"userDefined": false
 							}
 						],
@@ -206,238 +203,10 @@
 						"isAuto": false
 					},
 					{
-						"id": "6ca741c6-7c77-489c-a96d-245966552534",
+						"id": "c475b88b-e879-45f4-ab43-fd2783c33c5e",
 						"data": [
 							{
-								"text": "can you help",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "c4ff3895-43d0-4f3d-9f34-77823f250868",
-						"data": [
-							{
-								"text": "what can I do",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "db324412-947f-490a-b284-3f7f2045ed93",
-						"data": [
-							{
-								"text": "what can you tell me",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					}
-				],
-				"followUpIntents": [],
-				"templates": []
-			},
-			{
-				"id": "e151d88d-f211-4945-8ee6-39b74e59ca02",
-				"name": "RepeatIntent",
-				"auto": true,
-				"contexts": [],
-				"responses": [
-					{
-						"resetContexts": false,
-						"affectedContexts": [],
-						"parameters": [],
-						"defaultResponsePlatforms": {},
-						"speech": []
-					}
-				],
-				"priority": 1,
-				"webhookUsed": true,
-				"webhookForSlotFilling": true,
-				"fallbackIntent": false,
-				"events": [],
-				"userSays": [
-					{
-						"id": "1ecd7120-d273-4ed7-be2c-43ca6ba52ad0",
-						"data": [
-							{
-								"text": "can you repeat that",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "9fe051cb-c8dc-4c29-9b82-30d2a74199c6",
-						"data": [
-							{
-								"text": "repeat that",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "528212df-9f7a-4ef5-9180-9b81c6303cb5",
-						"data": [
-							{
-								"text": "please repeat",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "a5db8ec6-9fd2-4aa1-8d2b-5e05c5043692",
-						"data": [
-							{
-								"text": "what",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "e16a4b1f-4237-4e77-a72b-413e22af5df5",
-						"data": [
-							{
-								"text": "say that again",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					}
-				],
-				"followUpIntents": [],
-				"templates": []
-			},
-			{
-				"id": "1179bcae-06eb-4a53-8241-08afe7c38b74",
-				"name": "StopIntent",
-				"auto": true,
-				"contexts": [],
-				"responses": [
-					{
-						"resetContexts": false,
-						"affectedContexts": [],
-						"parameters": [],
-						"defaultResponsePlatforms": {},
-						"speech": []
-					}
-				],
-				"priority": 1,
-				"webhookUsed": true,
-				"webhookForSlotFilling": true,
-				"fallbackIntent": false,
-				"events": [],
-				"userSays": [
-					{
-						"id": "379e6499-1bc6-4b89-9a0b-48f51d414432",
-						"data": [
-							{
-								"text": "stop",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "acd73483-7f23-4c21-8163-f7bfef84cde1",
-						"data": [
-							{
-								"text": "stop please",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "a23b7755-ae02-42ab-b010-ce8e941de149",
-						"data": [
-							{
-								"text": "please stop",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					}
-				],
-				"followUpIntents": [],
-				"templates": []
-			},
-			{
-				"id": "5c2764a1-7dbf-41ab-9b1e-f7a84729cd84",
-				"name": "YesIntent",
-				"auto": true,
-				"contexts": [],
-				"responses": [
-					{
-						"resetContexts": false,
-						"affectedContexts": [],
-						"parameters": [],
-						"defaultResponsePlatforms": {},
-						"speech": []
-					}
-				],
-				"priority": 1,
-				"webhookUsed": true,
-				"webhookForSlotFilling": true,
-				"fallbackIntent": false,
-				"events": [],
-				"userSays": [
-					{
-						"id": "e6b7088e-ce47-4495-9a40-e9d33f29b525",
-						"data": [
-							{
-								"text": "yes",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "1b96fcb5-d8c9-4981-ba5a-f4e3406deaf2",
-						"data": [
-							{
-								"text": "yeah",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "fc562697-6c11-4471-a497-7d93a438a3d2",
-						"data": [
-							{
-								"text": "yep",
+								"text": "was kannst du mir sagen",
 								"userDefined": false
 							}
 						],
@@ -470,7 +239,7 @@
 				"events": [],
 				"userSays": [
 					{
-						"id": "04b0c3c8-c517-42fa-8721-a87d3eb73c76",
+						"id": "9264a54c-ce80-49a0-be8c-595a26701d27",
 						"data": [
 							{
 								"text": "no",
@@ -482,7 +251,7 @@
 						"isAuto": false
 					},
 					{
-						"id": "15af7573-1141-4a19-99d1-5e53f3a28c77",
+						"id": "7a477843-1746-4e68-9f5f-331c7186f48e",
 						"data": [
 							{
 								"text": "nope",
@@ -494,10 +263,298 @@
 						"isAuto": false
 					},
 					{
-						"id": "e5552069-0614-4037-b6eb-734808fd3692",
+						"id": "4719ce5d-f576-4184-a5de-235f8424c377",
 						"data": [
 							{
-								"text": "na",
+								"text": "nein",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"isAuto": false
+					},
+					{
+						"id": "470af02c-0483-400c-a089-8b9e02c7a678",
+						"data": [
+							{
+								"text": "ne",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"isAuto": false
+					},
+					{
+						"id": "9c841193-b20c-4ae6-a099-a0812b4aebf7",
+						"data": [
+							{
+								"text": "nö",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"isAuto": false
+					}
+				],
+				"followUpIntents": [],
+				"templates": []
+			},
+			{
+				"id": "e151d88d-f211-4945-8ee6-39b74e59ca02",
+				"name": "RepeatIntent",
+				"auto": true,
+				"contexts": [],
+				"responses": [
+					{
+						"resetContexts": false,
+						"affectedContexts": [],
+						"parameters": [],
+						"defaultResponsePlatforms": {},
+						"speech": []
+					}
+				],
+				"priority": 1,
+				"webhookUsed": true,
+				"webhookForSlotFilling": true,
+				"fallbackIntent": false,
+				"events": [],
+				"userSays": [
+					{
+						"id": "04dd25cb-c7ae-4153-9072-e1a955ef18ec",
+						"data": [
+							{
+								"text": "kannst du das wiederholen",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"isAuto": false
+					},
+					{
+						"id": "f933472b-4909-4433-b353-111784133fd5",
+						"data": [
+							{
+								"text": "wiederhol das bitte",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"isAuto": false
+					},
+					{
+						"id": "2d7e1e94-7a5e-44cb-80ee-6e71886dd488",
+						"data": [
+							{
+								"text": "bitte wiederholen",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"isAuto": false
+					},
+					{
+						"id": "38ae088e-e674-4ad7-a2ad-1632ea8439eb",
+						"data": [
+							{
+								"text": "wiederholen",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"isAuto": false
+					},
+					{
+						"id": "f1e0b31e-7d8a-455e-b63d-78236117cbe9",
+						"data": [
+							{
+								"text": "sag das nochmal",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"isAuto": false
+					}
+				],
+				"followUpIntents": [],
+				"templates": []
+			},
+			{
+				"id": "1179bcae-06eb-4a53-8241-08afe7c38b74",
+				"name": "StopIntent",
+				"auto": true,
+				"contexts": [],
+				"responses": [
+					{
+						"resetContexts": false,
+						"affectedContexts": [],
+						"parameters": [],
+						"defaultResponsePlatforms": {},
+						"speech": []
+					}
+				],
+				"priority": 1,
+				"webhookUsed": true,
+				"webhookForSlotFilling": true,
+				"fallbackIntent": false,
+				"events": [],
+				"userSays": [
+					{
+						"id": "abd788cf-0ca8-433a-ae1b-db789bcaf3ff",
+						"data": [
+							{
+								"text": "stop",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"isAuto": false
+					},
+					{
+						"id": "f1434457-7ffd-4911-82b2-5638a0525ad6",
+						"data": [
+							{
+								"text": "stop bitte",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"isAuto": false
+					},
+					{
+						"id": "051b6102-2d22-4a8e-93af-710106efb186",
+						"data": [
+							{
+								"text": "hör auf",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"isAuto": false
+					},
+					{
+						"id": "b9b95cd6-4693-43a1-bb57-74b0e8112727",
+						"data": [
+							{
+								"text": "bitte hör auf",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"isAuto": false
+					}
+				],
+				"followUpIntents": [],
+				"templates": []
+			},
+			{
+				"id": "5c2764a1-7dbf-41ab-9b1e-f7a84729cd84",
+				"name": "YesIntent",
+				"auto": true,
+				"contexts": [],
+				"responses": [
+					{
+						"resetContexts": false,
+						"affectedContexts": [],
+						"parameters": [],
+						"defaultResponsePlatforms": {},
+						"speech": []
+					}
+				],
+				"priority": 1,
+				"webhookUsed": true,
+				"webhookForSlotFilling": true,
+				"fallbackIntent": false,
+				"events": [],
+				"userSays": [
+					{
+						"id": "8b8c1354-ea88-474d-afc0-70927d1d90c9",
+						"data": [
+							{
+								"text": "yes",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"isAuto": false
+					},
+					{
+						"id": "dfcafa59-127e-4fa6-b93a-ba4e6c4ad94c",
+						"data": [
+							{
+								"text": "yeah",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"isAuto": false
+					},
+					{
+						"id": "8bf8ea37-b960-40d6-b5c5-38a3e7f84b55",
+						"data": [
+							{
+								"text": "yep",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"isAuto": false
+					},
+					{
+						"id": "5f8ed453-52e6-4314-94be-fd41fd0b9703",
+						"data": [
+							{
+								"text": "sicher",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"isAuto": false
+					},
+					{
+						"id": "8b439b49-7864-4d4a-ae96-2dbd8f1faead",
+						"data": [
+							{
+								"text": "okay",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"isAuto": false
+					},
+					{
+						"id": "8f630ec8-dbb6-4228-ae77-4ad6b80e5dcd",
+						"data": [
+							{
+								"text": "ja",
+								"userDefined": false
+							}
+						],
+						"isTemplate": false,
+						"count": 0,
+						"isAuto": false
+					},
+					{
+						"id": "6135bdbd-370f-4f18-9d5d-272f597775e9",
+						"data": [
+							{
+								"text": "jo",
 								"userDefined": false
 							}
 						],
