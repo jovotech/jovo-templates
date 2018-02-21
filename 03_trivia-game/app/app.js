@@ -80,9 +80,6 @@ app.setHandler({
         'DontKnowIntent': function() {
             handleUserGuess.call(this, true);
         },
-        'AMAZON.StartOverIntent': function() {
-            this.toStateIntent('StartState', 'StartGameIntent', false);
-        },
         'RepeatIntent': function() {
             this.ask(this.getSessionAttribute('questionSpeech'), this.getSessionAttribute('questionReprompt'));
         },
@@ -162,6 +159,11 @@ app.setHandler({
 // Helper
 // =================================================================================
 
+/**
+ * Selects 5 (GAME_LENGTH) questions from i18n file.
+ * @param {object} translatedQuestions questions from the i18n file
+ * @return {object} gameQuestions questions which will be used in the game
+ */
 function populateGameQuestions(translatedQuestions) {
     const gameQuestions = [];
     const indexList = [];
@@ -191,6 +193,11 @@ function populateGameQuestions(translatedQuestions) {
  * Get the answers for a given question, and place the correct answer at the spot marked by the
  * correctAnswerTargetLocation variable. Note that you can have as many answers as you want but
  * only ANSWER_COUNT will be selected.
+ * @param {object} gameQuestionIndexes questions which will be used in the game
+ * @param {number} correctAnswerIndex current spot of the correct answer
+ * @param {number} correctAnswerTargetLocation used to determine future spot of the correct answer
+ * @param {object} translatedQuestions questions from the i18n file
+ * @return {object}
  * */
 function populateRoundAnswers(gameQuestionIndexes, correctAnswerIndex, correctAnswerTargetLocation, translatedQuestions) {
     const answers = [];
@@ -221,6 +228,10 @@ function populateRoundAnswers(gameQuestionIndexes, correctAnswerIndex, correctAn
     return answers;
 }
 
+/**
+ * @param {object} answer user input
+ * @return {boolean}
+ */
 function isAnswerSlotValid(answer) {
     console.log(answer.value);
     console.log(parseInt(answer.value));
@@ -229,6 +240,9 @@ function isAnswerSlotValid(answer) {
     }
 }
 
+/**
+ * @param {boolean} userGaveUp
+ */
 function handleUserGuess(userGaveUp) {
     const answerSlotValid = isAnswerSlotValid(this.getInput('answer'));
     let speechOutput = '';
