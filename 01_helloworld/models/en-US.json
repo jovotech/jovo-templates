@@ -1,5 +1,5 @@
 {  
-    "invocation":"jovo beta",
+    "invocation":"my test app",
     "intents":[  
         {  
             "name":"HelloWorldIntent",
