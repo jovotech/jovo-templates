@@ -259,7 +259,7 @@
         "NO_MESSAGE": "OK, spielen wir ein andermal. Auf Wiedersehen!",
         "TRIVIA_UNHANDLED": "Sagt eine Zahl beispielsweise zwischen 1 und {{answerCount}}",
         "HELP_UNHANDLED": "Sage ja, um fortzufahren, oder nein, um das Spiel zu beenden.",
-        "NEW_GAME_MESSAGE": "Willkommen bei {{gameName}. ",
+        "NEW_GAME_MESSAGE": "Willkommen bei {{gameName}}. ",
         "WELCOME_MESSAGE": "Ich stelle dir {{gameLength}} Fragen und du versuchst, so viele wie möglich richtig zu beantworten. Sage einfach die Zahl, die zur richtigen Antwort passt. Sollen wir anfangen?",
         "ANSWER_CORRECT_MESSAGE": "Richtig. ",
         "ANSWER_WRONG_MESSAGE": "Falsch. ",
