@@ -19,11 +19,7 @@
 						"dialogflow": "@sys.number"
 					}
 				}
-			],
-			"dialogflow": {
-				"priority": 1,
-				"webhookForSlotFilling": true
-			}
+			]
 		},
 		{
 			"name": "DontKnowIntent",
@@ -33,539 +29,84 @@
 				"kein Plan",
 				"weiss nicht"
 			],
-			"inputs": [],
-			"dialogflow": {
-				"priority": 1,
-				"webhookForSlotFilling": true
-			}
+			"inputs": []
+		},
+		{
+			"name": "CancelIntent",
+			"alexa": {
+				"name": "AMAZON.CancelIntent"
+			},
+			"phrases": [
+				"abbruch",
+				"brich ab",
+				"bitte brich ab"
+			]
+		},
+		{
+			"name": "HelpIntent",
+			"alexa": {
+				"name": "AMAZON.HelpIntent"
+			},
+			"phrases": [
+				"Hilfe",
+				"hilf mir",
+				"kannst du mir helfen",
+				"hilf mir bitte",
+				"was kannst du mir sagen"
+			]
+		},
+		{
+			"name": "StopIntent",
+			"alexa": {
+				"name": "AMAZON.StopIntent"
+			},
+			"phrases": [
+				"stop",
+				"stop bitte",
+				"hör auf",
+				"bitte hör auf"
+			]
+		},
+		{
+			"name": "YesIntent",
+			"alexa": {
+				"name": "AMAZON.YesIntent"
+			},
+			"phrases": [
+				"yes",
+				"yeah",
+				"yep",
+				"sicher",
+				"okay",
+				"ja",
+				"jo"
+			]
+		},
+		{
+			"name": "NoIntent",
+			"alexa": {
+				"name": "AMAZON.NoIntent"
+			},
+			"phrases": [
+				"no",
+				"nope",
+				"nein",
+				"ne",
+				"nö"
+			]
+		},
+		{
+			"name": "RepeatIntent",
+			"alexa": {
+				"name": "AMAZON.RepeatIntent"
+			},
+			"phrases": [
+				"kannst du das wiederholen",
+				"wiederhol das bitte",
+				"bitte wiederholen",
+				"wiederholen",
+				"sag das nochmal"
+			]
 		}
-	],
-	"alexa": {
-		"interactionModel": {
-			"languageModel": {
-				"intents": [
-					{
-						"name": "AMAZON.CancelIntent",
-						"samples": []
-					},
-					{
-						"name": "AMAZON.HelpIntent",
-						"samples": []
-					},
-					{
-						"name": "AMAZON.StopIntent",
-						"samples": []
-					},
-					{
-						"name": "AMAZON.YesIntent",
-						"samples": []
-					},
-					{
-						"name": "AMAZON.NoIntent",
-						"samples": []
-					},
-					{
-						"name": "AMAZON.RepeatIntent",
-						"samples": []
-					}
-				]
-			}
-		}
-	},
-	"dialogflow": {
-		"intents": [
-			{
-				"id": "f58ed440-7133-4e90-a684-f7446c5b0985",
-				"name": "CancelIntent",
-				"auto": true,
-				"contexts": [],
-				"responses": [
-					{
-						"resetContexts": false,
-						"affectedContexts": [],
-						"parameters": [],
-						"defaultResponsePlatforms": {},
-						"speech": []
-					}
-				],
-				"priority": 1,
-				"webhookUsed": true,
-				"webhookForSlotFilling": true,
-				"fallbackIntent": false,
-				"events": [],
-				"userSays": [
-					{
-						"id": "f1764db9-bcae-47cd-9a59-2860306f8b13",
-						"data": [
-							{
-								"text": "abbruch",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "a48bf864-be01-402d-a795-604621cccf8d",
-						"data": [
-							{
-								"text": "brich ab",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "c0e35184-2d34-410f-8174-d7227b8402ae",
-						"data": [
-							{
-								"text": "bitte brich ab",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					}
-				],
-				"followUpIntents": [],
-				"templates": []
-			},
-			{
-				"id": "0c9de404-9fa6-4352-bc9a-990d59f0a28c",
-				"name": "HelpIntent",
-				"auto": true,
-				"contexts": [],
-				"responses": [
-					{
-						"resetContexts": false,
-						"affectedContexts": [],
-						"parameters": [],
-						"defaultResponsePlatforms": {},
-						"speech": []
-					}
-				],
-				"priority": 1,
-				"webhookUsed": true,
-				"webhookForSlotFilling": true,
-				"fallbackIntent": false,
-				"events": [],
-				"userSays": [
-					{
-						"id": "a7ab85f1-5954-4d2b-935d-f0b831929f78",
-						"data": [
-							{
-								"text": "Hilfe",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "2fb6dc25-903c-4f6c-af11-da110a310319",
-						"data": [
-							{
-								"text": "hilf mir",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "8b877cb3-57b6-4d12-9244-3baed20d8644",
-						"data": [
-							{
-								"text": "kannst du mir helfen",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "e57cc343-bb9d-4793-9dff-6cae69aa9d19",
-						"data": [
-							{
-								"text": "hilf mir bitte",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "c475b88b-e879-45f4-ab43-fd2783c33c5e",
-						"data": [
-							{
-								"text": "was kannst du mir sagen",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					}
-				],
-				"followUpIntents": [],
-				"templates": []
-			},
-			{
-				"id": "648f2e28-d5c4-4756-a1a4-4a9803b4cac7",
-				"name": "NoIntent",
-				"auto": true,
-				"contexts": [],
-				"responses": [
-					{
-						"resetContexts": false,
-						"affectedContexts": [],
-						"parameters": [],
-						"defaultResponsePlatforms": {},
-						"speech": []
-					}
-				],
-				"priority": 1,
-				"webhookUsed": true,
-				"webhookForSlotFilling": true,
-				"fallbackIntent": false,
-				"events": [],
-				"userSays": [
-					{
-						"id": "9264a54c-ce80-49a0-be8c-595a26701d27",
-						"data": [
-							{
-								"text": "no",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "7a477843-1746-4e68-9f5f-331c7186f48e",
-						"data": [
-							{
-								"text": "nope",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "4719ce5d-f576-4184-a5de-235f8424c377",
-						"data": [
-							{
-								"text": "nein",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "470af02c-0483-400c-a089-8b9e02c7a678",
-						"data": [
-							{
-								"text": "ne",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "9c841193-b20c-4ae6-a099-a0812b4aebf7",
-						"data": [
-							{
-								"text": "nö",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					}
-				],
-				"followUpIntents": [],
-				"templates": []
-			},
-			{
-				"id": "e151d88d-f211-4945-8ee6-39b74e59ca02",
-				"name": "RepeatIntent",
-				"auto": true,
-				"contexts": [],
-				"responses": [
-					{
-						"resetContexts": false,
-						"affectedContexts": [],
-						"parameters": [],
-						"defaultResponsePlatforms": {},
-						"speech": []
-					}
-				],
-				"priority": 1,
-				"webhookUsed": true,
-				"webhookForSlotFilling": true,
-				"fallbackIntent": false,
-				"events": [],
-				"userSays": [
-					{
-						"id": "04dd25cb-c7ae-4153-9072-e1a955ef18ec",
-						"data": [
-							{
-								"text": "kannst du das wiederholen",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "f933472b-4909-4433-b353-111784133fd5",
-						"data": [
-							{
-								"text": "wiederhol das bitte",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "2d7e1e94-7a5e-44cb-80ee-6e71886dd488",
-						"data": [
-							{
-								"text": "bitte wiederholen",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "38ae088e-e674-4ad7-a2ad-1632ea8439eb",
-						"data": [
-							{
-								"text": "wiederholen",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "f1e0b31e-7d8a-455e-b63d-78236117cbe9",
-						"data": [
-							{
-								"text": "sag das nochmal",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					}
-				],
-				"followUpIntents": [],
-				"templates": []
-			},
-			{
-				"id": "1179bcae-06eb-4a53-8241-08afe7c38b74",
-				"name": "StopIntent",
-				"auto": true,
-				"contexts": [],
-				"responses": [
-					{
-						"resetContexts": false,
-						"affectedContexts": [],
-						"parameters": [],
-						"defaultResponsePlatforms": {},
-						"speech": []
-					}
-				],
-				"priority": 1,
-				"webhookUsed": true,
-				"webhookForSlotFilling": true,
-				"fallbackIntent": false,
-				"events": [],
-				"userSays": [
-					{
-						"id": "abd788cf-0ca8-433a-ae1b-db789bcaf3ff",
-						"data": [
-							{
-								"text": "stop",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "f1434457-7ffd-4911-82b2-5638a0525ad6",
-						"data": [
-							{
-								"text": "stop bitte",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "051b6102-2d22-4a8e-93af-710106efb186",
-						"data": [
-							{
-								"text": "hör auf",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "b9b95cd6-4693-43a1-bb57-74b0e8112727",
-						"data": [
-							{
-								"text": "bitte hör auf",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					}
-				],
-				"followUpIntents": [],
-				"templates": []
-			},
-			{
-				"id": "5c2764a1-7dbf-41ab-9b1e-f7a84729cd84",
-				"name": "YesIntent",
-				"auto": true,
-				"contexts": [],
-				"responses": [
-					{
-						"resetContexts": false,
-						"affectedContexts": [],
-						"parameters": [],
-						"defaultResponsePlatforms": {},
-						"speech": []
-					}
-				],
-				"priority": 1,
-				"webhookUsed": true,
-				"webhookForSlotFilling": true,
-				"fallbackIntent": false,
-				"events": [],
-				"userSays": [
-					{
-						"id": "8b8c1354-ea88-474d-afc0-70927d1d90c9",
-						"data": [
-							{
-								"text": "yes",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "dfcafa59-127e-4fa6-b93a-ba4e6c4ad94c",
-						"data": [
-							{
-								"text": "yeah",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "8bf8ea37-b960-40d6-b5c5-38a3e7f84b55",
-						"data": [
-							{
-								"text": "yep",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "5f8ed453-52e6-4314-94be-fd41fd0b9703",
-						"data": [
-							{
-								"text": "sicher",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "8b439b49-7864-4d4a-ae96-2dbd8f1faead",
-						"data": [
-							{
-								"text": "okay",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "8f630ec8-dbb6-4228-ae77-4ad6b80e5dcd",
-						"data": [
-							{
-								"text": "ja",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					},
-					{
-						"id": "6135bdbd-370f-4f18-9d5d-272f597775e9",
-						"data": [
-							{
-								"text": "jo",
-								"userDefined": false
-							}
-						],
-						"isTemplate": false,
-						"count": 0,
-						"isAuto": false
-					}
-				],
-				"followUpIntents": [],
-				"templates": []
-			}
-		]
-	}
+	]
 }
