@@ -12,6 +12,6 @@
 Sample Trivia Voice App.
 
 ```sh
-$ jovo new <directory> --template trivia
+$ jovo new <directory> --template trivia-game
 ```
 
