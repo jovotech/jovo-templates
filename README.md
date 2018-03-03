@@ -27,3 +27,4 @@ Name | Description
 :--- | :---
 [`helloworld`](./01_helloworld) | `Default`. Jovo Sample Voice App with a simple "Hello World!" + asking for the user's name 
 [`alexa-audioplayer`](./02_alexa-audioplayer) | Sample Alexa Audioplayer Skill that plays a longform audio file with the Audioplayer directive
+[`trivia-game`](./03_trivia-game) | Trivia game voice app that makes use of states, helper functions, and i18n
