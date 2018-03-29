@@ -7,7 +7,7 @@
 <a href="https://github.com/jovotech/jovo-cli"><strong>CLI </strong></a> - <a href="https://github.com/jovotech/jovo-framework-nodejs/blob/master/CONTRIBUTING.md"><strong>Contributing</strong></a> - <a href="https://twitter.com/jovotech"><strong>Twitter</strong></a></p>
 <br/>
 
-# Template: Google Mediaresponse
+# Template: Google MediaResponse
 
 Sample Google Action media response App.
 
