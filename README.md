@@ -29,3 +29,4 @@ Name | Description
 [`alexa-audioplayer`](./02_alexa-audioplayer) | Sample Alexa Audioplayer Skill that plays a longform audio file with the Audioplayer directive
 [`trivia-game`](./03_trivia-game) | Trivia game voice app that makes use of states, helper functions, and i18n
 [`google-mediaresponse`](./04_google-mediaresponse) | Sample Google Action media response app that plays longform audio file
+[`alexa-dialoginterface`](./05_alexa-dialoginterface) | Sample implementation of the Alexa dialog interface
