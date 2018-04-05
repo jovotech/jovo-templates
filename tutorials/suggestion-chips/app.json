@@ -1,0 +1,8 @@
+{
+	"googleAction": {
+		"nlu": {
+			"name": "dialogflow",
+			"version": 1
+		}
+	}
+}
