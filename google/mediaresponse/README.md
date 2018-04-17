@@ -9,10 +9,13 @@
 
 # Template: Google MediaResponse
 
-Sample Google Action media response App.
+Sample Google Action that uses the Media Response API.
 
 ```sh
-$ jovo new <directory> --template google-mediaresponse
+$ jovo new <directory> --template google/mediaresponse
+
+# Short version
+$ jovo new <directory> -t g/mediaresponse
 ```
 
 # Requirements:

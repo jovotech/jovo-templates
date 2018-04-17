@@ -13,5 +13,8 @@ Sample implementation of the Alexa Skill Events.
 
 ```sh
 $ jovo new <directory> --template alexa/skillevents
+
+# Short version
+$ jovo new <directory> -t a/skillevents
 ```
 

@@ -12,6 +12,9 @@
 Sample Alexa Audioplayer Skill that plays a longform audio file with the Audioplayer directive.
 
 ```sh
-$ jovo new <directory> --template alexa-audioplayer
+$ jovo new <directory> --template alexa/audioplayer
+
+# Short version
+$ jovo new <directory> -t a/audioplayer
 ```
 
