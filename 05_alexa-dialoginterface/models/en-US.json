@@ -1,0 +1,161 @@
+{
+	"invocation": "dialog test",
+	"intents": [
+		{
+			"name": "SearchFlightIntent",
+			"phrases": [
+				"sure",
+				"okay",
+				"yeah",
+				"Yes"
+			],
+			"inputs": [
+				{
+					"name": "fromCity",
+					"type": {
+						"alexa": "AMAZON.US_CITY"
+					},
+					"alexa": {
+						"samples": [
+							"{fromCity}",
+							"from {fromCity}"
+						]
+					}
+				},
+				{
+					"name": "toCity",
+					"type": {
+						"alexa": "AMAZON.US_CITY"
+					},
+					"alexa": {
+						"samples": [
+							"{toCity}",
+							"to {toCity}"
+						]
+					}
+				},
+				{
+					"name": "date",
+					"type": {
+						"alexa": "AMAZON.DATE"
+					},
+					"alexa": {
+						"samples": [
+							"{date}",
+							"on the {date}"
+						]
+					}
+				},
+				{
+					"name": "count",
+					"type": {
+						"alexa": "AMAZON.NUMBER"
+					}
+				}
+			]
+		}
+	],
+	"inputTypes": [],
+	"alexa": {
+		"interactionModel": {
+			"prompts": [
+				{
+					"id": "Elicit.Slot.1120021987437.905332624800",
+					"variations": [
+						{
+							"type": "PlainText",
+							"value": "Alright, where does your journey start?"
+						},
+						{
+							"type": "PlainText",
+							"value": "Where are you leaving from?"
+						}
+					]
+				},
+				{
+					"id": "Elicit.Slot.1120021987437.1197853466040",
+					"variations": [
+						{
+							"type": "PlainText",
+							"value": "Which city are you flying to?"
+						},
+						{
+							"type": "PlainText",
+							"value": "Where are you flying to?"
+						}
+					]
+				},
+				{
+					"id": "Elicit.Slot.1120021987437.498905510534",
+					"variations": [
+						{
+							"type": "PlainText",
+							"value": "When are you leaving?"
+						}
+					]
+				}
+			],
+			"dialog": {
+				"intents": [
+					{
+						"name": "SearchFlightIntent",
+						"confirmationRequired": false,
+						"prompts": {},
+						"slots": [
+							{
+								"name": "fromCity",
+								"type": "AMAZON.US_CITY",
+								"confirmationRequired": false,
+								"elicitationRequired": true,
+								"prompts": {
+									"elicitation": "Elicit.Slot.1120021987437.905332624800"
+								}
+							},
+							{
+								"name": "toCity",
+								"type": "AMAZON.US_CITY",
+								"confirmationRequired": false,
+								"elicitationRequired": true,
+								"prompts": {
+									"elicitation": "Elicit.Slot.1120021987437.1197853466040"
+								}
+							},
+							{
+								"name": "date",
+								"type": "AMAZON.DATE",
+								"confirmationRequired": false,
+								"elicitationRequired": true,
+								"prompts": {
+									"elicitation": "Elicit.Slot.1120021987437.498905510534"
+								}
+							},
+							{
+								"name": "count",
+								"type": "AMAZON.NUMBER",
+								"confirmationRequired": false,
+								"elicitationRequired": false,
+								"prompts": {}
+							}
+						]
+					}
+				]
+			},
+			"languageModel": {
+				"intents": [
+					{
+						"name": "AMAZON.CancelIntent",
+						"samples": []
+					},
+					{
+						"name": "AMAZON.HelpIntent",
+						"samples": []
+					},
+					{
+						"name": "AMAZON.StopIntent",
+						"samples": []
+					}
+				]
+			}
+		}
+	}
+}
