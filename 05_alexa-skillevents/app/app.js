@@ -29,6 +29,7 @@ app.setHandler({
     'MyNameIsIntent': function(name) {
         this.tell('Hey ' + name.value + ', nice to meet you!');
     },
+
     'ON_EVENT': {
         'AlexaSkillEvent.SkillEnabled': function() {
             console.log('AlexaSkillEvent.SkillEnabled');
