@@ -4,10 +4,9 @@
 		{
 			"name": "SearchFlightIntent",
 			"phrases": [
-				"sure",
-				"okay",
-				"yeah",
-				"Yes"
+				"I am flying to {toCity} from {fromCity} on the {date}",
+			    "I want to fly to {toCity} on {date}",
+				"Book a flight for {ticketCount} people on the {date} to {toCity}"
 			],
 			"inputs": [
 				{
@@ -47,7 +46,7 @@
 					}
 				},
 				{
-					"name": "count",
+					"name": "ticketCount",
 					"type": {
 						"alexa": "AMAZON.NUMBER"
 					}
@@ -130,7 +129,7 @@
 								}
 							},
 							{
-								"name": "count",
+								"name": "ticketCount",
 								"type": "AMAZON.NUMBER",
 								"confirmationRequired": false,
 								"elicitationRequired": false,
