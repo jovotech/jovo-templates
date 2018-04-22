@@ -19,26 +19,26 @@ const app = new App(config);
 
 app.setHandler({
     'LAUNCH': function() {
-        this.ask('Would you like to book a flight?');
+        this.ask('Where are you flying to?');
     },
-    'SearchFlightIntent': function(fromCity, toCity, date, count) {
+    'SearchFlightIntent': function(fromCity, toCity, date, ticketCount) {
         if (!this.alexaSkill().isDialogCompleted()) {
             this.alexaSkill().dialogDelegate();
-        } else if (!this.alexaSkill().hasSlotValue('count')) {
-            this.alexaSkill().dialogElicitSlot('count', 'How many tickets do you need?');
+        } else if (!this.alexaSkill().hasSlotValue('ticketCount')) {
+            this.alexaSkill().dialogElicitSlot('ticketCount', 'How many tickets do you need?');
         } else if (this.alexaSkill().getIntentConfirmationStatus() !== 'CONFIRMED') {
             this.alexaSkill().dialogConfirmIntent(
                 'So you are flying from ' + fromCity.value +
                 ' to ' + toCity.value +
                 ' on ' + date.value +
-                ' and you need ' + count.value + ' tickets, right?'
+                ' and you need ' + ticketCount.value + ' tickets, right?'
             );
         } else if (this.alexaSkill().getIntentConfirmationStatus() === 'CONFIRMED') {
             let flightData = {
                 fromCity: fromCity.value,
                 toCity: toCity.value,
                 date: date.value,
-                count: count.value,
+                ticketCount: ticketCount.value,
             };
             this.toIntent('FlightApiIntent', flightData);
         }
