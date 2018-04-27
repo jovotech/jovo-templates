@@ -1,0 +1,14 @@
+{  
+    "invocation":"my test app",
+    "intents":[  
+        {  
+            "name":"HelloWorldIntent",
+            "phrases":[  
+                "hello",
+                "say hello",
+                "say hello world",
+                "test"
+            ]
+        }
+    ]
+}
