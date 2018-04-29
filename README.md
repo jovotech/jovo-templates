@@ -26,7 +26,8 @@ The following templates are currently available:
 Name | Description 
 :--- | :---
 [`helloworld`](./01_helloworld) | `Default`. Jovo Sample Voice App with a simple "Hello World!" + asking for the user's name 
-[`alexa-audioplayer`](./alexa/audioplayer) | Sample Alexa Audioplayer Skill that plays a longform audio file with the Audioplayer directive
-[`trivia-game`](./03_trivia-game) | Trivia game voice app that makes use of states, helper functions, and i18n
-[`google-mediaresponse`](./google/mediaresponse) | Sample Google Action media response app that plays longform audio file
-[`alexa-dialoginterface`](alexa/dialoginterface) | Sample implementation of the Alexa dialog interface
+[`trivia-game`](./02_trivia-game) | Trivia game voice app that makes use of states, helper functions, and i18n
+[`alexa/audioplayer`](./alexa/audioplayer) | Sample Alexa Audioplayer Skill that plays a longform audio file with the Audioplayer directive
+[`alexa/dialoginterface`](alexa/dialoginterface) | Sample implementation of the Alexa Dialog Interface
+[`alexa/skillevents`](./alexa/skillevents) | Sample implementation of the Alexa Skill Events.
+[`google/mediaresponse`](./google/mediaresponse) | Sample Google Action media response app that plays longform audio file
