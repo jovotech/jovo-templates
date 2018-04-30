@@ -11,7 +11,7 @@ const sheets = google.sheets('v4');
 
 module.exports = {
 
-    get_content : function(app){
+    get_content : function(jovo){
 
         const jwtClient = new google.auth.JWT(
             key.client_email,
@@ -25,7 +25,7 @@ module.exports = {
             function (error, tokens) {
                 if (error) {
                     console.error(`Error at authorization: ${error.message}`);
-                    logic.error.connect(app);
+                    logic.error.connect(jovo);
                 };
 
                 sheets.spreadsheets.values.get(
@@ -36,16 +36,16 @@ module.exports = {
                     }, function(error, response) {
                         if ( error) {
                             console.error(`Error at retrieving data: ${error.message}`);
-                            logic.error.data(app);
+                            logic.error.data(jovo);
                         }
                         const rows = response.data.values;
 
                         if (rows.length == 0) {
                             console.log( 'No data found.');
-                            logic.error.connect(app);
+                            logic.error.connect(jovo);
                         } else if (rows.length == 1) {
                             console.log( 'Only header found.');
-                            logic.error.connect(app);
+                            logic.error.connect(jovo);
                         } else {
                             let responses = {};
                             let keys = [];
@@ -63,9 +63,9 @@ module.exports = {
                                     responses[key].push(response); 
                                 }   
                             }
-                            app.setSessionAttribute('responses', responses);
-                            app = module.exports.load_responses(app);
-                            logic.welcome(app);
+                            jovo.setSessionAttribute('responses', responses);
+                            jovo = module.exports.load_responses(jovo);
+                            logic.welcome(jovo);
                         }
                     }
                 )

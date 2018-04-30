@@ -26,12 +26,22 @@ const logic = require( './logic/logic.js');
 
 app.setHandler({
 
-    'ON_REQUEST' : function() {
-        load_responses(this);
-    },
-
     'NEW_SESSION': function() {
         spreadsheet.get_content( this);
+    },
+
+    'ON_REQUEST' : function() {
+        const responses = this.getSessionAttribute('responses');
+        if (responses){
+            let i18n_config = {
+                'resources' : {},
+                'returnObjects' : true
+            }
+            i18n_config.resources[this.getLocale()] = {
+                'translation' : responses
+            };
+            this.app.setI18n(i18n_config);
+        }
     },
 
     'Unhandled': function(name) {
@@ -40,9 +50,3 @@ app.setHandler({
 });
 
 module.exports.app = app;
-
-function load_responses(app){;
-    if (app.getSessionAttribute('responses')){
-        spreadsheet.load_responses(app);
-    }
-}

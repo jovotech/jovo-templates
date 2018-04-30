@@ -7,7 +7,7 @@ const SHEET_ID  = "responses";
 
 module.exports = {
 
-    get_content : function(app){
+    get_content : function(jovo){
 
         const spreadsheet_url = `http://spreadsheets.google.com/feeds/list/${SPREADSHEET_ID}/od6/public/basic?alt=json`;
 
@@ -29,7 +29,7 @@ module.exports = {
             }
             if (error) {
                 console.error(error.message);
-                logic.error.connect(app);
+                logic.error.connect(jovo);
             }
 
             response.setEncoding('utf8');
@@ -55,18 +55,18 @@ module.exports = {
                             responses[key].push(response); 
                         }                        
                     }
-                    app.setSessionAttribute('responses', responses);
-                    app = module.exports.load_responses(app);
-                    logic.welcome(app);
+                    jovo.setSessionAttribute('responses', responses);
+                    jovo = module.exports.load_responses(jovo);
+                    logic.welcome(jovo);
                 } catch (error) {
                     console.error(error.message);
-                    logic.error.data(app);
+                    logic.error.data(jovo);
                 }
             });
         })
         .on('error', (error) => {
             console.error(`Error: ${error.message}`);
-            logic.error.connect(app);
+            logic.error.connect(jovo);
         });
     },
 

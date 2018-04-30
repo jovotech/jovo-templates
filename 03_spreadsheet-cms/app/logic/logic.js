@@ -1,32 +1,32 @@
 
 module.exports = {
 
-    welcome : function( app){
+    welcome : function( jovo){
         console.log( 'logic.welcome()');
-        app.ask(
-            app.speech.t('welcome')
+        jovo.ask(
+            jovo.speech.t('welcome')
         );    
     },
 
-    goodbye : function( app){
+    goodbye : function( jovo){
         console.log( 'logic.goodbye()');
-        app.tell(
-            app.speech.t('goodbye')
+        jovo.tell(
+            jovo.speech.t('goodbye')
         );    
     },
 
     error : {
-        connect : function( app){
+        connect : function( jovo){
             console.log( 'logic.error.connect()');
-            app.tell(
+            jovo.tell(
                 "Sorry, I couldn't connect to the spreadsheet. "
             );
         },
 
-        data : function( app){
+        data : function( jovo){
             console.log( 'logic.error.data()');
-            app.tell(
-                "Sorry, I couldn't retireve data from the spreadsheet. "
+            jovo.tell(
+                "Sorry, I couldn't retrieve data from the spreadsheet. "
             );
         },
     }
