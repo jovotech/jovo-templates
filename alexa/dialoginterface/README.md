@@ -9,7 +9,7 @@
 
 # Template: Alexa Dialog Interface
 
-Sample Google Action media response App.
+Jovo Sample Alexa Skill that uses the Alexa Dialog Interface.
 
 ```sh
 $ jovo new <directory> --template alexa-dialoginterface
