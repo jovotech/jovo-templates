@@ -1,0 +1,68 @@
+{
+	"invocation": "my purchase app",
+	"intents": [
+		{
+			"name": "BuySkillItemIntent",
+			"phrases": [
+				"buy",
+				"shop",
+				"buy {ProductName}",
+				"purchase {ProductName}",
+				"want {ProductName}",
+				"would like {ProductName}"
+			],
+			"inputs": [
+				{
+					"name": "ProductName",
+					"type": "LIST_OF_PRODUCT_NAMES"
+				}
+			]
+		},
+		{
+			"name": "RefundSkillItemIntent",
+			"phrases": [
+				"return {ProductName}",
+				"refund {ProductName}",
+				"want a refund for {ProductName}",
+				"would like to return {ProductName}"
+			],
+			"inputs": [
+				{
+					"name": "ProductName",
+					"type": "LIST_OF_PRODUCT_NAMES"
+				}
+			]
+		}
+	],
+	"inputTypes": [
+		{
+			"name": "LIST_OF_PRODUCT_NAMES",
+			"values": [
+				{
+					"value": "Cave Quest",
+					"id": "cave_quest"
+				}
+			]
+		}
+	],
+	"alexa": {
+		"interactionModel": {
+			"languageModel": {
+				"intents": [
+					{
+						"name": "AMAZON.CancelIntent",
+						"samples": []
+					},
+					{
+						"name": "AMAZON.HelpIntent",
+						"samples": []
+					},
+					{
+						"name": "AMAZON.StopIntent",
+						"samples": []
+					}
+				]
+			}
+		}
+	}
+}
