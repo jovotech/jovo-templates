@@ -47,7 +47,9 @@ $ jovo build
 
 ## Add Product with ASK CLI
 
-We're using the official ASK CLI to add a new product. To make it work, first go into the Alexa platform project folder:
+We're using the official ASK CLI to add a new product, which needs to be version `1.3.0` or later. [Take a look at the ASK CLI Quickstart here](https://developer.amazon.com/docs/smapi/quick-start-alexa-skills-kit-command-line-interface.html#step-2-install-and-initialize-ask-cli).
+
+To make it work, first go into the Alexa platform project folder:
 
 ```sh
 $ cd platforms/alexaSkill
