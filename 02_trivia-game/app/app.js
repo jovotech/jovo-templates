@@ -74,7 +74,7 @@ app.setHandler({
     },
     'TriviaState': {
         'AnswerIntent': function() {
-            handleUserGuess.call(this, false);
+            handleUserGuess.call(answer, false);
         },
         'DontKnowIntent': function() {
             handleUserGuess.call(this, true);
@@ -249,10 +249,12 @@ function isAnswerSlotValid(answer) {
 }
 
 /**
+ *  @param {object} answer user input
  * @param {boolean} userGaveUp
  */
-function handleUserGuess(userGaveUp) {
-    const answerSlotValid = isAnswerSlotValid(this.getInput('answer'));
+function handleUserGuess(answer, userGaveUp) {
+    console.log("getInput: " + answer);
+    const answerSlotValid = isAnswerSlotValid(answer);
     let speech = this.speechBuilder();
     let speechOutputAnalysis = this.speechBuilder();
     const gameQuestions = this.getSessionAttribute('questions');
@@ -310,6 +312,7 @@ function handleUserGuess(userGaveUp) {
         });
         this.followUpState('TriviaState').ask(speech, reprompt);
     }
+    return speech;
 }
 
 module.exports.app = app;
