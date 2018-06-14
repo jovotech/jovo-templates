@@ -29,9 +29,10 @@ app.setHandler({
     'MyNameIsIntent': function(name) {
         this.tell('Hey ' + name.value + ', nice to meet you!');
     },
+
     'RepeatIntent': function() {
         this.repeat();
-    }
+    },
 });
 
 module.exports.app = app;
