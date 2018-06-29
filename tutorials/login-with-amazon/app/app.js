@@ -5,6 +5,7 @@
 // =================================================================================
 
 const {App} = require('jovo-framework');
+const request = require('request');
 
 const config = {
     logging: true,
