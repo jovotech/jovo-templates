@@ -31,7 +31,9 @@ $ npm test
 ```
 
 Initially, there should be two tests that fail.
-If you then go into the `app/app.js` and remove the comments around the `"Unhandled"` intent block, it should work:
+If you then go into the `app/app.js` and remove the comments around the `"Unhandled"` intent block, it should work.
+
+Just change this:
 
 ```javascript
 app.setHandler({
@@ -53,6 +55,37 @@ app.setHandler({
         // 'Unhandled': function (name) {
         //     this.ask('What\'s your name?');
         // },
+    },
+
+    'MyNameIsIntent': function(name) {
+        this.tell('Hey ' + name.value + ', nice to meet you!');
+    },
+
+});
+```
+
+To that:
+
+```javascript
+app.setHandler({
+    'LAUNCH': function() {
+        this.toIntent('HelloWorldIntent');
+    },
+
+    'HelloWorldIntent': function() {
+        this.followUpState('IntroductionState')
+            .ask('Hello World! What\'s your name?', 'Please tell me your name.');
+    },
+
+    'IntroductionState': {
+        'MyNameIsIntent': function(name) {
+            this.toStatelessIntent('MyNameIsIntent', name);
+        },
+
+        // Test fails if this is commented out
+        'Unhandled': function (name) {
+            this.ask('What\'s your name?');
+        },
     },
 
     'MyNameIsIntent': function(name) {
