@@ -1,0 +1,26 @@
+{
+  "name": "jovo-template-unit-testing",
+  "version": "1.0.0",
+  "description": "Jovo voice app template with sample unit tests",
+  "main": "index.js",
+  "dependencies": {
+    "jovo-framework": "^1.3.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
+  },
+  "scripts": {
+    "test": "mocha test --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jovotech/jovo-sample-voice-app-nodejs.git"
+  },
+  "author": "Jovo",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/jovotech/jovo-templates/issues"
+  },
+  "homepage": "https://www.jovo.tech/templates/"
+}
