@@ -33,7 +33,7 @@ app.setHandler({
         },
 
         // // Test fails if this is commented out
-        // 'Unhandled': function (name) {
+        // 'Unhandled': function(name) {
         //     this.ask('What\'s your name?');
         // },
     },

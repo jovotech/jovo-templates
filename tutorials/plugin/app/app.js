@@ -60,7 +60,7 @@ app.setHandler({
         'Unhandled': function() {
             this.ask('Are you sure?');
         },
-    }
+    },
 });
 
 module.exports.app = app;
