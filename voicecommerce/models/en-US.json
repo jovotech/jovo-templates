@@ -1,0 +1,13 @@
+{
+    "invocation":"voice shopping",
+    "intents":[
+        {
+            "name":"ReorderIntent",
+            "phrases":[
+                "order the same thing as usual",
+                "make the same order as usual",
+                "reorder"
+            ]
+        }
+    ]
+}
