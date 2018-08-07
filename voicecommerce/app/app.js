@@ -23,7 +23,7 @@ const api = new VueStorefrontApi({ endpoint: 'https://demo.vuestorefront.io' });
 
 app.setHandler({
     'LAUNCH': function() {
-        this.toIntent('HelloWorldIntent');
+        this.tell('Ask me to repeat the last purchase');
     },
 
     'ReorderIntent': function() {
