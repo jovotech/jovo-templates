@@ -1,0 +1,30 @@
+{
+	"invocation": "button demo",
+	"alexa": {
+		"interactionModel": {
+			"languageModel": {
+				"intents": [
+					{
+						"name": "AMAZON.CancelIntent",
+						"samples": [
+							"cancel"
+						]
+					},
+					{
+						"name": "AMAZON.HelpIntent",
+						"samples": [
+							"help"
+						]
+					},
+					{
+						"name": "AMAZON.StopIntent",
+						"samples": [
+							"stop"
+						]
+					}
+				]
+			}
+		}
+	},
+	"intents": []
+}
