@@ -190,7 +190,7 @@ app.setHandler({
     'ON_GAME_ENGINE_INPUT_HANDLER_EVENT': function() {
         console.log('ON_GAME_ENGINE_INPUT_HANDLER_EVENT()');
         // This will be one of our configured events 'buttonDownEvent' or 'timeout'
-        // In theory, there can be more than one events in one input handler event,
+        // In theory, there can be more than one event in one input handler event,
         // but in practice you'll be fine focussing on the first one
         const inputEvent = this.request().getEvents()[0];
         const eventName = inputEvent.name;

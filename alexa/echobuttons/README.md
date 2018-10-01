@@ -7,26 +7,6 @@
 <a href="https://github.com/jovotech/jovo-cli"><strong>CLI </strong></a> - <a href="https://github.com/jovotech/jovo-framework-nodejs/blob/master/CONTRIBUTING.md"><strong>Contributing</strong></a> - <a href="https://twitter.com/jovotech"><strong>Twitter</strong></a></p>
 <br/>
 
-# Template: Hello World
-
-Jovo Sample Voice App with a simple "Hello World!" + asking for the user's name. This is the default template for the `jovo new` command:
-
-```sh
-$ jovo new <directory>
-
-## Alternative
-$ jovo new <directory> --template helloworld
-```
-
-[![Jovo Framework](https://www.jovo.tech/img/github-logo.png)](https://www.jovo.tech)
-
-<p align="center">Templates for the <a href="https://github.com/jovotech/jovo-framework-nodejs">Jovo Framework</a> ⭐️</p>
-
-<p align="center">
-<a href="https://www.jovo.tech/framework/docs/"><strong>Documentation</strong></a> -
-<a href="https://github.com/jovotech/jovo-cli"><strong>CLI </strong></a> - <a href="https://github.com/jovotech/jovo-framework-nodejs/blob/master/CONTRIBUTING.md"><strong>Contributing</strong></a> - <a href="https://twitter.com/jovotech"><strong>Twitter</strong></a></p>
-<br/>
-
 # Template: Alexa Buttons Demo
 
 Jovo Sample Alexa Skill that uses the [Game Engine](https://developer.amazon.com/docs/custom-skills/game-engine-interface-reference.html) and [Gadget Controller Interfaces](https://developer.amazon.com/docs/custom-skills/gadget-controller-interface-reference.html) of the Gadgets Skill API.
@@ -46,15 +26,14 @@ This template contains:
 
 How to make it work:
 
-- [Template: Hello World](#template-hello-world)
-- [Template: Alexa Buttons Demo](#template-alexa-buttons-demo)
-    - [Create Project](#create-project)
-    - [Deploy project](#deploy-project)
-    - [Run Jovo Webhook](#run-jovo-webhook)
-    - [Understand the Code](#understand-the-code)
-        - [Setting up the game engine](#setting-up-the-game-engine)
-        - [Seting up the gadget controller](#seting-up-the-gadget-controller)
-        - [Responding to game engine events](#responding-to-game-engine-events)
+(#template-alexa-buttons-demo)
+- [Create Project](#create-project)
+- [Deploy project](#deploy-project)
+- [Run Jovo Webhook](#run-jovo-webhook)
+- [Understand the Code](#understand-the-code)
+    - [Setting up the game engine](#setting-up-the-game-engine)
+    - [Seting up the gadget controller](#seting-up-the-gadget-controller)
+    - [Responding to game engine events](#responding-to-game-engine-events)
 
 
 ## Create Project
@@ -62,7 +41,7 @@ How to make it work:
 Create a new project from this template:
 
 ```sh
-$ jovo new <directory> --template alexa/button-demo
+$ jovo new <directory> --template alexa/buttondemo
 ```
 
 Go into the project directory and build the platform-specific configuration for an Alexa Skill with Echo Buttons:
@@ -79,6 +58,9 @@ $ jovo build -p alexaSkill
 The Skill is ready to be deployed to the Amazon Developer console:
 
 ```sh
+$ jovo deploy
+
+# Alternative
 $ jovo deploy alexaSkill
 ```
 
