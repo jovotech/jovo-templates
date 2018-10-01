@@ -4,7 +4,7 @@
 // App Configuration
 // =================================================================================
 
-const { App } = require('jovo-framework');
+const {App} = require('jovo-framework');
 
 const config = {
     responseLogging: true,
@@ -34,13 +34,14 @@ const BUTTON_COLORS = [
 ];
 
 app.setHandler({
-    'LAUNCH': function () {
+    'LAUNCH': function() {
         console.log('LAUNCH()');
 
         // For this project, we'll focus only on 'button up' events, because
         // 'button down' events offer very little information over threir coupled 'button up' events
-        
-        // To trigger a 'buttonDownEvent', we first need to initialize and configure a corresponding recognizer:
+
+        // To trigger a 'buttonDownEvent', we first need to initialize and configure
+        // a corresponding recognizer:
         const buttonDownRecognizer = this.alexaSkill().gameEngine()
             .getPatternRecognizerBuilder('buttonDownRecognizer')
             .anchorEnd()
@@ -49,7 +50,7 @@ app.setHandler({
                 [
                     {
                         'action': 'down',
-                    }
+                    },
                 ]
             );
 
@@ -76,7 +77,8 @@ app.setHandler({
         // This is how long we want to listen for events from the gadget API
         const timeout = 30000;
 
-        // Now we're registering our events and the recognizer at the game engine and set timeout and proxies
+        // Now we're registering our events and the recognizer at the game engine
+        // and set timeout and proxies
         this.alexaSkill().gameEngine()
             .setEvents([buttonDownEvent, timeoutEvent])
             .setRecognizers([buttonDownRecognizer])
@@ -86,9 +88,9 @@ app.setHandler({
         this.user().data.buttonCount = 0;
         this.user().data.knownButtons = [];
 
-        // Input handler events can be time-delayed, but they are signed with the ID of the request that
-        // started their input handler directive. So we're remembering the current request ID and compare them
-        // with the  gadget API requests we will receive. 
+        // Input handler events can be time-delayed, but they are signed with the ID of the
+        // request that started their input handler directive. So we're remembering the current
+        // request ID and compare them with the gadget API requests we will receive.
         this.user().data.currentInputHandlerID = this.request.id;
 
         // Our Game Engine is not fully configured and ready to use - But we didn't define any
@@ -101,21 +103,21 @@ app.setHandler({
             .setAnimations(
                 [
                     {
-                        "repeat": 20,
-                        "targetLights": ["1"],
-                        "sequence": [
+                        'repeat': 20,
+                        'targetLights': ['1'],
+                        'sequence': [
                             {
-                                "durationMs": 500,
-                                "color": "111111",
-                                "blend": true
+                                'durationMs': 500,
+                                'color': '111111',
+                                'blend': true,
                             },
                             {
-                                "durationMs": 500,
-                                "color": "000000",
-                                "blend": true
-                            }
-                        ]
-                    }
+                                'durationMs': 500,
+                                'color': '000000',
+                                'blend': true,
+                            },
+                        ],
+                    },
                 ]
             )
             .setLight(
@@ -131,16 +133,16 @@ app.setHandler({
             .setAnimations(
                 [
                     {
-                        "repeat": 1,
-                        "targetLights": ["1"],
-                        "sequence": [
+                        'repeat': 1,
+                        'targetLights': ['1'],
+                        'sequence': [
                             {
-                            "durationMs": 1000,
-                            "color": "ffffff",
-                            "blend": true
-                            }
-                        ]
-                    }
+                            'durationMs': 1000,
+                            'color': 'ffffff',
+                            'blend': true,
+                            },
+                        ],
+                    },
                 ]
             )
             .setLight(
@@ -156,16 +158,16 @@ app.setHandler({
             .setAnimations(
                 [
                     {
-                        "repeat": 1,
-                        "targetLights": ["1"],
-                        "sequence": [
+                        'repeat': 1,
+                        'targetLights': ['1'],
+                        'sequence': [
                             {
-                            "durationMs": 1000,
-                            "color": "ffffff",
-                            "blend": true
-                            }
-                        ]
-                    }
+                            'durationMs': 1000,
+                            'color': 'ffffff',
+                            'blend': true,
+                            },
+                        ],
+                    },
                 ]
             )
             .setLight(
@@ -174,7 +176,8 @@ app.setHandler({
                 [] // Unused parameter
             );
 
-        // Now we're setting up a little tune from the ASK sound library and a text, and send the response
+        // Now we're setting up a little tune fom the ASK sound library and a text,
+        // sand send the response
         this.speech
             .addAudio('https://s3.amazonaws.com/ask-soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_intro_01.mp3')
             .addText('Hello there! Show me your sweet buttons!');
@@ -184,7 +187,7 @@ app.setHandler({
         );
     },
 
-    'ON_GAME_ENGINE_INPUT_HANDLER_EVENT': function () {
+    'ON_GAME_ENGINE_INPUT_HANDLER_EVENT': function() {
         console.log('ON_GAME_ENGINE_INPUT_HANDLER_EVENT()');
         // This will be one of our configured events 'buttonDownEvent' or 'timeout'
         // In theory, there can be more than one events in one input handler event,
@@ -237,7 +240,7 @@ app.setHandler({
                 this.user().data.buttonCount = knownButtons.length;
                 this.speech
                     .addAudio(
-                        `https://s3.amazonaws.com/ask-soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_player${buttonNumber}_01.mp3`
+                        `https://s3.amazonaws.com/ask-soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_player${buttonNumber}_01.mp3` // eslint-disable-line
                     )
                     .addText(`Welcome, button ${buttonNumber}!`);
 
@@ -246,21 +249,21 @@ app.setHandler({
                     .setAnimations(
                         [
                             {
-                                "repeat": 20,
-                                "targetLights": ["1"],
-                                "sequence": [
+                                'repeat': 20,
+                                'targetLights': ['1'],
+                                'sequence': [
                                     {
-                                        "durationMs": 500,
-                                        "color": BUTTON_COLORS[buttonNumber - 1],
-                                        "blend": true
+                                        'durationMs': 500,
+                                        'color': BUTTON_COLORS[buttonNumber - 1],
+                                        'blend': true,
                                     },
                                     {
-                                        "durationMs": 500,
-                                        "color": "000000",
-                                        "blend": true
-                                    }
-                                ]
-                            }
+                                        'durationMs': 500,
+                                        'color': '000000',
+                                        'blend': true,
+                                    },
+                                ],
+                            },
                         ]
                     )
                     .setLight(
@@ -276,11 +279,11 @@ app.setHandler({
         }
     },
 
-    'buttonRequest': function () {
+    'buttonRequest': function() {
         this.ask('Did you just push a button?!');
     },
 
-    'Unhandled': function () {
+    'Unhandled': function() {
         this.tell('See you next time!');
     },
 });
