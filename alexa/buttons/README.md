@@ -33,14 +33,13 @@ This template contains:
 
 How to make it work:
 
-(#template-alexa-buttons-demo)
 - [Create Project](#create-project)
 - [Deploy project](#deploy-project)
 - [Run Jovo Webhook](#run-jovo-webhook)
 - [Understand the Code](#understand-the-code)
-    - [Setting up the game engine](#setting-up-the-game-engine)
-    - [Seting up the gadget controller](#seting-up-the-gadget-controller)
-    - [Responding to game engine events](#responding-to-game-engine-events)
+    - [Setting up the Game Engine](#setting-up-the-game-engine)
+    - [Setting up the Gadget Controller](#seting-up-the-gadget-controller)
+    - [Responding to Game Engine Events](#responding-to-game-engine-events)
 
 
 ## Create Project
@@ -60,6 +59,8 @@ $ cd <directory>
 $ jovo build -p alexaSkill
 ```
 
+This will use the information in the `app.json` file to write the right information into the Alexa `skill.json` that will be used in the next step.
+
 ## Deploy project
 
 The Skill is ready to be deployed to the Amazon Developer console:
@@ -73,7 +74,7 @@ $ jovo deploy alexaSkill
 
 ## Run Jovo Webhook
 
-The Skill is configured to use the Jovo Webhook as its HTTPS endpoint, so your Jovo Webhook needs to be active in order to process requests.
+The Skill is configured to use the Jovo Webhook as its HTTPS endpoint (the `endpoint` element in the `app.json` file), so your Jovo Webhook needs to be active in order to process requests.
 
 ```sh
 # Run Jovo Webhook
@@ -93,10 +94,10 @@ The logic of the Skill has three main parts:
 * Defining the light effects of the buttons up to where the pre-defined events happen (i.e. setting up the gadget controller)
 * Reacting to Button presses (i.e. the events defined by the game engine)
 
-### Setting up the game engine
+### Setting up the Game Engine
 
 The details of how the code works can be found in the comments of `app.js`, and here's a general outline.
-Upon launching Skill, we define which button events we want to receive. Technically, this means we have to set the input handler for the **game engine interface** using the `jovo.alexaSkill().gameEngine()` class.
+Upon launching the Skill, we define which button events we want to receive. Technically, this means we have to set the input handler for the **game engine interface** using the `jovo.alexaSkill().gameEngine()` class.
 
 First, we define a **recognizer** to recognize one type of button event. In this template, we only have one recognizer `buttonDownRecognizer` to recognize when a button is pressed down:
 
@@ -139,7 +140,7 @@ this.alexaSkill().gameEngine()
     .startInputHandler(timeout, proxies);
 ```
 
-### Seting up the gadget controller
+### Setting up the Gadget Controller
 
 For the lights, we need to set up one gadget controller object for each of the three events `'buttonUp'`, `'buttonDown'` and `none` (for when the button is not pressed). Note that these events do no correspond to the events defined for the game engine above, and cannot be configured!
 
@@ -190,7 +191,7 @@ this.alexaSkill().gameEngine().respond(
     this.speech
 );
 ```
-### Responding to game engine events
+### Responding to Game Engine Events
 
 For processing button requests, the Jovo framework has a `ON_GAME_ENGINE_INPUT_HANDLER_EVENT()` handler. What it does is first to extract the event name, which is one of those we defined in the input handler (or game engine object) earlier, i.e. either `buttonDownEvent` or `timeoutEvent`.
 
@@ -265,4 +266,4 @@ this.tell(
 );
 ```
 
-Congratulations for your first Echo Button Skill! :)
+Congratulations on building your first Echo Button Skill! :)
