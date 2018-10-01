@@ -13,6 +13,13 @@ Jovo Sample Alexa Skill that uses the [Game Engine](https://developer.amazon.com
 
 Actual Echo Buttons are not required to run this template, as they can be simulated in the Alexa developer console.
 
+```sh
+$ jovo new <directory> --template alexa/buttons
+
+# Short version
+$ jovo new <directory> -t a/buttons
+```
+
 This template contains:
 
 * A language model (`models/en-US.json`) corresponding to the default one of a custom Skill, with the invocation name `button demo`
