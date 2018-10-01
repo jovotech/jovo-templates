@@ -41,7 +41,7 @@ How to make it work:
 Create a new project from this template:
 
 ```sh
-$ jovo new <directory> --template alexa/buttondemo
+$ jovo new <directory> --template alexa/buttons
 ```
 
 Go into the project directory and build the platform-specific configuration for an Alexa Skill with Echo Buttons:
