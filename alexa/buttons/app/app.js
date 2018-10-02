@@ -7,14 +7,7 @@
 const {App} = require('jovo-framework');
 
 const config = {
-    responseLogging: true,
-    responseLoggingObjects: [
-        'response',
-    ],
-    requestLogging: true,
-    requestLoggingObjects: [
-        'request',
-    ],
+    logging: true,
 };
 
 const app = new App(config);
@@ -91,7 +84,7 @@ app.setHandler({
         // Input handler events can be time-delayed, but they are signed with the ID of the
         // request that started their input handler directive. So we're remembering the current
         // request ID and compare them with the gadget API requests we will receive.
-        this.user().data.currentInputHandlerID = this.request.id;
+        this.user().data.currentInputHandlerId = this.request().request.requestId;
 
         // Our Game Engine is not fully configured and ready to use - But we didn't define any
         // animations for our buttons yet. For this, we need the Gadget Controller.
@@ -177,7 +170,7 @@ app.setHandler({
             );
 
         // Now we're setting up a little tune fom the ASK sound library and a text,
-        // sand send the response
+        // and send the response
         this.speech
             .addAudio('https://s3.amazonaws.com/ask-soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_intro_01.mp3')
             .addText('Hello there! Show me your sweet buttons!');
@@ -213,9 +206,9 @@ app.setHandler({
             // Here we check whether this gadget API request ID matches the one that
             // started the input handler. In fully developed Button Skill, mismatches
             // should be ignored
-            const originatingRequestId = this.request.id;
+            const originatingRequestId = this.request().request.originatingRequestId;
             console.log(`Matching request ID? ${
-                this.user().data.currentInputHandlerID === originatingRequestId
+                this.user().data.currentInputHandlerId === originatingRequestId
                 }`);
 
             // Now we're checking if this button is already known

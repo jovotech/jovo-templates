@@ -55,8 +55,11 @@ Go into the project directory and build the platform-specific configuration for 
 ```sh
 $ cd <directory>
 
-# Initialize Alexa Platform
+# Build Platform Files
 $ jovo build -p alexaSkill
+
+# Short version
+$ jovo build
 ```
 
 This will use the information in the `app.json` file to write the right information into the Alexa `skill.json` that will be used in the next step.
