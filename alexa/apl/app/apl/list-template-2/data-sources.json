@@ -1,0 +1,241 @@
+{
+    "listTemplate2Metadata": {
+        "type": "object",
+        "objectId": "lt1Metadata",
+        "backgroundImage": {
+            "contentDescription": null,
+            "smallSourceUrl": null,
+            "largeSourceUrl": null,
+            "sources": [
+                {
+                    "url": "https://d2o906d8ln7ui1.cloudfront.net/images/LT2_Background.png",
+                    "size": "small",
+                    "widthPixels": 0,
+                    "heightPixels": 0
+                },
+                {
+                    "url": "https://d2o906d8ln7ui1.cloudfront.net/images/LT2_Background.png",
+                    "size": "large",
+                    "widthPixels": 0,
+                    "heightPixels": 0
+                }
+            ]
+        },
+        "title": "Results for \"Cow's Milk Cheese\"",
+        "logoUrl": "https://d2o906d8ln7ui1.cloudfront.net/images/cheeseskillicon.png"
+    },
+    "listTemplate2ListData": {
+        "type": "list",
+        "listId": "lt2Sample",
+        "totalNumberOfItems": 10,
+        "hintText": "Try, \"Alexa, select number 1\"",
+        "listPage": {
+            "listItems": [
+                {
+                    "listItemIdentifier": "brie",
+                    "ordinalNumber": 1,
+                    "textContent": {
+                        "primaryText": {
+                            "type": "PlainText",
+                            "text": "Brie"
+                        },
+                        "secondaryText": {
+                            "type": "PlainText",
+                            "text": "Origin: France"
+                        }
+                    },
+                    "image": {
+                        "contentDescription": null,
+                        "smallSourceUrl": null,
+                        "largeSourceUrl": null,
+                        "sources": [
+                            {
+                                "url": "https://d2o906d8ln7ui1.cloudfront.net/images/md_brie.png",
+                                "size": "small",
+                                "widthPixels": 0,
+                                "heightPixels": 0
+                            },
+                            {
+                                "url": "https://d2o906d8ln7ui1.cloudfront.net/images/md_brie.png",
+                                "size": "large",
+                                "widthPixels": 0,
+                                "heightPixels": 0
+                            }
+                        ]
+                    },
+                    "token": "brie"
+                },
+                {
+                    "listItemIdentifier": "gruyere",
+                    "ordinalNumber": 2,
+                    "textContent": {
+                        "primaryText": {
+                            "type": "PlainText",
+                            "text": "Gruyere"
+                        },
+                        "secondaryText": {
+                            "type": "RichText",
+                            "text": "Origin: Switzerland"
+                        }
+                    },
+                    "image": {
+                        "contentDescription": null,
+                        "smallSourceUrl": null,
+                        "largeSourceUrl": null,
+                        "sources": [
+                            {
+                                "url": "https://d2o906d8ln7ui1.cloudfront.net/images/md_gruyere.png",
+                                "size": "small",
+                                "widthPixels": 0,
+                                "heightPixels": 0
+                            },
+                            {
+                                "url": "https://d2o906d8ln7ui1.cloudfront.net/images/md_gruyere.png",
+                                "size": "large",
+                                "widthPixels": 0,
+                                "heightPixels": 0
+                            }
+                        ]
+                    },
+                    "token": "gruyere"
+                },
+                {
+                    "listItemIdentifier": "gorgonzola",
+                    "ordinalNumber": 3,
+                    "textContent": {
+                        "primaryText": {
+                            "type": "PlainText",
+                            "text": "Gorgonzola"
+                        },
+                        "secondaryText": {
+                            "type": "RichText",
+                            "text": "Origin: Italy"
+                        }
+                    },
+                    "image": {
+                        "contentDescription": null,
+                        "smallSourceUrl": null,
+                        "largeSourceUrl": null,
+                        "sources": [
+                            {
+                                "url": "https://d2o906d8ln7ui1.cloudfront.net/images/md_gorgonzola.png",
+                                "size": "small",
+                                "widthPixels": 0,
+                                "heightPixels": 0
+                            },
+                            {
+                                "url": "https://d2o906d8ln7ui1.cloudfront.net/images/md_gorgonzola.png",
+                                "size": "large",
+                                "widthPixels": 0,
+                                "heightPixels": 0
+                            }
+                        ]
+                    },
+                    "token": "gorgonzola"
+                },
+                {
+                    "listItemIdentifier": "brie",
+                    "ordinalNumber": 1,
+                    "textContent": {
+                        "primaryText": {
+                            "type": "PlainText",
+                            "text": "Brie"
+                        },
+                        "secondaryText": {
+                            "type": "PlainText",
+                            "text": "Origin: France"
+                        }
+                    },
+                    "image": {
+                        "contentDescription": null,
+                        "smallSourceUrl": null,
+                        "largeSourceUrl": null,
+                        "sources": [
+                            {
+                                "url": "https://d2o906d8ln7ui1.cloudfront.net/images/tl_brie.png",
+                                "size": "small",
+                                "widthPixels": 0,
+                                "heightPixels": 0
+                            },
+                            {
+                                "url": "https://d2o906d8ln7ui1.cloudfront.net/images/tl_brie.png",
+                                "size": "large",
+                                "widthPixels": 0,
+                                "heightPixels": 0
+                            }
+                        ]
+                    },
+                    "token": "tl_brie"
+                },
+                {
+                    "listItemIdentifier": "gruyere",
+                    "ordinalNumber": 2,
+                    "textContent": {
+                        "primaryText": {
+                            "type": "PlainText",
+                            "text": "Gruyere"
+                        },
+                        "secondaryText": {
+                            "type": "RichText",
+                            "text": "Origin: Switzerland"
+                        }
+                    },
+                    "image": {
+                        "contentDescription": null,
+                        "smallSourceUrl": null,
+                        "largeSourceUrl": null,
+                        "sources": [
+                            {
+                                "url": "https://d2o906d8ln7ui1.cloudfront.net/images/tl_gruyere.png",
+                                "size": "small",
+                                "widthPixels": 0,
+                                "heightPixels": 0
+                            },
+                            {
+                                "url": "https://d2o906d8ln7ui1.cloudfront.net/images/tl_gruyere.png",
+                                "size": "large",
+                                "widthPixels": 0,
+                                "heightPixels": 0
+                            }
+                        ]
+                    },
+                    "token": "tl_gruyere"
+                },
+                {
+                    "listItemIdentifier": "gorgonzola",
+                    "ordinalNumber": 3,
+                    "textContent": {
+                        "primaryText": {
+                            "type": "PlainText",
+                            "text": "Gorgonzola"
+                        },
+                        "secondaryText": {
+                            "type": "RichText",
+                            "text": "Origin: Italy"
+                        }
+                    },
+                    "image": {
+                        "contentDescription": null,
+                        "smallSourceUrl": null,
+                        "largeSourceUrl": null,
+                        "sources": [
+                            {
+                                "url": "https://d2o906d8ln7ui1.cloudfront.net/images/tl_gorgonzola.png",
+                                "size": "small",
+                                "widthPixels": 0,
+                                "heightPixels": 0
+                            },
+                            {
+                                "url": "https://d2o906d8ln7ui1.cloudfront.net/images/tl_gorgonzola.png",
+                                "size": "large",
+                                "widthPixels": 0,
+                                "heightPixels": 0
+                            }
+                        ]
+                    },
+                    "token": "tl_gorgonzola"
+                }
+            ]
+        }
+    }
+}

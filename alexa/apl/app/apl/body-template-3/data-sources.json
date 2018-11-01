@@ -1,0 +1,65 @@
+{
+    "bodyTemplate3Data": {
+        "type": "object",
+        "objectId": "bt3Sample",
+        "backgroundImage": {
+            "contentDescription": null,
+            "smallSourceUrl": null,
+            "largeSourceUrl": null,
+            "sources": [
+                {
+                    "url": "https://d2o906d8ln7ui1.cloudfront.net/images/BT2_Background.png",
+                    "size": "small",
+                    "widthPixels": 0,
+                    "heightPixels": 0
+                },
+                {
+                    "url": "https://d2o906d8ln7ui1.cloudfront.net/images/BT2_Background.png",
+                    "size": "large",
+                    "widthPixels": 0,
+                    "heightPixels": 0
+                }
+            ]
+        },
+        "title": "Mild Gouda",
+        "image": {
+            "contentDescription": null,
+            "smallSourceUrl": null,
+            "largeSourceUrl": null,
+            "sources": [
+                {
+                    "url": "https://d2o906d8ln7ui1.cloudfront.net/images/details_bt3.png",
+                    "size": "small",
+                    "widthPixels": 0,
+                    "heightPixels": 0
+                },
+                {
+                    "url": "https://d2o906d8ln7ui1.cloudfront.net/images/details_bt3.png",
+                    "size": "large",
+                    "widthPixels": 0,
+                    "heightPixels": 0
+                }
+            ]
+        },
+        "textContent": {
+            "title": {
+                "type": "PlainText",
+                "text": "Mild Gouda"
+            },
+            "subtitle": {
+                "type": "PlainText",
+                "text": "Country of origin: Netherlands"
+            },
+            "primaryText": {
+                "type": "PlainText",
+                "text": "Mild Gouda is a semi hard cheese with a creamy texture and mild nutty flavor. Easy to cut and grate, it also melts beautifully. Gouda is a Dutch yellow cheese made from cow's milk, and one of the most popular cheeses worldwide. "
+            },
+            "bulletPoint": {
+                "type": "PlainText",
+                "text": "• The cheese is named after the Dutch city of Gouda. "
+            }
+        },
+        "logoUrl": "https://d2o906d8ln7ui1.cloudfront.net/images/cheeseskillicon.png",
+        "hintText": "Try, \"Alexa, search for blue cheese\""
+    }
+}
