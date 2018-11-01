@@ -7,14 +7,16 @@
 <a href="https://github.com/jovotech/jovo-cli"><strong>CLI </strong></a> - <a href="https://github.com/jovotech/jovo-framework-nodejs/blob/master/CONTRIBUTING.md"><strong>Contributing</strong></a> - <a href="https://twitter.com/jovotech"><strong>Twitter</strong></a></p>
 <br/>
 
-# Template: Hello World
+# Template: Alexa Presentation Language (APL)
 
-Jovo Sample Voice App with a simple "Hello World!" + asking for the user's name. This is the default template for the `jovo new` command:
+Jovo Sample Voice App that uses the Alexa Presentation Language (APL) to display visual responses on devices with a screen.
+
+Read the full tutorial here: https://www.jovo.tech/tutorials/alexa-presentation-language
 
 ```sh
-$ jovo new <directory>
+$ jovo new <directory> --template alexa/apl
 
-## Alternative
-$ jovo new <directory> --template helloworld
+## Short version
+$ jovo new <directory> --template a/apl
 ```
 
