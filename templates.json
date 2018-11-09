@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Hello World",
+        "id": "helloworld",
+        "description": "Jovo Sample Voice App with a simple \"Hello World!\" + asking for the user's name.",
+        "githubUrl": "https://github.com/jovotech/jovo-sample-voice-app-nodejs"
+    },
+    {
+        "name": "Trivia Game",
+        "id": "trivia-game",
+        "description": "Sample Trivia Voice App.",
+        "githubUrl": "https://github.com/jovotech/jovo-templates/tree/master/02_trivia-game"
+    },
+    {
+        "name": "Unit Testing",
+        "id": "unit-testing",
+        "description": "This template comes with some sample unit tests that work for both Alexa Skills and Google Actions.",
+        "githubUrl": "https://github.com/jovotech/jovo-templates/tree/master/03_unit-testing"
+    }
+]
