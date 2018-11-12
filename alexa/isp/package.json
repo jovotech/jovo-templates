@@ -1,10 +1,10 @@
 {
   "name": "jovo-sample-voice-app-nodejs",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A sample voice app that works with the Jovo framework",
   "main": "index.js",
   "dependencies": {
-    "jovo-framework": "^1.0.0"
+    "jovo-framework": "^1.4.16"
   },
   "devDependencies": {},
   "scripts": {

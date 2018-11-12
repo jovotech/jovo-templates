@@ -1,0 +1,51 @@
+{
+  "version": "1.0",
+  "type": "CONSUMABLE",
+  "referenceName": "extra_lives",
+  "publishingInformation": {
+    "locales": {
+      "en-US": {
+        "name": "Extra Lives",
+        "smallIconUri": "https://s3.amazonaws.com/jovocards/logo108.png",
+        "largeIconUri": "https://s3.amazonaws.com/jovocards/logo512.png",
+        "summary": "Allows the user to revive after death",
+        "description": "Adds 5 extra lives to the user's inventory, which they can use to revive after their death",
+        "examplePhrases": [
+          "Alexa, buy extra lives"
+        ],
+        "keywords": [
+          "lives",
+          "extra lives"
+        ],
+        "customProductPrompts": {
+          "purchasePromptDescription": "Do you want to buy five extra lives/",
+          "boughtCardDescription": "Great! You now have five extra lives in your inventory, which you can use after your death by saying Alexa, revive me"
+        }
+      }
+    },
+    "distributionCountries": [
+      "US"
+    ],
+    "pricing": {
+      "amazon.com": {
+        "releaseDate": "2018-05-14T00:00Z",
+        "defaultPriceListing": {
+          "price": 0.99,
+          "currency": "USD"
+        }
+      }
+    },
+    "taxInformation": {
+      "category": "SOFTWARE"
+    }
+  },
+  "privacyAndCompliance": {
+    "locales": {
+      "en-US": {
+        "privacyPolicyUrl": "https://www.yourcompany.com/privacy-policy"
+      }
+    }
+  },
+  "testingInstructions": "This is an example product.",
+  "purchasableState": "PURCHASABLE"
+}
