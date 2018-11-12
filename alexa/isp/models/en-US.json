@@ -1,50 +1,6 @@
 {
-	"invocation": "my purchase app",
-	"intents": [
-		{
-			"name": "BuySkillItemIntent",
-			"phrases": [
-				"buy",
-				"shop",
-				"buy {ProductName}",
-				"purchase {ProductName}",
-				"want {ProductName}",
-				"would like {ProductName}"
-			],
-			"inputs": [
-				{
-					"name": "ProductName",
-					"type": "LIST_OF_PRODUCT_NAMES"
-				}
-			]
-		},
-		{
-			"name": "RefundSkillItemIntent",
-			"phrases": [
-				"return {ProductName}",
-				"refund {ProductName}",
-				"want a refund for {ProductName}",
-				"would like to return {ProductName}"
-			],
-			"inputs": [
-				{
-					"name": "ProductName",
-					"type": "LIST_OF_PRODUCT_NAMES"
-				}
-			]
-		}
-	],
-	"inputTypes": [
-		{
-			"name": "LIST_OF_PRODUCT_NAMES",
-			"values": [
-				{
-					"value": "Cave Quest",
-					"id": "cave_quest"
-				}
-			]
-		}
-	],
+	"invocation": "blogpost test",
+	"intents": [],
 	"alexa": {
 		"interactionModel": {
 			"languageModel": {
@@ -60,6 +16,57 @@
 					{
 						"name": "AMAZON.StopIntent",
 						"samples": []
+					},
+					{
+						"name": "RefundSkillItemIntent",
+						"samples": [
+							"return {ProductName}",
+							"refund {ProductName}",
+							"want a refund for {ProductName}",
+							"would like to return {ProductName}"
+						],
+						"slots": [
+							{
+								"name": "ProductName",
+								"type": "PRODUCT_NAMES"
+							}
+						]
+					},
+					{
+						"name": "BuySkillItemIntent",
+						"samples": [
+							"buy",
+							"shop",
+							"buy {ProductName}",
+							"purchase {ProductName}",
+							"want {ProductName}",
+							"would like {ProductName}"
+						],
+						"slots": [
+							{
+								"name": "ProductName",
+								"type": "PRODUCT_NAMES"
+							}
+						]
+					}
+				],
+				"types": [
+					{
+						"name": "PRODUCT_NAMES",
+						"values": [
+							{
+								"id": "frozen_sword",
+								"name": {
+									"value": "frozen sword"
+								}
+							},
+							{
+								"id": "premium_pass",
+								"name": {
+									"value": "premium pass"
+								}
+							}
+						]
 					}
 				]
 			}
