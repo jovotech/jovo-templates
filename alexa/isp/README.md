@@ -7,14 +7,19 @@
 <a href="https://github.com/jovotech/jovo-cli"><strong>CLI </strong></a> - <a href="https://github.com/jovotech/jovo-framework-nodejs/blob/master/CONTRIBUTING.md"><strong>Contributing</strong></a> - <a href="https://twitter.com/jovotech"><strong>Twitter</strong></a></p>
 <br/>
 
-# Template: Hello World
+# Template: Alexa In-Skill Purchases
 
-Jovo Sample Voice App with a simple "Hello World!" + asking for the user's name. This is the default template for the `jovo new` command:
+Jovo Sample Alexa Skill that uses In-Skill Purchasing.
 
-```sh
-$ jovo new <directory>
-
-## Alternative
-$ jovo new <directory> --template helloworld
+```text
+$ jovo new <directory> --template alexa/isp
 ```
+
+This template contains:
+
+* A language model (`models/en-US.json`) that contains a `BuySkillItemIntent` and a `RefundSkillItemIntent` with an input type `PRODUCT_NAMES` that contains the products specified inside the `/ispTemplates` folder
+* App logic (`app/app.js`) that uses the Jovo implementation of Alexa In-Skill Purchasing for a sample purchase and refund process
+
+To use the template you have to initialize and deploy the products, which you find a detailed tutorial about [here](https://www.jovo.tech/tutorials/alexa-in-skill-purchasing)
+
 
