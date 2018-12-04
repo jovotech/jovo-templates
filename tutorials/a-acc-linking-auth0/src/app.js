@@ -17,11 +17,11 @@ app.use(
 
 app.setHandler({
     async LAUNCH() {
-        if (!this.$request.session.user.accessToken) {
+        if (!this.$request.getAccessToken()) {
             this.showAccountLinkingCard();
             this.tell('Please link you Account');
         } else {
-            let token = this.$request.session.user.accessToken;
+            let token = this.$request.getAccessToken();
             let options = {
                 method: 'GET',
                 uri: 'https://jovo-blog.auth0.com/userinfo', // You can find your URL on Client --> Settings --> 
