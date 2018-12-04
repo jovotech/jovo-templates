@@ -6,7 +6,6 @@ const { JovoDebugger } = require('jovo-plugin-debugger');
 const { FileDb } = require('jovo-db-filedb');
 
 const app = new App();
-Util.consoleLog();
 
 app.use(
     new GoogleAssistant(),
@@ -25,7 +24,7 @@ app.setHandler({
         })
     },
     ShowTemplateIntent() {
-        let template = this.getInput('template');
+        let template = this.$inputs.template;
 
         // Retrieve document and data from folder
         this.$alexaSkill.addDirective({
