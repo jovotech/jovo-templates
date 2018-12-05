@@ -19,7 +19,7 @@ const song = 'https://s3.amazonaws.com/jovo-songs/song1.mp3';
 app.setHandler({
     LAUNCH() {
         this.$googleAction.showSuggestionChips(['Stop', 'Pause']);
-        this.$googleAction.audioPlayer().play(song, 'First song');
+        this.$googleAction.$audioPlayer.play(song, 'First song');
         this.ask('How do you like my new song?');
     },
     AUDIOPLAYER: {
