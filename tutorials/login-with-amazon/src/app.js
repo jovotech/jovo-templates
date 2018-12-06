@@ -7,7 +7,6 @@ const { FileDb } = require('jovo-db-filedb');
 const rp = require('request-promise');
 
 const app = new App();
-Util.consoleLog();
 
 app.use(
     new GoogleAssistant(),
@@ -18,11 +17,11 @@ app.use(
 
 app.setHandler({
     async LAUNCH() {
-        if (!this.$request.session.user.accessToken) {
+        if (!this.$request.getAccessToken()) {
             this.showAccountLinkingCard();
             this.tell('Please link you Account');
         } else {
-            let url = `https://api.amazon.com/user/profile?access_token=${this.$request.session.user.accessToken}`;
+            let url = `https://api.amazon.com/user/profile?access_token=${this.$request.getAccessToken()}`;
 
             await rp(url).then((body) => {
                 let data = JSON.parse(body);

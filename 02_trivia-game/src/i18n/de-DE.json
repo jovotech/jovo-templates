@@ -252,7 +252,7 @@
         "GAME_NAME": "Jovo Trivia", 
         "HELP_MESSAGE": "Ich stelle dir {{gameLength}} Multiple-Choice-Fragen. Antworte mit der Zahl, die zur richtigen Antwort gehört. Sage beispielsweise eins, zwei, drei oder vier. ",
         "REPEAT_QUESTION_MESSAGE": "Wenn die letzte Frage wiederholt werden soll, sage „Wiederholen“ ",
-        "ASK_MESSAGE_START": "Möchten Sie beginnen?",
+        "ASK_MESSAGE_START": "Möchtest Du beginnen?",
         "HELP_REPROMPT": "Wenn du eine Frage beantworten willst, antworte mit der Zahl, die zur richtigen Antwort gehört. ",
         "STOP_MESSAGE": "Möchtest du weiterspielen?",
         "CANCEL_MESSAGE": "OK, dann lass uns bald mal wieder spielen.",

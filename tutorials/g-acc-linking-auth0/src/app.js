@@ -19,8 +19,12 @@ app.setHandler({
     async LAUNCH() {
         if (!this.$request.getAccessToken()) {
             this.showAccountLinkingCard();
-            this.tell('Please link you Account');
         } else {
+            this.tell('You are already logged in!');
+        }
+    },
+    async ON_SIGN_IN() {
+        if (this.$googleAction.getSignInStatus() === 'OK') {
             let token = this.$request.getAccessToken();
             let options = {
                 method: 'GET',
@@ -39,8 +43,10 @@ app.setHandler({
                 */
                 this.tell(data.name + ', ' + data.email); // Output: Kaan Kilic, email@jovo.tech
             });
+        } else {
+            this.tell('There was an error. We could not sign in you in.');
         }
-    },
+    }
 });
 
 
