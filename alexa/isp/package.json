@@ -1,14 +1,21 @@
 {
   "name": "jovo-sample-voice-app-nodejs",
-  "version": "0.0.1",
-  "description": "A sample voice app that works with the Jovo framework",
-  "main": "index.js",
+  "version": "2.0.1-alpha.2",
+  "description": "A sample voice app that works with the Jovo Framework",
+  "main": "src/index.js",
   "dependencies": {
-    "jovo-framework": "^1.4.16"
+    "jovo-framework": "^2.0.1-alpha.4",
+    "jovo-platform-alexa": "^2.0.1-alpha.4",
+    "jovo-platform-googleassistant": "^2.0.1-alpha.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jovo-db-filedb": "^2.0.1-alpha.4",
+    "jovo-plugin-debugger": "^2.0.1-alpha.4"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js --webhook",
+    "tsc": "node -v",
+    "test": "echo \"Error: no test specified\""
   },
   "repository": {
     "type": "git",
