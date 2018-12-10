@@ -1,4 +1,13 @@
-# jovo-sample-true-false 
+[![Jovo Framework](https://www.jovo.tech/img/github-logo.png)](https://www.jovo.tech)
+
+<p align="center">Templates for the <a href="https://github.com/jovotech/jovo-framework-nodejs">Jovo Framework</a> ⭐️</p>
+
+<p align="center">
+<a href="https://www.jovo.tech/framework/docs/"><strong>Documentation</strong></a> -
+<a href="https://github.com/jovotech/jovo-cli"><strong>CLI </strong></a> - <a href="https://github.com/jovotech/jovo-framework-nodejs/blob/master/CONTRIBUTING.md"><strong>Contributing</strong></a> - <a href="https://twitter.com/jovotech"><strong>Twitter</strong></a></p>
+<br/>
+
+# Template: True-or-False Game
 ## with public Google Spreadsheet integration
 
 
@@ -13,7 +22,7 @@ Different than in the jovo i18n example, this one has the whole content/text out
 
 You can add more languages here by adding more columns to the sheet and name them by the locale ID (e.g. `en-US`, `de-DE`, `en-GB`, etc.).
 
-The `/i18n` folder with the `en.json` was removed, we do not need it anymore.
+The `/i18n` folder with the `en.json` and the `answers.json` was removed, we do not need it anymore.
 
 The `cms` configurations were added to the `config.js`:
 ```javascript
@@ -38,16 +47,13 @@ cms: {
         }
     },
 ```
-You can find the spreadsheet ID in the URL of your spreadsheet. Your spreadsheet must be public - for publishing go to 'File' > 'Publish to the web'. Later, when you want to use a private spreadsheet for your project, you need to follow our tutorial ... But for now, ... .
+You can find the spreadsheet ID in the URL of your spreadsheet. Your spreadsheet must be public - for publishing go to 'File' > 'Publish to the web'. Later, when you want to use a private spreadsheet for your project, you need to follow our tutorial for private spreadsheet integration (coming soon!) But for now, we use the public spreadsheet.
 
 As you can see in the `config.js`, the `responses`-sheet has the `type: 'Responses'`. This sheet type is for translation to different languages, the `this.t('KEY')` function uses this one for translation. 
 
 The `answers`-sheet has the `type: 'KeyValue'`. This one is just for getting the value of a certain key. In our case, it is used for storing the answers 'true' or 'false' for the statements.
+
 Getting a value from the CMS looks like this:
 ```javascript
 const answer = this.$cms.answers[`STATEMENT_3`]; // returns 'FALSE'
 ```
-
-.....
-
-In the next step ...
