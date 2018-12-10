@@ -110,5 +110,32 @@
 				"repeat"
 			]
 		}
-	]
+	],
+	"alexa": {
+		"interactionModel": {
+			"languageModel": {
+				"intents": []
+			}
+		}
+	},
+	"dialogflow": {
+		"intents": [
+			{
+				"name": "Default Fallback Intent",
+				"auto": true,
+				"webhookUsed": true,
+				"fallbackIntent": true
+			},
+			{
+				"name": "Default Welcome Intent",
+				"auto": true,
+				"webhookUsed": true,
+				"events": [
+					{
+						"name": "WELCOME"
+					}
+				]
+			}
+		]
+	}
 }
