@@ -34,11 +34,12 @@ app.setHandler({
                 date: this.$inputs.date.value,
                 ticketCount: this.$inputs.ticketCount.value,
             };
-            this.toIntent('FlightApiIntent', flightData);
+            this.$data.flightData = flightData;
+            this.toIntent('FlightApiIntent');
         }
     },
-    FlightApiIntent(flightData) {
-        console.log('flightData: ');
+    FlightApiIntent() {
+        let flightData = this.$data.flightData;
         console.log(flightData);
         this.tell('Your flight is booked, thanks!');
     },
