@@ -25,12 +25,9 @@ app.setHandler({
         } else if (!this.$inputs.ticketCount.value) {
             this.$alexaSkill.$dialog.elicitSlot('ticketCount', 'How many tickets do you need?');
         } else if (this.$alexaSkill.$dialog.getIntentConfirmationStatus() !== 'CONFIRMED') {
-            this.$alexaSkill.$dialog.confirmIntent(
-                'So you are flying from ' + this.$inputs.fromCity.value +
-                ' to ' + this.$inputs.toCity.value +
-                ' on ' + this.$inputs.date.value +
-                ' and you need ' + this.$inputs.ticketCount.value + ' tickets, right?'
-            );
+            let speech = `So you are flying from ${this.$inputs.fromCity.value} to ${this.$inputs.toCity.value}
+                        on ${this.$inputs.date.value} and you need ${this.$inputs.ticketCount.value} tickets, right?`;
+            this.$alexaSkill.$dialog.confirmIntent(speech, speech);
         } else if (this.$alexaSkill.$dialog.getIntentConfirmationStatus() === 'CONFIRMED') {
             let flightData = {
                 fromCity: this.$inputs.fromCity.value,
