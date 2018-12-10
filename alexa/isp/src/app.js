@@ -16,7 +16,8 @@ app.use(
 
 app.setHandler({
     LAUNCH() {
-        this.toIntent('UpsellIntent');
+        this.ask('You can buy an item saying: buy "product name", or refund an item saying: refund "product name". What would you like to do?');
+        // return this.toIntent('UpsellIntent');
     },
     async UpsellIntent() {
         console.log('UpsellIntent');
@@ -38,35 +39,37 @@ app.setHandler({
 
     // Ungetestet:
     
-    BuySkillItemIntent() {
-        let productName = this.getInput('productName');
+    async BuySkillItemIntent() {
+        let productName = this.$inputs.ProductName;
         if (!productName) {
             return this.ask('You can choose either the premium pass. or frozen sword. Which are you interested in?');
         }
         let productReferenceName = productName.id;
-        this.$alexaSkill.inSkillPurchase()
-            .getProductByReferenceName(productReferenceName, (error, product) => {
-                if (error) {
-                    console.log(error);
-                }
+        let token = 'testToken';
+        await this.$alexaSkill.$inSkillPurchase.getProductByReferenceName(productReferenceName)
+            .then((product) => {
+                console.log('product:');
+                console.log(product);
                 if (product.entitled === 'ENTITLED') {
                     return this.tell('You have already bought this item.');
+                } else {
+                    this.$alexaSkill.$inSkillPurchase.buy(product.productId, token);
                 }
-                this.$alexaSkill.inSkillPurchase().buy(product.productId);
             });
     },
-    RefundSkillItemIntent() {
-        let productName = this.getInput('productName');
+    async RefundSkillItemIntent() {
+        let productName = this.$inputs.ProductName;
         let productReferenceName = productName.id;
-        this.$alexaSkill.inSkillPurchase()
-            .getProductByReferenceName(productReferenceName, (error, product) => {
-                if (error) {
-                    console.log(error);
-                }
-                if (product.entitled === 'ENTITLED') {
+        let token = 'testToken';
+        await this.$alexaSkill.$inSkillPurchase.getProductByReferenceName(productReferenceName)
+            .then((product) => {
+                console.log('product:');
+                console.log(product);
+                if (product.entitled !== 'ENTITLED') {
                     return this.tell('You have not bought this item yet.');
+                } else {
+                    this.$alexaSkill.$inSkillPurchase.cancel(product.productId, token);
                 }
-                this.$alexaSkill.inSkillPurchase().cancel(product.productId);
             });
     },
     ON_PURCHASE() {
@@ -74,11 +77,17 @@ app.setHandler({
         const productId = this.$alexaSkill.$inSkillPurchase.getProductId();
         const purchaseResult = this.$alexaSkill.$inSkillPurchase.getPurchaseResult();
         const token = this.$request.token;
-    
-        if (purchaseResult === 'ACCEPTED') {
-            this.tell('Great! Let\'s use your new item');
-        } else {
-            this.tell('Okay. Let\'s continue where you left off.');
+        
+        switch (name) {
+            case 'Cancel':
+                // Refund transaction finished
+                break;
+            case 'Buy':
+                // Buy transaction finished
+                break;
+            case 'Upsell':
+                // Upsell transaction finished
+                break;
         }
     }
 });
