@@ -5,8 +5,9 @@
 			"name": "SearchFlightIntent",
 			"phrases": [
 				"I am flying to {toCity} from {fromCity} on the {date}",
-			    "I want to fly to {toCity} on {date}",
-				"Book a flight for {ticketCount} people on the {date} to {toCity}"
+				"I want to fly to {toCity} on {date}",
+				"Book a flight for {ticketCount} people on the {date} to {toCity}",
+				"I am flying to {toCity}"
 			],
 			"inputs": [
 				{
