@@ -10,6 +10,12 @@
 # Template: True-or-False Game
 ## with plain-text content
 
+Sample True-or-False Voice App
+
+```sh
+$ jovo new <directory> --template cms/plain
+```
+
 This project is a simple example for a True-or-False-Quiz Voice App.
 
 It tells you different facts and you have to answer with "true" or "false". For every correct answer, you get a point, for every incorrect answer you lose one. Your total points will be saved and you can open the game again to collect more points.
