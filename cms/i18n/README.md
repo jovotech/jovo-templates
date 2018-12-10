@@ -1,4 +1,13 @@
-# jovo-sample-true-false 
+[![Jovo Framework](https://www.jovo.tech/img/github-logo.png)](https://www.jovo.tech)
+
+<p align="center">Templates for the <a href="https://github.com/jovotech/jovo-framework-nodejs">Jovo Framework</a> ⭐️</p>
+
+<p align="center">
+<a href="https://www.jovo.tech/framework/docs/"><strong>Documentation</strong></a> -
+<a href="https://github.com/jovotech/jovo-cli"><strong>CLI </strong></a> - <a href="https://github.com/jovotech/jovo-framework-nodejs/blob/master/CONTRIBUTING.md"><strong>Contributing</strong></a> - <a href="https://twitter.com/jovotech"><strong>Twitter</strong></a></p>
+<br/>
+
+# Template: True-or-False Game
 ## with i18n integration
 
 
@@ -77,5 +86,3 @@ this.$reprompt.addText(this.t('REPROMPT'));
 ```
 Instead of giving the `addText()` function a plain-text string, you can give `this.t('REPROMPT')`. The key `REPROMPT` gets translated to its value, that is defined in `en.json`.  
 Now the complete speech content is seperated from the application logic and you can easily change the speech texts and add more languages through adding more json files like `en.json`, using the locale ID (e.g. `en-US.json`, `de-DE.json`, `en-GB.json`, etc.). `en.json` is for all english locale IDs.
-
-In the next step ...
