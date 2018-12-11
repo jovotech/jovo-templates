@@ -6,7 +6,14 @@
 			"phrases": [
 				"{answer}",
 				"that is {answer}",
-				"it is {answer}"
+				"it is {answer}",
+				"it is a {answer}"
+			],
+			"inputs": [
+				{
+					"name": "answer",
+					"type": "answer"
+				}
 			]
 		}
 	],
@@ -15,17 +22,21 @@
 			"name": "answer",
 			"values": [
 				{
+					"id": "true",
 					"value": "true",
 					"synonyms": [
 						"right",
-						"correct"
+						"correct",
+						"truth"
 					]
 				},
 				{
+					"id": "false",
 					"value": "false",
 					"synonyms": [
 						"wrong",
-						"incorrect"
+						"incorrect",
+						"lie"
 					]
 				}
 			]
