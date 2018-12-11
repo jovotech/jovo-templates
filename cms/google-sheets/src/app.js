@@ -46,7 +46,7 @@ app.setHandler({
     },
 
     TrueOrFalseIntent() {
-        const input = this.$inputs.answer.key;
+        const input = this.$inputs.answer.id;
         const answer = parseBoolean(input);
         console.log(`input answer:   ${answer}`);
         const correctAnswerStr = this.$cms.answers[`STATEMENT_${this.$user.$data.index}`]; // get answer as string

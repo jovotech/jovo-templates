@@ -54,7 +54,7 @@ app.setHandler({
     },
 
     TrueOrFalseIntent() {
-        const input = this.$inputs.answer.key;
+        const input = this.$inputs.answer.id;
         const answer = parseBoolean(input);
         console.log(`input answer:   ${answer}`);
         const index = this.$user.$data.index;
