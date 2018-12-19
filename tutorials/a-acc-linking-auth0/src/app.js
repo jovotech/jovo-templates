@@ -19,7 +19,7 @@ app.setHandler({
     async LAUNCH() {
         if (!this.$request.getAccessToken()) {
             this.showAccountLinkingCard();
-            this.tell('Please link you Account');
+            this.tell('Please link your Account');
         } else {
             let token = this.$request.getAccessToken();
             let options = {

@@ -15,18 +15,18 @@ app.use(
 );
 
 app.setHandler({
-    'LAUNCH': function() {
+    LAUNCH() {
         this.toIntent('HelloWorldIntent');
     },
 
-    'HelloWorldIntent': function() {
+    HelloWorldIntent() {
         if (this.isGoogleAction()) {
             this.$googleAction.showSuggestionChips(['Elliot', 'J.D', 'Turk']);
         }
         this.ask('Hello World! What\'s your name?', 'Please tell me your name.');
     },
 
-    'MyNameIsIntent': function() {
+    MyNameIsIntent() {
         this.tell('Hey ' + this.$inputs.name.value + ', nice to meet you!');
     },
 });

@@ -1,9 +1,10 @@
+// ------------------------------------------------------------------
+// APP CONFIGURATION
+// ------------------------------------------------------------------
+
 module.exports = {
     logging: true,
-    v1: {
-        logging: true,
-    },
-
+ 
     intentMap: {
         'AMAZON.YesIntent': 'YesIntent',
         'AMAZON.NoIntent': 'NoIntent',
@@ -12,9 +13,11 @@ module.exports = {
         'AMAZON.HelpIntent': 'HelpIntent',
         'AMAZON.CancelIntent': 'CancelIntent',
     },
+ 
     db: {
-        FileDb: {
-            pathToFile: './db/db.json'
-        }
-    },
-};
+         FileDb: {
+             pathToFile: '../db/db.json',
+         }
+     },
+ };
+ 

@@ -20,7 +20,7 @@ $ jovo new <directory> -t unit-testing
 
 ## Setup
 
-After dowloading the template, go into the project's root directory and run the Jovo development server. You can then run the tests in a new tab.
+After downloading the template, go into the project's root directory and run the Jovo development server. You can then run the tests in a new tab.
 
 ```sh
 # Run development server

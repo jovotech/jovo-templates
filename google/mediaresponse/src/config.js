@@ -1,15 +1,17 @@
+// ------------------------------------------------------------------
+// APP CONFIGURATION
+// ------------------------------------------------------------------
+
 module.exports = {
     logging: true,
-    v1: {
-        logging: true,
-    },
+
     intentMap: {
         'AMAZON.StopIntent': 'END',
     },
+
     db: {
         FileDb: {
-            pathToFile: './db/db.json'
+            pathToFile: '../db/db.json',
         }
     },
-
 };
