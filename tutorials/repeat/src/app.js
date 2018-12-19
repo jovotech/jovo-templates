@@ -1,21 +1,28 @@
 'use strict';
 
-// =================================================================================
-// App Configuration
-// =================================================================================
+// ------------------------------------------------------------------
+// APP INITIALIZATION
+// ------------------------------------------------------------------
 
-const {App} = require('jovo-framework');
+const { App } = require('jovo-framework');
+const { Alexa } = require('jovo-platform-alexa');
+const { GoogleAssistant } = require('jovo-platform-googleassistant');
+const { JovoDebugger } = require('jovo-plugin-debugger');
+const { FileDb } = require('jovo-db-filedb');
 
-const config = {
-    logging: true,
-};
+const app = new App();
 
-const app = new App(config);
+app.use(
+    new Alexa(),
+    new GoogleAssistant(),
+    new JovoDebugger(),
+    new FileDb()
+);
 
 
-// =================================================================================
-// App Logic
-// =================================================================================
+// ------------------------------------------------------------------
+// APP LOGIC
+// ------------------------------------------------------------------
 
 app.setHandler({
     'LAUNCH': function() {

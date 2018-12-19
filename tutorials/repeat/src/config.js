@@ -14,4 +14,8 @@ module.exports = {
             pathToFile: '../db/db.json',
         }
     },
+
+    user: {
+        context: true,
+    }
 };

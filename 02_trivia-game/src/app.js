@@ -1,18 +1,28 @@
+'use strict';
+
+// ------------------------------------------------------------------
+// APP INITIALIZATION
+// ------------------------------------------------------------------
 
 const { App } = require('jovo-framework');
-const { GoogleAssistant } = require('jovo-platform-googleassistant');
 const { Alexa } = require('jovo-platform-alexa');
+const { GoogleAssistant } = require('jovo-platform-googleassistant');
 const { JovoDebugger } = require('jovo-plugin-debugger');
 const { FileDb } = require('jovo-db-filedb');
 
 const app = new App();
 
 app.use(
-    new GoogleAssistant(),
     new Alexa(),
+    new GoogleAssistant(),
     new JovoDebugger(),
     new FileDb()
 );
+
+
+// ------------------------------------------------------------------
+// APP LOGIC
+// ------------------------------------------------------------------
 
 const GAME_LENGTH = 5;
 const ANSWER_COUNT = 4;
@@ -32,8 +42,10 @@ app.setHandler({
             // Select questions
             const translatedQuestions = this.t('QUESTIONS');
             const gameQuestions = populateGameQuestions(translatedQuestions);
+
             // Generate a random index for the correct answer, from 0 to 3
             const correctAnswerIndex = Math.floor(Math.random() * (ANSWER_COUNT));
+
             // Select and shuffle the answers for each question
             const roundAnswers = populateRoundAnswers(gameQuestions, 0, correctAnswerIndex, translatedQuestions);
             const currentQuestionIndex = 0;
@@ -99,7 +111,6 @@ app.setHandler({
             } else {
                 console.log('Session ended in TriviaState');
             }
-            this.endSession();
         },
     },
     HelpState: {
@@ -152,7 +163,6 @@ app.setHandler({
             } else {
                 console.log('Session ended in HelpState');
             }
-            this.endSession();
         },
     },
 });

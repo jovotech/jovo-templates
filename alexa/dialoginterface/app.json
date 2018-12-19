@@ -1,8 +1,0 @@
-{
-	"endpoint": "${JOVO_WEBHOOK_URL}",
-	"alexaSkill": {
-		"nlu": {
-			"name": "alexa"
-		}
-	}
-}
