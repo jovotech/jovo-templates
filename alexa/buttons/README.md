@@ -100,12 +100,12 @@ The logic of the Skill has three main parts:
 ### Setting up the Game Engine
 
 The details of how the code works can be found in the comments of `app.js`, and here's a general outline.
-Upon launching the Skill, we define which button events we want to receive. Technically, this means we have to set the input handler for the **game engine interface** using the `jovo.alexaSkill().gameEngine()` class.
+Upon launching the Skill, we define which button events we want to receive. Technically, this means we have to set the input handler for the **game engine interface** using the `jovo.alexaSkill().$gameEngine` class.
 
 First, we define a **recognizer** to recognize one type of button event. In this template, we only have one recognizer `buttonDownRecognizer` to recognize when a button is pressed down:
 
 ```js
-const buttonDownRecognizer = this.alexaSkill().gameEngine()
+const buttonDownRecognizer = this.alexaSkill().$gameEngine
     .getPatternRecognizerBuilder('buttonDownRecognizer')
     .anchorEnd()
     .fuzzy(false)
@@ -116,7 +116,7 @@ const buttonDownRecognizer = this.alexaSkill().gameEngine()
 Now we can use this recognizer to define an **event** `buttonDownEvent` that we want to receive from the Button (i.e. the Game Engine interface):
 
 ```js
-const buttonDownEvent = this.alexaSkill().gameEngine()
+const buttonDownEvent = this.alexaSkill().$gameEngine
     .getEventsBuilder('buttonDownEvent')
     .meets(['buttonDownRecognizer'])
     .reportsMatches()
@@ -127,7 +127,7 @@ const buttonDownEvent = this.alexaSkill().gameEngine()
 We also need a **timeout event** `timeoutEvent` to know when the designated time to press buttons has ended. This one uses the built-in `timed out` recognizer and ends the input handler, so that we recieve no more Button events in this seesion.
 
 ```js
-const timeoutEvent = this.alexaSkill().gameEngine()
+const timeoutEvent = this.alexaSkill().$gameEngine
     .getEventsBuilder('timeoutEvent')
     .meets(['timed out'])
     .reportsNothing()
@@ -137,7 +137,7 @@ const timeoutEvent = this.alexaSkill().gameEngine()
 
 Finally, we need to register our recognizer and the two events with the game engine. The `timeout` and `proxies` aren't relevant at this point.
 ```js
-this.alexaSkill().gameEngine()
+this.alexaSkill().$gameEngine
     .setEvents([buttonDownEvents, timeoutEvents])
     .setRecognizers([buttonDownRecognizer])
     .startInputHandler(timeout, proxies);
@@ -190,7 +190,7 @@ this.speech
     .addAudio('https://s3.amazonaws.com/ask-soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_intro_01.mp3')
     .addText('Hello there! Show me your sweet buttons!');
 
-this.alexaSkill().gameEngine().respond(
+this.alexaSkill().$gameEngine.respond(
     this.speech
 );
 ```

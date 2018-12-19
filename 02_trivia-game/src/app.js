@@ -19,11 +19,13 @@ const ANSWER_COUNT = 4;
 
 app.setHandler({
     LAUNCH() {
-
         this.$speech
             .t('NEW_GAME_MESSAGE', {gameName: this.t('GAME_NAME')})
             .t('WELCOME_MESSAGE', {gameLength: GAME_LENGTH.toString()});
         this.followUpState('StartState').ask(this.$speech, this.$speech);
+    },
+    HelloWorldIntent() {
+        this.tell('hello world!');
     },
     StartState: {
         StartGameIntent() {

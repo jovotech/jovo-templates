@@ -40,8 +40,7 @@ app.setHandler({
         this.$user.$data.index = 0;
         this.$user.$data.currentPoints = 0;
         this.$speech.addAudio('soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_intro_01');
-        this.$speech.addText(`Welcome to "True or False". 
-                              I will tell you a fact, and you will say if its true or false. Lets go! `);
+        this.$speech.addText(`Welcome to 'True or False'. I will tell you a fact, and you will say if it is true or false. Lets go!`);
         askQuestion(this);
     },
 
@@ -94,7 +93,7 @@ function askQuestion(jovo) {
     }
     jovo.$speech.addAudio('soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_neutral_response_01');
     jovo.$speech.addText(`True or false: ${statements[jovo.$user.$data.index][0]}`);
-    jovo.$reprompt.addText('Please say "true" or "false"!');
+    jovo.$reprompt.addText('Please answer with \'true\' or \'false\'! ');
     jovo.ask(jovo.$speech, jovo.$reprompt);
 }
 

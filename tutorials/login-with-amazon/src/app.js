@@ -19,7 +19,7 @@ app.setHandler({
     async LAUNCH() {
         if (!this.$request.getAccessToken()) {
             this.showAccountLinkingCard();
-            this.tell('Please link you Account');
+            this.tell('Please link your Account');
         } else {
             let url = `https://api.amazon.com/user/profile?access_token=${this.$request.getAccessToken()}`;
 

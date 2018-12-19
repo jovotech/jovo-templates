@@ -249,7 +249,7 @@
                 ]
             }
         ],
-        "GAME_NAME": "Jovo Trivia", 
+        "GAMENAME": "Jovo Trivia", 
         "HELP_MESSAGE": "I will ask you {{gameLength}} multiple choice questions. Respond with the number of the answer. For example, say one, two, three, or four. ",
         "REPEAT_QUESTION_MESSAGE": "To repeat the last question, say, repeat. ",
         "ASK_MESSAGE_START": "Would you like to start playing?",
