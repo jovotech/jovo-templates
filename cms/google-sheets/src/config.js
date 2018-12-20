@@ -12,18 +12,16 @@ module.exports = {
 
     cms: {
         GoogleSheetsCMS: {
+            spreadsheetId: '1dSM_4n7zUgZwLevo8QwGS_ZKcWADHk1kvmscI0tEu24',
+            access: 'public',
             sheets: [
                 {
-                    spreadsheetId: '1dSM_4n7zUgZwLevo8QwGS_ZKcWADHk1kvmscI0tEu24',
                     name: 'responses',
-                    access: 'public',
                     type: 'Responses',
                     position: 1,
                 },
                 {
-                    spreadsheetId: '1dSM_4n7zUgZwLevo8QwGS_ZKcWADHk1kvmscI0tEu24',
                     name: 'answers',
-                    access: 'public',
                     type: 'KeyValue',
                     position: 2,
                 }

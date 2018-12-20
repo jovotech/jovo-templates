@@ -6,6 +6,6 @@ module.exports = {
     alexaSkill: {
        nlu: 'alexa',
     },
-    endpoint: `${JOVO_WEBHOOK_URL}`,
- };
+    endpoint: '${JOVO_WEBHOOK_URL}',
+};
  
