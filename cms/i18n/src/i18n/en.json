@@ -1,0 +1,33 @@
+{
+	"translation": {
+		"WELCOME": [
+			"Welcome to 'True or False'. I will tell you a fact, and you will say if it is true or false. Lets go! ",
+			"Welcome to 'True or False'. Now I will tell you a fact, and you will say if it is true or false. Lets go! "
+		],
+		"QUESTION": "True or false: {{statement}} ",
+		"INCORRECT": "No, it's {{correctAnswer}}! ",
+		"REPROMPT": "Please answer with 'true' or 'false'! ",
+		"GOODBYE": "Good bye, see you soon! ",
+		"END": [
+			"Nice! You got {{currentPoints}} points! Your total points are: {{totalPoints}}. Bye, see you next time!",
+			"Cool! You reached {{currentPoints}} points! Your total points are now: {{totalPoints}}. Good bye, see you soon!"
+		],
+		"SOUND": {
+			"INTRO": "soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_intro_01",
+			"CORRECT": "soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_positive_response_02",
+			"INCORRECT": "soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_negative_response_02",
+			"FORWARD": "soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_neutral_response_01",
+			"OUTRO": "soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_outro_01"
+		},
+		"STATEMENT": {
+			"0": "Mount Everest is the tallest mountain in the world.",
+			"1": "The Atlantic Ocean is the biggest ocean on Earth.",
+			"2": "The study of plants is known as botany.",
+			"3": "Venus is the closest planet to our Sun.",
+			"4": "Spiders have six legs.",
+			"5": "Dolphins are mammals.",
+			"6": "Earthworms do not have eyes.",
+			"7": "The human body has four lungs."
+		}
+	}
+}

@@ -5,8 +5,9 @@
 			"name": "SearchFlightIntent",
 			"phrases": [
 				"I am flying to {toCity} from {fromCity} on the {date}",
-			    "I want to fly to {toCity} on {date}",
-				"Book a flight for {ticketCount} people on the {date} to {toCity}"
+				"I want to fly to {toCity} on {date}",
+				"Book a flight for {ticketCount} people on the {date} to {toCity}",
+				"I am flying to {toCity}"
 			],
 			"inputs": [
 				{
@@ -156,5 +157,25 @@
 				]
 			}
 		}
+	},
+	"dialogflow": {
+		"intents": [
+			{
+				"name": "Default Fallback Intent",
+				"auto": true,
+				"webhookUsed": true,
+				"fallbackIntent": true
+			},
+			{
+				"name": "Default Welcome Intent",
+				"auto": true,
+				"webhookUsed": true,
+				"events": [
+					{
+						"name": "WELCOME"
+					}
+				]
+			}
+		]
 	}
 }

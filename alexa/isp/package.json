@@ -1,14 +1,27 @@
 {
   "name": "jovo-sample-voice-app-nodejs",
-  "version": "0.0.1",
-  "description": "A sample voice app that works with the Jovo framework",
-  "main": "index.js",
+  "version": "2.0.2",
+  "description": "A sample voice app that works with the Jovo Framework",
+  "main": "src/index.js",
   "dependencies": {
-    "jovo-framework": "^1.4.16"
+    "jovo-db-filedb": "^2.0.2",
+    "jovo-framework": "^2.0.2",
+    "jovo-platform-alexa": "^2.0.2",
+    "jovo-plugin-debugger": "^2.0.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-install": "^1.1.0",
+    "gulp-run-command": "0.0.9",
+    "gulp-zip": "^4.2.0",
+    "jest": "^23.6.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "tsc": "node -v",
+    "test": "jest",
+    "bundle": "gulp --gulpfile node_modules/jovo-framework/gulpfile.js --cwd ./",
+    "start": "cd src && node index.js --webhook",
+    "launch": "npm start -- --launch"
   },
   "repository": {
     "type": "git",

@@ -1,50 +1,60 @@
-{  
-    "invocation":"jovo beta",
-    "intents":[  
-        {  
-            "name":"PlayIntent",
-            "phrases":[  
-                "Play a song",
-                "Start the song"
-            ]
-        }
-    ],
-    "alexa":{  
-        "interactionModel":{  
-            "languageModel":{  
-                "intents":[  
-                    {  
-                        "name":"AMAZON.CancelIntent",
-                        "samples":[  
-
-                        ]
-                    },
-                    {  
-                        "name":"AMAZON.HelpIntent",
-                        "samples":[  
-
-                        ]
-                    },
-                    {  
-                        "name":"AMAZON.StopIntent",
-                        "samples":[  
-
-                        ]
-                    },
-                    {
-                        "name":"AMAZON.ResumeIntent",
-                        "samples":[
-
-                        ]
-                    },
-                    {
-                        "name":"AMAZON.PauseIntent",
-                        "samples":[
-                            
-                        ]
-                    }
-                ]
-            }
-        }
-    }
+{
+	"invocation": "my test app",
+	"intents": [
+		{
+			"name": "PlayIntent",
+			"phrases": [
+				"Play a song",
+				"Start the song"
+			]
+		}
+	],
+	"alexa": {
+		"interactionModel": {
+			"languageModel": {
+				"intents": [
+					{
+						"name": "AMAZON.CancelIntent",
+						"samples": []
+					},
+					{
+						"name": "AMAZON.HelpIntent",
+						"samples": []
+					},
+					{
+						"name": "AMAZON.StopIntent",
+						"samples": []
+					},
+					{
+						"name": "AMAZON.ResumeIntent",
+						"samples": []
+					},
+					{
+						"name": "AMAZON.PauseIntent",
+						"samples": []
+					}
+				]
+			}
+		}
+	},
+	"dialogflow": {
+		"intents": [
+			{
+				"name": "Default Fallback Intent",
+				"auto": true,
+				"webhookUsed": true,
+				"fallbackIntent": true
+			},
+			{
+				"name": "Default Welcome Intent",
+				"auto": true,
+				"webhookUsed": true,
+				"events": [
+					{
+						"name": "WELCOME"
+					}
+				]
+			}
+		]
+	}
 }
