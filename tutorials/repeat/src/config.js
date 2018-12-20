@@ -16,6 +16,8 @@ module.exports = {
     },
 
     user: {
-        context: true,
+        context: {
+            enabled: true
+        }
     }
 };
