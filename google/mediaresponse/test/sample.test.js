@@ -1,4 +1,5 @@
 'use strict';
+
 const { GoogleAssistant } = require('jovo-platform-googleassistant');
 jest.setTimeout(500);
 

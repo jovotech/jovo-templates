@@ -7,7 +7,6 @@
     "jovo-db-filedb": "^2.0.2-beta.7",
     "jovo-framework": "^2.0.2-beta.7",
     "jovo-platform-alexa": "^2.0.2-beta.7",
-    "jovo-platform-googleassistant": "^2.0.2-beta.7",
     "jovo-plugin-debugger": "^2.0.2-beta.7",
     "lodash": "^4.17.11"
   },

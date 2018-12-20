@@ -1,7 +1,11 @@
+'use strict';
 
-const { App, Util } = require('jovo-framework');
+// ------------------------------------------------------------------
+// APP INITIALIZATION
+// ------------------------------------------------------------------
+
+const { App } = require('jovo-framework');
 const { GoogleAssistant } = require('jovo-platform-googleassistant');
-const { Alexa } = require('jovo-platform-alexa');
 const { JovoDebugger } = require('jovo-plugin-debugger');
 const { FileDb } = require('jovo-db-filedb');
 const rp = require('request-promise');
@@ -10,10 +14,14 @@ const app = new App();
 
 app.use(
     new GoogleAssistant(),
-    new Alexa(),
     new JovoDebugger(),
-    new FileDb(),
+    new FileDb()
 );
+
+
+// ------------------------------------------------------------------
+// APP LOGIC
+// ------------------------------------------------------------------
 
 app.setHandler({
     async LAUNCH() {
