@@ -1,32 +1,6 @@
 'use strict';
 
 // ------------------------------------------------------------------
-// PLUGIN
-// ------------------------------------------------------------------
-
-class CustomLogging extends Plugin {
-    constructor(options) {
-        super(options);
-    }
-    init() {
-        let output = '';
-        this.app.on('request', (jovo) => {
-            if (jovo.getIntentName() === 'Default Fallback Intent') {
-                output += `\nState: ${jovo.getState()} | Raw Text: ${jovo.platform.getRawText()}\n`
-                console.log(output);
-                output = '';
-            }
-        });
-        this.app.on('ask', (jovo, speech, repromptSpeech) => {
-            output += `\nspeech: ${speech} | reprompt: ${repromptSpeech}\n`;
-        });
-    }
-}
-
-
-
-
-// ------------------------------------------------------------------
 // APP INITIALIZATION
 // ------------------------------------------------------------------
 
@@ -40,22 +14,42 @@ const {FileDb} = require('jovo-db-filedb');
 const app = new App();
 
 
-class CustomLogging implements Plugin {
-    constructor(options) {
-        super(options);
+class CustomLogging {
+    constructor() {
+        this.output = '';
     }
-    init() {
-        let output = '';
-        this.app.on('request', (jovo) => {
-            if (jovo.getIntentName() === 'Default Fallback Intent') {
-                output += `\nState: ${jovo.getState()} | Raw Text: ${jovo.platform.getRawText()}\n`
-                console.log(output);
-                output = '';
+    install(app) {
+        app.on('response', this.saveOutput.bind(this));
+        app.on('nlu', this.log.bind(this));
+    }
+    saveOutput(handleRequest) {
+        if (!handleRequest.jovo) {
+            return;
+        }
+
+        if (handleRequest.jovo.constructor.name === 'GoogleAction') {
+            let speech = handleRequest.jovo.$response.getSpeech().replace(/<[^>]*>/g, '');
+            let reprompt;
+            if (handleRequest.jovo.$response.getReprompt()) {
+                reprompt = handleRequest.jovo.$response.getReprompt().replace(/<[^>]*>/g, '');
             }
-        });
-        this.app.on('ask', (jovo, speech, repromptSpeech) => {
-            output += `\nspeech: ${speech} | reprompt: ${repromptSpeech}\n`;
-        });
+            this.output = `\nspeech: ${speech} | reprompt: ${reprompt}\n`
+            this.output += `\nState: ${handleRequest.jovo.getState() || '-'} | `;
+        }
+    }
+    log(handleRequest) {
+        if (!handleRequest.jovo) {
+            return;
+        }
+
+        if (handleRequest.jovo.constructor.name === 'GoogleAction') {
+            let intentName = handleRequest.jovo.$request.getIntentName();
+            if (intentName === 'Default Fallback Intent') {
+                this.output += ` Raw Text: ${handleRequest.jovo.$request.toJSON().queryResult.queryText}\n`
+                console.log(this.output);
+                this.output = '';
+            }
+        }     
     }
 }
 
@@ -80,7 +74,6 @@ app.setHandler({
     HelloWorldIntent() {
         this.ask('Hello World! What\'s your name?', 'Please tell me your name.');
     },
-
     MyNameIsIntent() {
         this.tell('Hey ' + this.$inputs.name.value + ', nice to meet you!');
     },
