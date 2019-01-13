@@ -26,7 +26,7 @@ const song = 'https://s3.amazonaws.com/jovo-songs/song1.mp3';
 
 app.setHandler({
     LAUNCH() {
-        this.toIntent('PlayIntent');
+        return this.toIntent('PlayIntent');
     },
     PlayIntent() {
         this.$alexaSkill.$audioPlayer

@@ -70,7 +70,7 @@ app.setHandler({
             this.followUpState('TriviaState').ask(this.$speech, this.$speech);
         },
         YesIntent() {
-            this.toStateIntent('StartState', 'StartGameIntent');
+            return this.toStateIntent('StartState', 'StartGameIntent');
         },
         NoIntent() {
             this.$speech.t('NO_MESSAGE')
@@ -90,7 +90,7 @@ app.setHandler({
             this.ask(this.$speech, this.$reprompt);
         },
         HelpIntent() {
-            this.toStateIntent('HelpState', 'HelpUser', false);
+            return this.toStateIntent('HelpState', 'HelpUser', false);
         },
         StopIntent() {
             this.$speech.t('STOP_MESSAGE');
@@ -131,21 +131,21 @@ app.setHandler({
             this.ask(this.$speech, this.$reprompt);
         },
         'AMAZON.StartOverIntent'() {
-            this.toStateIntent('StartState', 'StartGameIntent', false);
+            return this.toStateIntent('StartState', 'StartGameIntent', false);
         },
         RepeatIntent() {
             let newGame = !(this.getSessionAttribute('questionSpeech') && this.getSessionAttribute('questionReprompt'));
-            this.toStateIntent('HelpState', 'HelpUser', newGame);
+            return this.toStateIntent('HelpState', 'HelpUser', newGame);
         },
         HelpIntent() {
             let newGame = !(this.getSessionAttribute('questionSpeech') && this.getSessionAttribute('questionReprompt'));
-            this.toStateIntent('HelpState', 'HelpUser', newGame);
+            return this.toStateIntent('HelpState', 'HelpUser', newGame);
         },
         YesIntent() {
             if (this.getSessionAttribute('questionSpeech') && this.getSessionAttribute('questionReprompt')) {
-                this.toStateIntent('TriviaState', 'RepeatIntent');
+                return this.toStateIntent('TriviaState', 'RepeatIntent');
             } else {
-                this.toStateIntent('StartState', 'StartGameIntent', false);
+                return this.toStateIntent('StartState', 'StartGameIntent', false);
             }
         },
         NoIntent() {
