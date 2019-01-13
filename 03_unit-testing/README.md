@@ -37,28 +37,29 @@ Just change this:
 
 ```javascript
 app.setHandler({
-    'LAUNCH': function() {
-        this.toIntent('HelloWorldIntent');
+    LAUNCH() {
+        return this.toIntent('HelloWorldIntent');
     },
 
-    'HelloWorldIntent': function() {
+    HelloWorldIntent() {
         this.followUpState('IntroductionState')
             .ask('Hello World! What\'s your name?', 'Please tell me your name.');
     },
 
-    'IntroductionState': {
-        'MyNameIsIntent': function(name) {
-            this.toStatelessIntent('MyNameIsIntent', name);
+    IntroductionState: {
+        MyNameIsIntent() {
+
+            return this.toStatelessIntent('MyNameIsIntent');
         },
 
-        // // Test fails if this is commented out
-        // 'Unhandled': function (name) {
-        //     this.ask('What\'s your name?');
-        // },
+        // Test fails if this is commented out
+        Unhandled() {
+            this.ask('What\'s your name?');
+        },
     },
 
-    'MyNameIsIntent': function(name) {
-        this.tell('Hey ' + name.value + ', nice to meet you!');
+    MyNameIsIntent() {
+        this.tell('Hey ' + this.$inputs.name.value + ', nice to meet you!');
     },
 
 });
@@ -68,28 +69,29 @@ To that:
 
 ```javascript
 app.setHandler({
-    'LAUNCH': function() {
-        this.toIntent('HelloWorldIntent');
+    LAUNCH() {
+        return this.toIntent('HelloWorldIntent');
     },
 
-    'HelloWorldIntent': function() {
+    HelloWorldIntent() {
         this.followUpState('IntroductionState')
             .ask('Hello World! What\'s your name?', 'Please tell me your name.');
     },
 
-    'IntroductionState': {
-        'MyNameIsIntent': function(name) {
-            this.toStatelessIntent('MyNameIsIntent', name);
+    IntroductionState: {
+        MyNameIsIntent() {
+
+            return this.toStatelessIntent('MyNameIsIntent');
         },
 
-        // Test fails if this is commented out
-        'Unhandled': function (name) {
-            this.ask('What\'s your name?');
-        },
+        // // Test fails if this is commented out
+        // Unhandled() {
+        //     this.ask('What\'s your name?');
+        // },
     },
 
-    'MyNameIsIntent': function(name) {
-        this.tell('Hey ' + name.value + ', nice to meet you!');
+    MyNameIsIntent() {
+        this.tell('Hey ' + this.$inputs.name.value + ', nice to meet you!');
     },
 
 });
