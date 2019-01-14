@@ -1,5 +1,7 @@
 'use strict';
 
+console.log('This template uses an outdated version of the Jovo Framework. Please update your Jovo CLI to the latest version. Learn more here: https://www.jovo.tech/docs/installation/v1-migration');
+
 // =================================================================================
 // App Configuration
 // =================================================================================
