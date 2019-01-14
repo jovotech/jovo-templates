@@ -43,7 +43,7 @@ app.setHandler({
                 ticketCount: this.$inputs.ticketCount.value,
             };
             this.$data.flightData = flightData;
-            this.toIntent('FlightApiIntent');
+            return this.toIntent('FlightApiIntent');
         }
     },
     FlightApiIntent() {

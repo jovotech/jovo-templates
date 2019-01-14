@@ -26,7 +26,7 @@ app.use(
 
 app.setHandler({
     LAUNCH() {
-        this.toIntent('HelloWorldIntent');
+        return this.toIntent('HelloWorldIntent');
     },
 
     HelloWorldIntent() {
@@ -37,7 +37,7 @@ app.setHandler({
     IntroductionState: {
         MyNameIsIntent() {
 
-            this.toStatelessIntent('MyNameIsIntent');
+            return this.toStatelessIntent('MyNameIsIntent');
         },
 
         // // Test fails if this is commented out
