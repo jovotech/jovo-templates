@@ -7,14 +7,11 @@
 <a href="https://github.com/jovotech/jovo-cli"><strong>CLI </strong></a> - <a href="https://github.com/jovotech/jovo-framework-nodejs/blob/master/CONTRIBUTING.md"><strong>Contributing</strong></a> - <a href="https://twitter.com/jovotech"><strong>Twitter</strong></a></p>
 <br/>
 
-# Template: Hello World
+# Template: Event Calendar Voice App
 
-Jovo Sample Voice App with a simple "Hello World!" + asking for the user's name. This is the default template for the `jovo new` command:
+An Event Calendar Alexa Skill and Google Action that uses the Jovo Google Sheets integration.
 
 ```sh
-$ jovo new <directory>
-
-## Alternative
-$ jovo new <directory> --template helloworld
+$ jovo new <directory> --template tutorials/event-calendar
 ```
 
