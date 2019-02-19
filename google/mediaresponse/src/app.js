@@ -27,12 +27,12 @@ const song = 'https://s3.amazonaws.com/jovo-songs/song1.mp3';
 app.setHandler({
     LAUNCH() {
         this.$googleAction.showSuggestionChips(['Stop', 'Pause']);
-        this.$googleAction.$audioPlayer.play(song, 'First song');
+        this.$googleAction.$mediaResponse.play(song, 'First song');
         this.ask('How do you like my new song?');
     },
     AUDIOPLAYER: {
         /**
-         * Gets triggered, if the session is still active (audio started with ask() instead of tell()) and the song is finished
+         * Gets triggered if the session is still active (audio started with ask() instead of tell()) and the song is finished
          */
         'GoogleAction.Finished'() {
             this.tell('The end');
