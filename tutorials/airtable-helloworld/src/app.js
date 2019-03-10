@@ -1,5 +1,7 @@
 'use strict';
 
+console.log('Don\'t forget to update the `apiKey` and `baseId` in the config.js file! You can delete this prompt at the top of the app.js file after you\'re done');
+
 // ------------------------------------------------------------------
 // APP INITIALIZATION
 // ------------------------------------------------------------------
