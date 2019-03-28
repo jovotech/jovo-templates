@@ -20,7 +20,7 @@
   "scripts": {
     "tsc": "node -v",
     "test": "jest",
-    "bundle": "gulp --gulpfile node_modules/jovo-framework/gulpfile.js --cwd ./",
+    "bundle": "gulp --gulpfile node_modules/jovo-framework/gulpfile.js --cwd ..",
     "start": "cd src && node index.js --webhook",
     "launch": "npm start -- --launch"
   },
