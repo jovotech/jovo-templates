@@ -1,7 +1,6 @@
-'use strict';
-const { App, Util } = require('jovo-framework');
-const { GoogleAssistant } = require('jovo-platform-googleassistant');
-const { Alexa } = require('jovo-platform-alexa');
+import {Alexa} from 'jovo-platform-alexa';
+import {GoogleAssistant} from 'jovo-platform-googleassistant';
+
 jest.setTimeout(500);
 
 for (const p of [new Alexa(), new GoogleAssistant()]) {
