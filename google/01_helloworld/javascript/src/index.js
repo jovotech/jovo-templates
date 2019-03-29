@@ -1,7 +1,7 @@
 'use strict';
 
-const { Webhook, ExpressJS, Lambda } = require('jovo-framework');
-const { app } = require ('./app.js');
+const {Webhook, ExpressJS, Lambda} = require('jovo-framework');
+const {app} = require('./app.js');
 
 // ------------------------------------------------------------------
 // HOST CONFIGURATION

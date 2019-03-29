@@ -2,7 +2,7 @@
 // APP CONFIGURATION
 // ------------------------------------------------------------------
 
-module.exports = {
+const config = {
     logging: true,
 
     intentMap: {
@@ -12,6 +12,8 @@ module.exports = {
     db: {
         FileDb: {
             pathToFile: '../db/db.json',
-        }
+        },
     },
 };
+
+export {config};

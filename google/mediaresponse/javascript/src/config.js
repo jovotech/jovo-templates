@@ -4,15 +4,14 @@
 
 module.exports = {
     logging: true,
- 
+
     intentMap: {
-       'Default Fallback Intent': 'Unhandled',
+        'AMAZON.StopIntent': 'END',
     },
- 
+
     db: {
-         FileDb: {
-             pathToFile: '../db/db.json',
-         }
-     },
- };
- 
+        FileDb: {
+            pathToFile: '../db/db.json',
+        },
+    },
+};
