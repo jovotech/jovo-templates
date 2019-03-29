@@ -1,14 +1,16 @@
-'use strict';
-
 // ------------------------------------------------------------------
 // APP INITIALIZATION
 // ------------------------------------------------------------------
 
-const { App } = require('jovo-framework');
-const { Alexa } = require('jovo-platform-alexa');
-const { GoogleAssistant } = require('jovo-platform-googleassistant');
-const { JovoDebugger } = require('jovo-plugin-debugger');
-const { FileDb } = require('jovo-db-filedb');
+
+import {AlexaHandler} from './alexa/handler';
+import {GoogleHandler} from './google/handler';
+import {Player} from './player';
+import {App} from 'jovo-framework';
+import {Alexa} from 'jovo-platform-alexa';
+import {JovoDebugger} from 'jovo-plugin-debugger';
+import {FileDb} from 'jovo-db-filedb';
+import {GoogleAssistant} from 'jovo-platform-googleassistant';
 
 const app = new App();
 
@@ -16,12 +18,9 @@ app.use(
     new Alexa(),
     new GoogleAssistant(),
     new JovoDebugger(),
-    new FileDb()
+    new FileDb(),
 );
 
-const Player = require('./player.js');
-const AlexaHandler = require('./alexa/handler.js');
-const GoogleHandler = require('./google/handler.js');
 
 // ------------------------------------------------------------------
 // APP LOGIC
@@ -30,14 +29,14 @@ const GoogleHandler = require('./google/handler.js');
 app.setHandler({
     NEW_USER() {
         this.$speech.addText('Welcome to the Podcast Player!')
-            .addText('Would you like to begin listening from episode one or rather choose from a list?')
-        
+            .addText('Would you like to begin listening from episode one or rather choose from a list?');
+
         return this.ask(this.$speech);
     },
 
     LAUNCH() {
-        this.$speech.addText('Would you like to resume where you left off or listen to the latest episode?')
-        
+        this.$speech.addText('Would you like to resume where you left off or listen to the latest episode?');
+
         this.ask(this.$speech);
     },
 
@@ -47,12 +46,12 @@ app.setHandler({
         this.$user.$data.currentIndex = currentIndex;
         this.$speech.addText('Here is the first episode.');
 
-        if (this.isAlexaSkill()) {
+        if (this.$alexaSkill && this.$alexaSkill.$audioPlayer) {
             this.$alexaSkill.$audioPlayer
                 .setOffsetInMilliseconds(0)
                 .play(episode.url, `${currentIndex}`)
                 .tell(this.$speech);
-        } else if (this.isGoogleAction()) {
+        } else if (this.$googleAction && this.$googleAction.$mediaResponse) {
             this.$googleAction.$mediaResponse.play(episode.url, episode.title);
             this.$googleAction.showSuggestionChips(['pause', 'start over']);
             this.ask(this.$speech);
@@ -63,14 +62,14 @@ app.setHandler({
         let episode = Player.getLatestEpisode();
         let currentIndex = Player.getEpisodeIndex(episode);
         this.$user.$data.currentIndex = currentIndex;
-        this.$speech.addText('Here is the latest episode.'); 
+        this.$speech.addText('Here is the latest episode.');
 
-        if (this.isAlexaSkill()) {
+        if (this.$alexaSkill && this.$alexaSkill.$audioPlayer) {
             this.$alexaSkill.$audioPlayer
                 .setOffsetInMilliseconds(0)
                 .play(episode.url, `${currentIndex}`)
                 .tell(this.$speech);
-        } else if (this.isGoogleAction()) {
+        } else if (this.$googleAction && this.$googleAction.$mediaResponse) {
             this.$googleAction.$mediaResponse.play(episode.url, episode.title);
             this.$googleAction.showSuggestionChips(['pause', 'start over']);
             this.ask(this.$speech);
@@ -80,13 +79,13 @@ app.setHandler({
     ListIntent() {
         const indices = Player.getRandomIndices(4);
         this.$session.$data.episodeIndices = indices;
-    
+
         this.$speech.addText('Here\'s a list of episodes: ');
         for (let i = 0; i < indices.length; i++) {
             let episode = Player.getEpisode(indices[i]);
-            this.$speech.addSayAsOrdinal(`${i + 1}`)
+            this.$speech.addSayAsOrdinal(i + 1)
                 .addText(episode.title)
-                .addBreak("100ms");
+                .addBreak('100ms');
         }
         this.$speech.addText('Which one would you like to listen to?');
         this.ask(this.$speech);
@@ -95,17 +94,17 @@ app.setHandler({
     ChooseFromListIntent() {
         const ordinal = this.$inputs.ordinal;
         let episodeIndices = this.$session.$data.episodeIndices;
-        let episodeIndex = episodeIndices[parseInt(ordinal.key) - 1];
+        let episodeIndex = episodeIndices[parseInt(ordinal.key!) - 1];
         this.$user.$data.currentIndex = episodeIndex;
         let episode = Player.getEpisode(episodeIndex);
-        this.$speech.addText('Enjoy'); 
-    
-        if (this.isAlexaSkill()) {
+        this.$speech.addText('Enjoy');
+
+        if (this.$alexaSkill && this.$alexaSkill.$audioPlayer) {
             this.$alexaSkill.$audioPlayer
                 .setOffsetInMilliseconds(0)
                 .play(episode.url, `${episodeIndex}`)
                 .tell(this.$speech);
-        } else if (this.isGoogleAction()) {
+        } else if (this.$googleAction && this.$googleAction.$mediaResponse) {
             this.$googleAction.$mediaResponse.play(episode.url, episode.title);
             this.$googleAction.showSuggestionChips(['pause', 'start over']);
             this.ask(this.$speech);
@@ -115,15 +114,15 @@ app.setHandler({
     ResumeIntent() {
         let currentIndex = this.$user.$data.currentIndex;
         let episode = Player.getEpisode(currentIndex);
-        this.$speech.addText('Resuming your episode.')
+        this.$speech.addText('Resuming your episode.');
 
-        if (this.isAlexaSkill()) {
+        if (this.$alexaSkill && this.$alexaSkill.$audioPlayer) {
             let offset = this.$user.$data.offset;
             this.$alexaSkill.$audioPlayer
                 .setOffsetInMilliseconds(offset)
                 .play(episode.url, `${currentIndex}`)
                 .tell(this.$speech);
-        } else if (this.isGoogleAction()) {
+        } else if (this.$googleAction && this.$googleAction.$mediaResponse) {
             this.$googleAction.$mediaResponse.play(episode.url, episode.title);
             this.$googleAction.showSuggestionChips(['pause', 'start over']);
             this.ask(this.$speech);
@@ -138,13 +137,14 @@ app.setHandler({
         }
         currentIndex = Player.getEpisodeIndex(nextEpisode);
         this.$user.$data.currentIndex = currentIndex;
-        if (this.isAlexaSkill()) {
+        if (this.$alexaSkill && this.$alexaSkill.$audioPlayer) {
             this.$alexaSkill.$audioPlayer.setOffsetInMilliseconds(0).play(nextEpisode.url, `${currentIndex}`);
-        } else if (this.isGoogleAction()) {
+        } else if (this.$googleAction && this.$googleAction.$mediaResponse) {
             this.$googleAction.$mediaResponse.play(nextEpisode.url, nextEpisode.title);
             this.$googleAction.showSuggestionChips(['pause', 'start over']);
             this.ask('Enjoy');
         }
+        return;
     },
 
     PreviousIntent() {
@@ -155,24 +155,25 @@ app.setHandler({
         }
         currentIndex = Player.getEpisodeIndex(previousEpisode);
         this.$user.$data.currentIndex = currentIndex;
-        if (this.isAlexaSkill()) {
+        if (this.$alexaSkill && this.$alexaSkill.$audioPlayer) {
             this.$alexaSkill.$audioPlayer.setOffsetInMilliseconds(0).play(previousEpisode.url, `${currentIndex}`);
-        } else if (this.isGoogleAction()) {
+        } else if (this.$googleAction && this.$googleAction.$mediaResponse) {
             this.$googleAction.$mediaResponse.play(previousEpisode.url, previousEpisode.title);
             this.$googleAction.showSuggestionChips(['pause', 'start over']);
             this.ask('Enjoy');
         }
+        return;
     },
 
     HelpIntent() {
         this.$speech.addText('You can either listen to episode one or the latest episode or choose from a random list of episodes.')
-            .addText('Which one would you like to do?')
+            .addText('Which one would you like to do?');
 
         this.ask(this.$speech);
-    }
+    },
 });
 
 app.setAlexaHandler(AlexaHandler);
 app.setGoogleAssistantHandler(GoogleHandler);
 
-module.exports.app = app;
+export {app};

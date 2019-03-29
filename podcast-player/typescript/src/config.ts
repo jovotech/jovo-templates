@@ -2,7 +2,7 @@
 // APP CONFIGURATION
 // ------------------------------------------------------------------
 
-module.exports = {
+const config = {
     logging: true,
 
     intentMap: {
@@ -10,12 +10,13 @@ module.exports = {
         'AMAZON.PreviousIntent': 'PreviousIntent',
         'AMAZON.ResumeIntent': 'ResumeIntent',
         'AMAZON.HelpIntent': 'HelpIntent',
-        'AMAZON.StopIntent': 'CancelIntent'
+        'AMAZON.StopIntent': 'CancelIntent',
     },
 
     db: {
         FileDb: {
             pathToFile: '../db/db.json',
-        }
+        },
     },
 };
+export {config};

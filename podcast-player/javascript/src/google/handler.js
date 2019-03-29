@@ -13,6 +13,6 @@ module.exports = {
             } else {
                 this.tell('');
             }
-        }
+        },
     },
-}
+};

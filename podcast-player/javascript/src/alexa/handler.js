@@ -42,7 +42,7 @@ module.exports = {
 
         },
 
-        'AlexaSkill.PlaybackNearlyFinished': function() {
+        'AlexaSkill.PlaybackNearlyFinished': function () {
             let currentIndex = this.$user.$data.currentIndex;
             let episode = Player.getNextEpisode(currentIndex);
             let nextIndex = Player.getEpisodeIndex(episode);
@@ -64,6 +64,6 @@ module.exports = {
 
         'AlexaSkill.PlaybackFailed'() {
 
-        }
-    }
-}
+        },
+    },
+};

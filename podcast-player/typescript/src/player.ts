@@ -1,32 +1,38 @@
 const episodesJSON = require('./episodes.json');
 
-module.exports = {
-    getLatestEpisode: function() {
+export class Player {
+    static getLatestEpisode() {
         return episodesJSON[0];
-    },
-    getFirstEpisode: function() {
+    }
+
+    static getFirstEpisode() {
         return episodesJSON[episodesJSON.length - 1];
-    },
-    getNextEpisode: function(index) {
+    }
+
+    static getNextEpisode(index: number) {
         return episodesJSON[index - 1];
-    },
-    getPreviousEpisode: function(index) {
+    }
+
+    static getPreviousEpisode(index: number) {
         return episodesJSON[index + 1];
-    },
-    getEpisodeIndex: function(episode) {
+    }
+
+    static getEpisodeIndex(episode: string) {
         return episodesJSON.indexOf(episode);
-    },
-    getEpisode: function(index) {
+    }
+
+    static getEpisode(index: number) {
         return episodesJSON[index];
-    },
-    getRandomIndices: function(number) {
-        let arr = []
-        while (arr.length < number){
+    }
+
+    static getRandomIndices(number: number) {
+        let arr = [];
+        while (arr.length < number) {
             let randomNumber = Math.floor(Math.random() * episodesJSON.length);
             if (arr.indexOf(randomNumber) === -1) {
                 arr.push(randomNumber);
             }
         }
         return arr;
-    },
+    }
 }

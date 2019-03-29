@@ -1,0 +1,236 @@
+{
+  "invocation": "my podcast player",
+  "intents": [
+    {
+      "name": "NextIntent",
+      "alexa": {
+        "name": "AMAZON.NextIntent",
+        "samples": []
+      },
+      "phrases": [
+        "skip",
+        "next",
+        "next one",
+        "skip please",
+        "next one please",
+        "skip the episode",
+        "skip to next episode",
+        "skip to the next episode",
+        "next episode",
+        "would like the next episode",
+        "I would like the next episode",
+        "I would like to listen to the next episode"
+      ]
+    },
+    {
+      "name": "PreviousIntent",
+      "alexa": {
+        "name": "AMAZON.PreviousIntent",
+        "samples": []
+      },
+      "phrases": [
+        "go back",
+        "skip back",
+        "back",
+        "back up",
+        "previous episode",
+        "go to the previous episode",
+        "skip back to previous episode",
+        "go back to the previous episode",
+        "the previous episode",
+        "I'd like to listen to the previous episode",
+        "I would like to listen to the previous episode",
+        "go back please",
+        "skip back please",
+        "previous episode please",
+        "skip back to the previous episode please"
+      ]
+    },
+    {
+      "name": "LatestEpisodeIntent",
+      "phrases": [
+        "latest episode",
+        "new episode",
+        "the latest episode",
+        "the new episode",
+        "I want the latest episode",
+        "I want to listen to the latest episode",
+        "I would prefer the latest one",
+        "play the latest episode",
+        "play the new episode",
+        "I would like to listen to the latest episode",
+        "stream the latest episode",
+        "stream the new episode"
+      ]
+    },
+    {
+      "name": "FirstEpisodeIntent",
+      "phrases": [
+        "episode one",
+        "I want episode one",
+        "play episode one",
+        "start with episode one",
+        "I want to listen to the first episode"
+      ]
+    },
+    {
+      "name": "ChooseFromListIntent",
+      "phrases": [
+        "{ordinal}",
+        "{ordinal} one please",
+        "{ordinal} one",
+        "{ordinal} episode",
+        "Play the {ordinal}",
+        "Play the {ordinal} one",
+        "Play the {ordinal} episode",
+        "Play the {ordinal} one",
+        "Play the {ordinal} episode",
+        "I want the {ordinal} one",
+        "I choose the {ordinal} one",
+        "I want the {ordinal} episode",
+        "I choose the {ordinal} episode",
+        "stream the {ordinal} one"
+      ],
+      "inputs": [
+        {
+          "name": "ordinal",
+          "type": {
+            "alexa": "ordinal",
+            "dialogflow": "@sys.ordinal"
+          }
+        }
+      ]
+    },
+    {
+      "name": "ListIntent",
+      "phrases": [
+        "list episodes",
+        "list the episodes",
+        "I want the list",
+        "I want the list of episodes",
+        "episode list",
+        "Can I get the list of episodes",
+        "Can I have the episode list",
+        "choose from a list",
+        "choose from list",
+        "I choose the list",
+        "choose list",
+        "list of episodes"
+      ]
+    },
+    {
+      "name": "ResumeIntent",
+      "alexa": {
+        "name": "AMAZON.ResumeIntent",
+        "samples": []
+      },
+      "phrases": [
+        "resume",
+        "continue",
+        "resume where I left off",
+        "continue where I left off",
+        "I want to continue",
+        "I want to resume",
+        "I want to resume where I left off",
+        "I want to continue where I left off"
+      ]
+    },
+    {
+      "name": "HelpIntent",
+      "alexa": {
+        "name": "AMAZON.HelpIntent",
+        "samples": []
+      },
+      "phrases": [
+        "help",
+        "help me",
+        "can you help me",
+        "help please",
+        "what can I do"
+      ]
+    }
+  ],
+  "inputTypes": [
+    {
+      "name": "ordinal",
+      "values": [
+        {
+          "value": "1",
+          "synonyms": [
+            "first",
+            "1st",
+            "1.",
+            "one"
+          ]
+        },
+        {
+          "value": "2",
+          "synonyms": [
+            "second",
+            "2nd",
+            "2.",
+            "two"
+          ]
+        },
+        {
+          "value": "3",
+          "synonyms": [
+            "third",
+            "3rd",
+            "3.",
+            "three"
+          ]
+        },
+        {
+          "value": "4",
+          "synonyms": [
+            "fourth",
+            "4th",
+            "4.",
+            "four"
+          ]
+        }
+      ]
+    }
+  ],
+  "alexa": {
+    "interactionModel": {
+      "languageModel": {
+        "intents": [
+          {
+            "name": "AMAZON.StopIntent",
+            "samples": []
+          },
+          {
+            "name": "AMAZON.PauseIntent",
+            "samples": []
+          },
+          {
+            "name": "AMAZON.CancelIntent",
+            "samples": []
+          }
+        ]
+      }
+    }
+  },
+  "dialogflow": {
+    "intents": [
+      {
+        "name": "Default Fallback Intent",
+        "auto": true,
+        "webhookUsed": true,
+        "fallbackIntent": true
+      },
+      {
+        "name": "Default Welcome Intent",
+        "auto": true,
+        "webhookUsed": true,
+        "events": [
+          {
+            "name": "WELCOME"
+          }
+        ]
+      }
+    ]
+  }
+}
