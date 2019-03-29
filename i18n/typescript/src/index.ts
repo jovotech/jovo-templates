@@ -1,13 +1,11 @@
-'use strict';
-
-const { Webhook, ExpressJS, Lambda } = require('jovo-framework');
-const { app } = require ('./app.js');
-
 // ------------------------------------------------------------------
 // HOST CONFIGURATION
 // ------------------------------------------------------------------
 
 // ExpressJS (Jovo Webhook)
+import {ExpressJS, Lambda, Webhook} from 'jovo-framework';
+import {app} from './app';
+
 if (process.argv.indexOf('--webhook') > -1) {
     const port = process.env.JOVO_PORT || 3000;
     Webhook.jovoApp = app;
@@ -22,6 +20,6 @@ if (process.argv.indexOf('--webhook') > -1) {
 }
 
 // AWS Lambda
-exports.handler = async (event, context, callback) => {
+export const handler = async (event: any, context: any, callback: () => any) => {
     await app.handle(new Lambda(event, context, callback));
 };

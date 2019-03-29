@@ -4,11 +4,12 @@
 // APP INITIALIZATION
 // ------------------------------------------------------------------
 
-const { App } = require('jovo-framework');
-const { Alexa } = require('jovo-platform-alexa');
-const { GoogleAssistant } = require('jovo-platform-googleassistant');
-const { JovoDebugger } = require('jovo-plugin-debugger');
-const { FileDb } = require('jovo-db-filedb');
+
+import {App} from 'jovo-framework';
+import {Alexa} from 'jovo-platform-alexa';
+import {JovoDebugger} from 'jovo-plugin-debugger';
+import {FileDb} from 'jovo-db-filedb';
+import {GoogleAssistant} from 'jovo-platform-googleassistant';
 
 const app = new App();
 
@@ -16,7 +17,7 @@ app.use(
     new Alexa(),
     new GoogleAssistant(),
     new JovoDebugger(),
-    new FileDb()
+    new FileDb(),
 );
 
 
@@ -30,12 +31,12 @@ app.setHandler({
     },
 
     HelloWorldIntent() {
-        this.ask(this.t('welcome.speech'), this.t('welcome.reprompt'));
+        this.ask(this.t('welcome.speech').toString(), this.t('welcome.reprompt'));
     },
 
     MyNameIsIntent() {
-        this.tell(this.t('greeting.speech', { name: this.$inputs.name.value }));
+        this.tell(this.t('greeting.speech', {name: this.$inputs.name.value}).toString());
     },
 });
 
-module.exports.app = app;
+export {app};
