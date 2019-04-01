@@ -20,6 +20,6 @@ if (process.argv.indexOf('--webhook') > -1) {
 }
 
 // AWS Lambda
-export const handler = async (event: any, context: any, callback: () => any) => {
+export const handler = async (event: any, context: any, callback: Function) => {
     await app.handle(new Lambda(event, context, callback));
 };

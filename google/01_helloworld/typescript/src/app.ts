@@ -1,11 +1,11 @@
-// ------------------------------------------------------------------
-// APP INITIALIZATION
-// ------------------------------------------------------------------
-
 import {App} from 'jovo-framework';
 import {JovoDebugger} from 'jovo-plugin-debugger';
 import {FileDb} from 'jovo-db-filedb';
 import {GoogleAssistant} from 'jovo-platform-googleassistant';
+
+// ------------------------------------------------------------------
+// APP INITIALIZATION
+// ------------------------------------------------------------------
 
 const app = new App();
 

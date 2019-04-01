@@ -3,6 +3,7 @@ import {Alexa, AlexaSpeechBuilder} from 'jovo-platform-alexa';
 import {JovoDebugger} from 'jovo-plugin-debugger';
 import {FileDb} from 'jovo-db-filedb';
 import {GoogleAssistant} from 'jovo-platform-googleassistant';
+import {GoogleActionSpeechBuilder} from 'jovo-platform-googleassistant/dist/src/core/GoogleActionSpeechBuilder';
 import {Jovo} from 'jovo-core';
 
 // ------------------------------------------------------------------

@@ -1,11 +1,11 @@
-// ------------------------------------------------------------------
-// APP INITIALIZATION
-// ------------------------------------------------------------------
-
 import {App} from 'jovo-framework';
 import {Alexa} from 'jovo-platform-alexa';
 import {JovoDebugger} from 'jovo-plugin-debugger';
 import {FileDb} from 'jovo-db-filedb';
+
+// ------------------------------------------------------------------
+// APP INITIALIZATION
+// ------------------------------------------------------------------
 
 const app = new App();
 

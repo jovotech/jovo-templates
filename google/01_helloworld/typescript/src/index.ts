@@ -1,5 +1,5 @@
-import {app} from './app';
 import {ExpressJS, Lambda, Webhook} from 'jovo-framework';
+import {app} from './app';
 
 // ------------------------------------------------------------------
 // HOST CONFIGURATION
@@ -20,6 +20,6 @@ if (process.argv.indexOf('--webhook') > -1) {
 }
 
 // AWS Lambda
-export const handler = async (event: any, context: any, callback: () => any) => {
+export const handler = async (event: any, context: any, callback: Function) => {
     await app.handle(new Lambda(event, context, callback));
 };

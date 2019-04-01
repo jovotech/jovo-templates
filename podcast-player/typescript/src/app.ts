@@ -1,8 +1,3 @@
-// ------------------------------------------------------------------
-// APP INITIALIZATION
-// ------------------------------------------------------------------
-
-
 import {AlexaHandler} from './alexa/handler';
 import {GoogleHandler} from './google/handler';
 import {Player} from './player';
@@ -11,6 +6,10 @@ import {Alexa} from 'jovo-platform-alexa';
 import {JovoDebugger} from 'jovo-plugin-debugger';
 import {FileDb} from 'jovo-db-filedb';
 import {GoogleAssistant} from 'jovo-platform-googleassistant';
+
+// ------------------------------------------------------------------
+// APP INITIALIZATION
+// ------------------------------------------------------------------
 
 const app = new App();
 

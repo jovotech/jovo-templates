@@ -1,12 +1,12 @@
-// ------------------------------------------------------------------
-// APP INITIALIZATION
-// ------------------------------------------------------------------
-
 import * as _ from 'lodash';
 import {App} from 'jovo-framework';
 import {Alexa, AlexaRequest, AlexaSpeechBuilder} from 'jovo-platform-alexa';
 import {JovoDebugger} from 'jovo-plugin-debugger';
 import {FileDb} from 'jovo-db-filedb';
+
+// ------------------------------------------------------------------
+// APP INITIALIZATION
+// ------------------------------------------------------------------
 
 const app = new App();
 

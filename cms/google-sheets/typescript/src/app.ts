@@ -1,6 +1,3 @@
-// ------------------------------------------------------------------
-// APP INITIALIZATION
-// ------------------------------------------------------------------
 import {App} from 'jovo-framework';
 import {Alexa, AlexaSpeechBuilder} from 'jovo-platform-alexa';
 import {JovoDebugger} from 'jovo-plugin-debugger';
@@ -9,6 +6,10 @@ import {GoogleSheetsCMS} from 'jovo-cms-googlesheets';
 import {GoogleAssistant} from 'jovo-platform-googleassistant';
 import {Jovo} from 'jovo-core';
 import {GoogleActionSpeechBuilder} from 'jovo-platform-googleassistant/dist/src/core/GoogleActionSpeechBuilder';
+
+// ------------------------------------------------------------------
+// APP INITIALIZATION
+// ------------------------------------------------------------------
 
 const app = new App();
 
