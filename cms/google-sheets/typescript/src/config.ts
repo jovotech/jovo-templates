@@ -31,7 +31,7 @@ module.exports = {
 
     db: {
         FileDb: {
-            pathToFile: '../db/db.json',
+            pathToFile: '../../db/db.json',
         },
     },
 };

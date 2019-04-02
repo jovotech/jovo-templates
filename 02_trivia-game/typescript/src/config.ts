@@ -16,9 +16,9 @@ const config = {
  
     db: {
          FileDb: {
-             pathToFile: '../db/db.json',
+             pathToFile: '../../db/db.json',
          }
      },
  };
 
-export {config};
+export = config;
