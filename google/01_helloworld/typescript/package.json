@@ -32,6 +32,27 @@
     "start": "cd ./dist && node index.js --webhook",
     "launch": "npm start -- --launch"
   },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testURL": "http://localhost/",
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "testPathIgnorePatterns": [
+      "/dist/",
+      "/node_modules/"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ],
+    "globals": {
+      "ts-jest": {
+        "diagnostics": true
+      }
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jovotech/jovo-sample-voice-app-nodejs.git"
