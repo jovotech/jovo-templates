@@ -1,0 +1,56 @@
+{
+  "version": "1.0",
+  "type": "SUBSCRIPTION",
+  "referenceName": "premium_pass",
+  "subscriptionInformation": {
+    "subscriptionPaymentFrequency": "MONTHLY",
+    "subscriptionTrialPeriodDays": 30
+  },
+  "publishingInformation": {
+    "locales": {
+      "en-US": {
+        "name": "Premium Pass",
+        "smallIconUri": "https://s3.amazonaws.com/jovocards/logo108.png",
+        "largeIconUri": "https://s3.amazonaws.com/jovocards/logo512.png",
+        "summary": "Get access to all the premium content",
+        "description": "Get content updates two weeks earlier than everbody else",
+        "examplePhrases": [
+          "Alexa, buy premium pass"
+        ],
+        "keywords": [
+          "premium pass",
+          "pass",
+          "premium"
+        ],
+        "customProductPrompts": {
+          "purchasePromptDescription": "Do you want to buy the premium pass?",
+          "boughtCardDescription": "Congrats. You successfully purchased the premium pass"
+        }
+      }
+    },
+    "distributionCountries": [
+      "US"
+    ],
+    "pricing": {
+      "amazon.com": {
+        "releaseDate": "2018-05-14",
+        "defaultPriceListing": {
+          "price": 0.99,
+          "currency": "USD"
+        }
+      }
+    },
+    "taxInformation": {
+      "category": "SOFTWARE"
+    }
+  },
+  "privacyAndCompliance": {
+    "locales": {
+      "en-US": {
+        "privacyPolicyUrl": "https://www.yourcompany.com/privacy-policy"
+      }
+    }
+  },
+  "testingInstructions": "This is an example product.",
+  "purchasableState": "PURCHASABLE"
+}

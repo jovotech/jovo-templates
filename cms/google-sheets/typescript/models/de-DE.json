@@ -1,0 +1,86 @@
+{
+  "invocation": "wahr oder falsch test",
+  "intents": [
+    {
+      "name": "TrueOrFalseIntent",
+      "phrases": [
+        "{answer}",
+        "das ist {answer}",
+        "das {answer}",
+        "es ist {answer}"
+      ],
+      "inputs": [
+        {
+          "name": "answer",
+          "type": "answer"
+        }
+      ]
+    }
+  ],
+  "inputTypes": [
+    {
+      "name": "answer",
+      "values": [
+        {
+          "id": "true",
+          "value": "wahr",
+          "synonyms": [
+            "richtig",
+            "korrekt",
+            "stimmt"
+          ]
+        },
+        {
+          "id": "false",
+          "value": "falsch",
+          "synonyms": [
+            "nicht wahr",
+            "stimmt nicht",
+            "lüge",
+            "gelogen"
+          ]
+        }
+      ]
+    }
+  ],
+  "alexa": {
+    "interactionModel": {
+      "languageModel": {
+        "intents": [
+          {
+            "name": "AMAZON.CancelIntent",
+            "samples": []
+          },
+          {
+            "name": "AMAZON.HelpIntent",
+            "samples": []
+          },
+          {
+            "name": "AMAZON.StopIntent",
+            "samples": []
+          }
+        ]
+      }
+    }
+  },
+  "dialogflow": {
+    "intents": [
+      {
+        "name": "Default Fallback Intent",
+        "auto": true,
+        "webhookUsed": true,
+        "fallbackIntent": true
+      },
+      {
+        "name": "Default Welcome Intent",
+        "auto": true,
+        "webhookUsed": true,
+        "events": [
+          {
+            "name": "WELCOME"
+          }
+        ]
+      }
+    ]
+  }
+}

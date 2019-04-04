@@ -1,0 +1,95 @@
+{
+  "invocation": "my money making test app",
+  "intents": [],
+  "alexa": {
+    "interactionModel": {
+      "languageModel": {
+        "intents": [
+          {
+            "name": "AMAZON.CancelIntent",
+            "samples": []
+          },
+          {
+            "name": "AMAZON.HelpIntent",
+            "samples": []
+          },
+          {
+            "name": "AMAZON.StopIntent",
+            "samples": []
+          },
+          {
+            "name": "RefundSkillItemIntent",
+            "samples": [
+              "return {ProductName}",
+              "refund {ProductName}",
+              "want a refund for {ProductName}",
+              "would like to return {ProductName}"
+            ],
+            "slots": [
+              {
+                "name": "ProductName",
+                "type": "PRODUCT_NAMES"
+              }
+            ]
+          },
+          {
+            "name": "BuySkillItemIntent",
+            "samples": [
+              "buy",
+              "shop",
+              "buy {ProductName}",
+              "purchase {ProductName}",
+              "want {ProductName}",
+              "would like {ProductName}"
+            ],
+            "slots": [
+              {
+                "name": "ProductName",
+                "type": "PRODUCT_NAMES"
+              }
+            ]
+          }
+        ],
+        "types": [
+          {
+            "name": "PRODUCT_NAMES",
+            "values": [
+              {
+                "id": "frozen_sword",
+                "name": {
+                  "value": "frozen sword"
+                }
+              },
+              {
+                "id": "premium_pass",
+                "name": {
+                  "value": "premium pass"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "dialogflow": {
+    "intents": [
+      {
+        "name": "Default Fallback Intent",
+        "auto": true,
+        "webhookUsed": true,
+        "fallbackIntent": true
+      },
+      {
+        "name": "Default Welcome Intent",
+        "auto": true,
+        "webhookUsed": true,
+        "events": [
+          {
+            "name": "WELCOME"
+          }
+        ]
+      }
+    ]
+  }
+}

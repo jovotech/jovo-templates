@@ -1,0 +1,141 @@
+{
+	"invocation": "jovo trivia",
+	"intents": [
+		{
+			"name": "AnswerIntent",
+			"phrases": [
+				"the answer is {answer}",
+				"my answer is {answer}",
+				"is it {answer}",
+				"{answer} is my answer",
+				"{answer}"
+			],
+			"inputs": [
+				{
+					"name": "answer",
+					"type": {
+						"alexa": "AMAZON.NUMBER",
+						"dialogflow": "@sys.number"
+					}
+				}
+			]
+		},
+		{
+			"name": "DontKnowIntent",
+			"phrases": [
+				"i don't know",
+				"don't know",
+				"i don't know that one",
+				"dunno",
+				"skip",
+				"i don't know that",
+				"who knows",
+				"i don't know this question"
+			],
+			"inputs": []
+		},
+		{
+			"name": "CancelIntent",
+			"alexa": {
+				"name": "AMAZON.CancelIntent"
+			},
+			"phrases": [
+				"cancel",
+				"cancel please",
+				"please cancel"
+			]
+		},
+		{
+			"name": "HelpIntent",
+			"alexa": {
+				"name": "AMAZON.HelpIntent"
+			},
+			"phrases": [
+				"help",
+				"help me",
+				"help please",
+				"can you help me",
+				"what can you tell me",
+				"could you help",
+				"what can i do"
+			]
+		},
+		{
+			"name": "StopIntent",
+			"alexa": {
+				"name": "AMAZON.StopIntent"
+			},
+			"phrases": [
+				"stop",
+				"stop please",
+				"please stop",
+				"bitte hör auf"
+			]
+		},
+		{
+			"name": "YesIntent",
+			"alexa": {
+				"name": "AMAZON.YesIntent"
+			},
+			"phrases": [
+				"yes",
+				"yeah",
+				"yep",
+				"sure",
+				"okay"
+			]
+		},
+		{
+			"name": "NoIntent",
+			"alexa": {
+				"name": "AMAZON.NoIntent"
+			},
+			"phrases": [
+				"no",
+				"nope",
+				"na"
+			]
+		},
+		{
+			"name": "RepeatIntent",
+			"alexa": {
+				"name": "AMAZON.RepeatIntent"
+			},
+			"phrases": [
+				"can you repeat that",
+				"repeat that",
+				"please repeat",
+				"what",
+				"say that again",
+				"repeat"
+			]
+		}
+	],
+	"alexa": {
+		"interactionModel": {
+			"languageModel": {
+				"intents": []
+			}
+		}
+	},
+	"dialogflow": {
+		"intents": [
+			{
+				"name": "Default Fallback Intent",
+				"auto": true,
+				"webhookUsed": true,
+				"fallbackIntent": true
+			},
+			{
+				"name": "Default Welcome Intent",
+				"auto": true,
+				"webhookUsed": true,
+				"events": [
+					{
+						"name": "WELCOME"
+					}
+				]
+			}
+		]
+	}
+}
