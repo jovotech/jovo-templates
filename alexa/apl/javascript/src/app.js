@@ -27,7 +27,7 @@ app.setHandler({
         this.$alexaSkill.addDirective({
             type: 'Alexa.Presentation.APL.RenderDocument',
             version: '1.0',
-            document: require(`alexa/apl/javascript/src/apl/main`), // Plain "Hello World" template
+            document: require(`./apl/main`), // Plain "Hello World" template
             datasources: {},
         });
     },

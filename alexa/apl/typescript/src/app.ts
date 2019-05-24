@@ -2,7 +2,7 @@ import {App} from 'jovo-framework';
 import {Alexa} from 'jovo-platform-alexa';
 import {JovoDebugger} from 'jovo-plugin-debugger';
 import {FileDb} from 'jovo-db-filedb';
-
+import {main} from './apl';
 // ------------------------------------------------------------------
 // APP INITIALIZATION
 // ------------------------------------------------------------------
@@ -26,21 +26,23 @@ app.setHandler({
             this.$alexaSkill!.addDirective({
                 type: 'Alexa.Presentation.APL.RenderDocument',
                 version: '1.0',
-                document: require(`alexa/apl/javascript/src/apl/main`), // Plain "Hello World" template
+                document: main, // Plain "Hello World" template
                 datasources: {},
             });
         }
     },
     ShowTemplateIntent() {
-        let template = this.$inputs.template;
+        const template = this.$inputs.template;
 
         if (this.isAlexaSkill()) {
             // Retrieve document and data from folder
             this.$alexaSkill!.addDirective({
                 type: 'Alexa.Presentation.APL.RenderDocument',
                 version: '1.0',
-                document: require(`./apl/${template.id}/document.json`),
-                datasources: require(`./apl/${template.id}/data-sources.json`),
+                // document: require(`./apl/${template.id}/document.json`),
+                document: () => import(`./apl/${template.id}/document.json`),
+                // datasources: require(`./apl/${template.id}/data-sources.json`),
+                datasources: () => import(`./apl/${template.id}/data-sources.json`),
             });
         }
     },
