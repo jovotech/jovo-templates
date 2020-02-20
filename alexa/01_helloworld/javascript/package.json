@@ -4,11 +4,10 @@
   "description": "A sample voice app that works with the Jovo Framework",
   "main": "src/index.js",
   "dependencies": {
-    "jovo-db-filedb": "^2.2.18",
-    "jovo-framework": "^2.2.25",
-    "jovo-platform-alexa": "^2.2.28",
-    "jovo-plugin-debugger": "^2.2.20",
-    "npm-check-updates": "^4.0.1"
+    "jovo-db-filedb": "^3.0.0",
+    "jovo-framework": "^3.0.0",
+    "jovo-platform-alexa": "^3.0.0",
+    "jovo-plugin-debugger": "^3.0.0"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
