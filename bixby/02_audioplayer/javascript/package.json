@@ -7,6 +7,7 @@
     "jovo-db-filedb": "^3.0.0",
     "jovo-framework": "^3.0.5",
     "jovo-platform-alexa": "^3.0.0",
+    "jovo-platform-bixby": "^3.0.6",
     "jovo-platform-googleassistant": "^3.0.0",
     "jovo-plugin-debugger": "^3.0.0"
   },
