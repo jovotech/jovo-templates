@@ -1,6 +1,6 @@
 {
   "name": "jovo-template-amazon-pay-js",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "A sample voice app that works with the Jovo Framework",
   "main": "src/index.js",
   "scripts": {
@@ -20,10 +20,10 @@
   "author": "Jovo",
   "license": "Apache-2.0",
   "dependencies": {
-    "jovo-db-filedb": "^2.2.18",
-    "jovo-framework": "^2.2.25",
-    "jovo-platform-alexa": "^2.2.28",
-    "jovo-plugin-debugger": "^2.2.20"
+    "jovo-db-filedb": "^3.0.6",
+    "jovo-framework": "^3.0.6",
+    "jovo-platform-alexa": "^3.0.6",
+    "jovo-plugin-debugger": "^3.0.6"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
