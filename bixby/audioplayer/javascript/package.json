@@ -4,12 +4,12 @@
   "description": "A sample voice app that works with the Jovo Framework",
   "main": "src/index.js",
   "dependencies": {
-    "jovo-db-filedb": "^3.0.0",
-    "jovo-framework": "^3.0.5",
-    "jovo-platform-alexa": "^3.0.0",
-    "jovo-platform-bixby": "^3.0.6",
-    "jovo-platform-googleassistant": "^3.0.0",
-    "jovo-plugin-debugger": "^3.0.0"
+    "jovo-db-filedb": "^3.0.6",
+    "jovo-framework": "^3.0.6",
+    "jovo-platform-alexa": "^3.0.6",
+    "jovo-platform-bixby": "^3.0.7",
+    "jovo-platform-googleassistant": "^3.0.6",
+    "jovo-plugin-debugger": "^3.0.6"
   },
   "devDependencies": {
     "gulp": "^4.0.0",
@@ -29,7 +29,7 @@
     "type": "git",
     "url": "git+https://github.com/jovotech/jovo-sample-voice-app-nodejs.git"
   },
-  "author": "Jovo",
+  "author": "jovotech",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/jovotech/jovo-sample-voice-app-nodejs/issues"
