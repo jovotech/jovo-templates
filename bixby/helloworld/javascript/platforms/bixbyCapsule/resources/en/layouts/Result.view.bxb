@@ -1,0 +1,9 @@
+result-view {
+  match {
+    JovoResponse (response)
+  }
+
+  message {
+    template("#{value (response._JOVO_SPEECH_)}")
+  }
+}
