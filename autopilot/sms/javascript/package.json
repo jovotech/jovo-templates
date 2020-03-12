@@ -1,0 +1,40 @@
+{
+  "name": "jovo-sample-voice-app-nodejs",
+  "version": "3.0.0",
+  "description": "A sample voice app that works with the Jovo Framework",
+  "main": "src/index.js",
+  "dependencies": {
+    "jovo-db-filedb": "^3.0.0",
+    "jovo-framework": "^3.0.0",
+    "jovo-platform-twilioautopilot": "^3.0.0",
+    "jovo-plugin-debugger": "^3.0.0",
+    "twilio": "^3.40.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-install": "^1.1.0",
+    "gulp-run-command": "0.0.10",
+    "gulp-zip": "^5.0.1",
+    "jest": "^24.9.0"
+  },
+  "scripts": {
+    "tsc": "node -v",
+    "test": "jest",
+    "bundle": "gulp --gulpfile node_modules/jovo-framework/gulpfile.js --cwd ./",
+    "start": "cd src && node index.js --webhook",
+    "launch": "npm start -- --launch"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jovotech/jovo-sample-voice-app-nodejs.git"
+  },
+  "author": "Jovo",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/jovotech/jovo-sample-voice-app-nodejs/issues"
+  },
+  "homepage": "https://github.com/jovotech/jovo-sample-voice-app-nodejs#readme"
+}
