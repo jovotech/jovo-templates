@@ -1,0 +1,64 @@
+{
+  "invocation": "my test app",
+  "intents": [
+    {
+      "name": "YesIntent",
+      "phrases": [
+        "yes",
+        "yeah",
+        "ok",
+        "sure",
+        "yep"
+      ]
+    },
+    {
+      "name": "NoIntent",
+      "phrases": [
+        "no",
+        "nope",
+        "na",
+        "don't"
+      ]
+    }
+  ],
+  "alexa": {
+    "interactionModel": {
+      "languageModel": {
+        "intents": [
+          {
+            "name": "AMAZON.CancelIntent",
+            "samples": []
+          },
+          {
+            "name": "AMAZON.HelpIntent",
+            "samples": []
+          },
+          {
+            "name": "AMAZON.StopIntent",
+            "samples": []
+          }
+        ]
+      }
+    }
+  },
+  "dialogflow": {
+		"intents": [
+			{
+				"name": "Default Fallback Intent",
+				"auto": true,
+				"webhookUsed": true,
+				"fallbackIntent": true
+			},
+			{
+				"name": "Default Welcome Intent",
+				"auto": true,
+				"webhookUsed": true,
+				"events": [
+					{
+						"name": "WELCOME"
+					}
+				]
+			}
+		]
+	}
+}
