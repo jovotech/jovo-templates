@@ -110,7 +110,7 @@ export function handleSetupResponse(jovo: Jovo) {
  * Returns true if we can ship to the user's address
  * @param {BuyerAddress} address 
  */
-export function canShipToUser(address: BuyerAddress): boolean {
+export function canShipToUser(address?: BuyerAddress): boolean {
   // We can't provide a universal implementation here since it's different for every project.
   // You should check whether you can even ship to the user before you make an offer.
 
