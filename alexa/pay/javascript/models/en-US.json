@@ -1,0 +1,91 @@
+{
+  "invocation": "my test app",
+  "intents": [
+    {
+      "name": "CancelOrderIntent",
+      "phrases": [
+        "cancel my order",
+        "i want to cancel my order",
+        "i would like to cancel my order",
+        "please cancel my order",
+        "cancel order",
+        "cancel the order",
+        "cancel the previous order"
+      ]
+    },
+    {
+      "name": "RefundOrderIntent",
+      "phrases": [
+        "refund my order",
+        "request a refund",
+        "I would like to get a refund",
+        "refund the previous order"
+      ]
+    },
+    {
+      "name": "YesIntent",
+      "phrases": [
+        "yes",
+        "yep",
+        "ok",
+        "yeah"
+      ],
+      "alexa": {
+        "name": "AMAZON.YesIntent",
+        "samples": []
+      }
+    },
+    {
+      "name": "NoIntent",
+      "phrases": [
+        "no",
+        "nope",
+        "na"
+      ],
+      "alexa": {
+        "name": "AMAZON.NoIntent",
+        "samples": []
+      }
+    }
+  ],
+  "alexa": {
+    "interactionModel": {
+      "languageModel": {
+        "intents": [
+          {
+            "name": "AMAZON.CancelIntent",
+            "samples": []
+          },
+          {
+            "name": "AMAZON.HelpIntent",
+            "samples": []
+          },
+          {
+            "name": "AMAZON.StopIntent",
+            "samples": []
+          }
+        ]
+      }
+    }
+  },
+  "dialogflow": {
+    "intents": [
+      {
+        "name": "Default Fallback Intent",
+        "auto": true,
+        "webhookUsed": true,
+        "fallbackIntent": true
+      },
+      {
+        "name": "Default Welcome Intent",
+        "auto": true,
+        "webhookUsed": true,
+        "events": [
+          {
+            "name": "WELCOME"
+          }
+        ]
+      }
+    ]
+  }
+}
