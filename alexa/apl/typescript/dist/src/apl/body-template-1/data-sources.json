@@ -1,0 +1,33 @@
+{
+    "bodyTemplate1Data": {
+        "type": "object",
+        "objectId": "bt1Sample",
+        "backgroundImage": {
+            "contentDescription": null,
+            "smallSourceUrl": null,
+            "largeSourceUrl": null,
+            "sources": [
+                {
+                    "url": "https://d2o906d8ln7ui1.cloudfront.net/images/BT1_Background.png",
+                    "size": "small",
+                    "widthPixels": 0,
+                    "heightPixels": 0
+                },
+                {
+                    "url": "https://d2o906d8ln7ui1.cloudfront.net/images/BT1_Background.png",
+                    "size": "large",
+                    "widthPixels": 0,
+                    "heightPixels": 0
+                }
+            ]
+        },
+        "title": "Did You Know?",
+        "textContent": {
+            "primaryText": {
+                "type": "PlainText",
+                "text": "But in reality, mice prefer grains, fruits, and manmade foods that are high in sugar, and tend to turn up their noses at very smelly foods, like cheese. In fact, a 2006 study found that mice actively avoid cheese and dairy in general."
+            }
+        },
+        "logoUrl": "https://d2o906d8ln7ui1.cloudfront.net/images/cheeseskillicon.png"
+    }
+}

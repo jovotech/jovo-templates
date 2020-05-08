@@ -15,7 +15,7 @@ for (const p of [new GoogleAssistant()]) {
 
             expect(
                 responseLaunchRequest.isAsk('How do you like my new song?', 'How do you like my new song?'),
-            ).toBe(true);
+            ).toBeTruthy()
 
             await conversation.clearDb();
         });

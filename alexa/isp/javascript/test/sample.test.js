@@ -18,7 +18,7 @@ for (const p of [new Alexa()]) {
                 responseLaunchRequest.isAsk(
                     'You can buy an item saying: buy "product name", or refund an item saying: refund "product name". What would you like to do?',
                     'You can buy an item saying: buy "product name", or refund an item saying: refund "product name". What would you like to do?'),
-            ).toBe(true);
+            ).toBeTruthy()
 
             await conversation.clearDb();
         });

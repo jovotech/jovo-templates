@@ -15,7 +15,7 @@ for (const p of [new Autopilot()]) {
             const responseLaunchRequest = await conversation.send(launchRequest);
             expect(
                 responseLaunchRequest.isAsk('Hello World! What\'s your name?'),
-            ).toBe(true);
+            ).toBeTruthy()
 
         });
     });

@@ -6,8 +6,8 @@
   "dependencies": {
     "jovo-db-filedb": "^3.0.0",
     "jovo-framework": "^3.0.0",
-    "jovo-platform-alexa":"^3.0.0",
-    "jovo-plugin-debugger":"^3.0.0"
+    "jovo-platform-alexa": "^3.0.0",
+    "jovo-plugin-debugger": "^3.0.0"
   },
   "devDependencies": {
     "gulp": "^4.0.0",

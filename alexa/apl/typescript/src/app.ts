@@ -1,8 +1,8 @@
-import {App} from 'jovo-framework';
-import {Alexa} from 'jovo-platform-alexa';
-import {JovoDebugger} from 'jovo-plugin-debugger';
-import {FileDb} from 'jovo-db-filedb';
-import {main} from './apl';
+import { App } from 'jovo-framework';
+import { Alexa } from 'jovo-platform-alexa';
+import { JovoDebugger } from 'jovo-plugin-debugger';
+import { FileDb } from 'jovo-db-filedb';
+
 // ------------------------------------------------------------------
 // APP INITIALIZATION
 // ------------------------------------------------------------------
@@ -10,43 +10,41 @@ import {main} from './apl';
 const app = new App();
 
 app.use(
-    new Alexa(),
-    new JovoDebugger(),
-    new FileDb(),
+  new Alexa(), 
+  new JovoDebugger(), 
+  new FileDb(),
 );
-
 
 // ------------------------------------------------------------------
 // APP LOGIC
 // ------------------------------------------------------------------
 
 app.setHandler({
-    LAUNCH() {
-        if (this.isAlexaSkill()) {
-            this.$alexaSkill!.addDirective({
-                type: 'Alexa.Presentation.APL.RenderDocument',
-                version: '1.0',
-                document: main, // Plain "Hello World" template
-                datasources: {},
-            });
-        }
-    },
-    ShowTemplateIntent() {
-        const template = this.$inputs.template;
+  LAUNCH() {
+    const document = require('./apl/main.json');
 
-        if (this.isAlexaSkill()) {
-            // Retrieve document and data from folder
-            this.$alexaSkill!.addDirective({
-                type: 'Alexa.Presentation.APL.RenderDocument',
-                version: '1.0',
-                // document: require(`./apl/${template.id}/document.json`),
-                document: () => import(`./apl/${template.id}/document.json`),
-                // datasources: require(`./apl/${template.id}/data-sources.json`),
-                datasources: () => import(`./apl/${template.id}/data-sources.json`),
-            });
-        }
-    },
+		this.$alexaSkill!.addDirective({
+			type: 'Alexa.Presentation.APL.RenderDocument',
+			version: '1.0',
+			document: document, // Insert plain "Hello World" template.
+			datasources: {},
+		});
+	},
+
+	ShowTemplateIntent() {
+    // ToDo: IDs not working in Jovo Debugger?
+		const template = this.$inputs.template;
+		// Retrieve document and datasources from respective folder.
+		const document = require(`./apl/${template.id}/document.json`);
+		const dataSources = require(`./apl/${template.id}/data-sources.json`);
+
+		this.$alexaSkill!.addDirective({
+			type: 'Alexa.Presentation.APL.RenderDocument',
+			version: '1.0',
+			document: document,
+			datasources: dataSources,
+		});
+	},
 });
 
-
-export {app};
+export { app };

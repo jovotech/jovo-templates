@@ -16,7 +16,7 @@ for (const p of [new Alexa()]) {
 
             expect(
                 responseLaunchRequest.isAsk('Where are you flying to?', 'Where are you flying to?'),
-            ).toBe(true);
+            ).toBeTruthy()
 
             await conversation.clearDb();
         });

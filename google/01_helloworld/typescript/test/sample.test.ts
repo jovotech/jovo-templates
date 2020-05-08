@@ -13,7 +13,7 @@ for (const p of [new GoogleAssistant()]) {
             const responseLaunchRequest = await conversation.send(launchRequest);
             expect(
                 responseLaunchRequest.isAsk('Hello World! What\'s your name?', 'Please tell me your name.'),
-            ).toBe(true);
+            ).toBeTruthy()
 
         });
     });

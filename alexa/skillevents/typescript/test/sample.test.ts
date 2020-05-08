@@ -14,7 +14,7 @@ for (const p of [new Alexa()]) {
 
             expect(
                 responseLaunchRequest.isAsk('Hello World! What\'s your name?', 'Please tell me your name.'),
-            ).toBe(true);
+            ).toBeTruthy()
 
             await conversation.clearDb();
         });

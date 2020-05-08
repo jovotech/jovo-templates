@@ -25,7 +25,7 @@ for (const p of [new Alexa(), new GoogleAssistant()]) {
                     ],
                     'Please answer with \'true\' or \'false\'! ',
                 ),
-            ).toBe(true);
+            ).toBeTruthy()
 
             await conversation.clearDb();
         });

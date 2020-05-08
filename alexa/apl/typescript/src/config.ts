@@ -3,17 +3,17 @@
 // ------------------------------------------------------------------
 
 const config = {
-    logging: true,
+	logging: true,
 
-    intentMap: {
-        'AMAZON.StopIntent': 'END',
-    },
+	intentMap: {
+		'AMAZON.StopIntent': 'END',
+	},
 
-    db: {
-        FileDb: {
-            pathToFile: './../../db/db.json',
-        },
-    },
+	db: {
+		FileDb: {
+			pathToFile: './../../db/db.json',
+		},
+	},
 };
 
 export = config;
