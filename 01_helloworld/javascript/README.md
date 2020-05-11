@@ -1,13 +1,4 @@
-[![Jovo Framework](https://www.jovo.tech/img/github-logo.png)](https://www.jovo.tech)
-
-<p align="center">Templates for the <a href="https://github.com/jovotech/jovo-framework-nodejs">Jovo Framework</a> ⭐️</p>
-
-<p align="center">
-<a href="https://www.jovo.tech/framework/docs/"><strong>Documentation</strong></a> -
-<a href="https://github.com/jovotech/jovo-cli"><strong>CLI </strong></a> - <a href="https://github.com/jovotech/jovo-framework-nodejs/blob/master/CONTRIBUTING.md"><strong>Contributing</strong></a> - <a href="https://twitter.com/jovotech"><strong>Twitter</strong></a></p>
-<br/>
-
-# Template: Hello World
+# Jovo Template: Hello World
 
 This template contains a Jovo Sample Voice App with a simple "Hello World!" greeting, asking for the user's name and returning a personalised message. This is the default template for the `jovo new` command.
 
@@ -42,6 +33,8 @@ $ jovo run [-w]
 
 > Read more about `jovo run` [here](https://www.jovo.tech/marketplace/jovo-cli#jovo-run).
 
+If you now go to the [Jovo Debugger](https://www.jovo.tech/marketplace/jovo-plugin-debugger) by pressing `.` or clicking on the webhook url in the terminal, you can test your voice application right away.
+
 ![Debugger Example](./debugger.gif)
 
 ## Next Steps
@@ -53,3 +46,9 @@ To see what else you can do with the Jovo Framework, take a look at the [Jovo Do
 ## About Jovo
 
 Jovo is the most popular development framework for voice, including platforms like Alexa, Google Assistant, mobile apps, and Raspberry Pi.
+
+-   [Jovo Website](https://jovo.tech/)
+-   [Documentation](https://jovo.tech/docs/)
+-   [Marketplace](https://www.jovo.tech/marketplace/)
+-   [Twitter](https://twitter.com/jovotech/)
+-   [Forum](https://community.jovo.tech/)
