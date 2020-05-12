@@ -1,3 +1,6 @@
+import * as enUsTranslationFile from './i18n/en-US.json';
+import * as deDeTranslationFile from './i18n/de-DE.json';
+
 // ------------------------------------------------------------------
 // APP CONFIGURATION
 // ------------------------------------------------------------------
@@ -17,6 +20,13 @@ const config = {
 	db: {
 		FileDb: {
 			pathToFile: './../../db/db.json',
+		},
+	},
+
+	i18n: {
+		resources: {
+			'en-US': enUsTranslationFile,
+			'de-DE': deDeTranslationFile,
 		},
 	},
 };

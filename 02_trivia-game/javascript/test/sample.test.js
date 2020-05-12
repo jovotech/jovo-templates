@@ -15,11 +15,13 @@ for (const p of [new Alexa(), new GoogleAssistant()]) {
 			const launchRequest = await testSuite.requestBuilder.launch();
 			const response = await conversation.send(launchRequest);
 
-			let speech =
+			const speech =
 				'Welcome to Jovo Trivia. I will ask you 5 questions, try to get as many right as you can. ' +
 				'Just say the number of the answer. Are you ready?';
 
-			expect(response.isAsk(speech, speech)).toBeTruthy();
+			const reprompt = 'Would you like to start playing?';
+
+			expect(response.isAsk(speech, reprompt)).toBeTruthy();
 
 			await conversation.clearDb();
 		});
