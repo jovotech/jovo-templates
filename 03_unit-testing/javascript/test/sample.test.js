@@ -30,8 +30,8 @@ for (const p of [new Alexa(), new GoogleAssistant()]) {
 
 			const response = await conversation.send(intentRequest);
 			const isAsk = response.isAsk("Hello World! What's your name?", 'Please tell me your name.');
-      expect(isAsk).toBeTruthy();
-      
+			expect(isAsk).toBeTruthy();
+
 			await conversation.clearDb();
 		});
 

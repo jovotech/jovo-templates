@@ -1,8 +1,8 @@
 import { App } from 'jovo-framework';
 import { Alexa } from 'jovo-platform-alexa';
+import { GoogleAssistant } from 'jovo-platform-googleassistant';
 import { JovoDebugger } from 'jovo-plugin-debugger';
 import { FileDb } from 'jovo-db-filedb';
-import { GoogleAssistant } from 'jovo-platform-googleassistant';
 
 // ------------------------------------------------------------------
 // APP INITIALIZATION
