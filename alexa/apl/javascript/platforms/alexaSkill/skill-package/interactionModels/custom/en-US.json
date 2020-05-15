@@ -1,0 +1,81 @@
+{
+	"interactionModel": {
+		"languageModel": {
+			"invocationName": "my a. p. l. test",
+			"types": [
+				{
+					"name": "DisplayTemplate",
+					"values": [
+						{
+							"id": "list-template-2",
+							"name": {
+								"value": "list template two"
+							}
+						},
+						{
+							"id": "list-template-1",
+							"name": {
+								"value": "list template one"
+							}
+						},
+						{
+							"id": "body-template-6",
+							"name": {
+								"value": "body template six"
+							}
+						},
+						{
+							"id": "body-template-3",
+							"name": {
+								"value": "body template three"
+							}
+						},
+						{
+							"id": "body-template-2",
+							"name": {
+								"value": "body template two"
+							}
+						},
+						{
+							"id": "body-template-1",
+							"name": {
+								"value": "body template one"
+							}
+						}
+					]
+				}
+			],
+			"intents": [
+				{
+					"name": "ShowTemplateIntent",
+					"samples": [
+						"{template}",
+						"show {template}"
+					],
+					"slots": [
+						{
+							"name": "template",
+							"type": "DisplayTemplate"
+						}
+					]
+				},
+				{
+					"name": "AMAZON.CancelIntent",
+					"samples": []
+				},
+				{
+					"name": "AMAZON.HelpIntent",
+					"samples": []
+				},
+				{
+					"name": "AMAZON.StopIntent",
+					"samples": []
+				},
+				{
+					"name": "AMAZON.NavigateHomeIntent",
+					"samples": []
+				}
+			]
+		}
+	}
+}

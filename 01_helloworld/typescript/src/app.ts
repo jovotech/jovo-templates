@@ -10,6 +10,7 @@ import { GoogleAssistant } from 'jovo-platform-googleassistant';
 
 const app = new App();
 
+// prettier-ignore
 app.use(
   new Alexa(),
   new GoogleAssistant(),
@@ -17,23 +18,22 @@ app.use(
   new FileDb(),
 );
 
-
 // ------------------------------------------------------------------
 // APP LOGIC
 // ------------------------------------------------------------------
 
 app.setHandler({
-	LAUNCH() {
-		return this.toIntent('HelloWorldIntent');
-	},
+  LAUNCH() {
+    return this.toIntent('HelloWorldIntent');
+  },
 
-	HelloWorldIntent() {
-		this.ask("Hello World! What's your name?", 'Please tell me your name.');
-	},
+  HelloWorldIntent() {
+    this.ask("Hello World! What's your name?", 'Please tell me your name.');
+  },
 
-	MyNameIsIntent() {
-		this.tell('Hey ' + this.$inputs.name.value + ', nice to meet you!');
-	},
+  MyNameIsIntent() {
+    this.tell('Hey ' + this.$inputs.name.value + ', nice to meet you!');
+  },
 });
 
 export { app };

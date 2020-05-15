@@ -1,98 +1,55 @@
-[![Jovo Framework](https://www.jovo.tech/img/github-logo.png)](https://www.jovo.tech)
+# Jovo Template: Unit Testing
 
-<p align="center">Templates for the <a href="https://github.com/jovotech/jovo-framework-nodejs">Jovo Framework</a> ⭐️</p>
+This template contains a Jovo Sample Unit Testing Voice App in TypeScript with some sample unit tests that work for both Alexa Skills and Google Actions. You can find them in `sample-tests.js` file in the `test/` folder.
 
-<p align="center">
-<a href="https://www.jovo.tech/docs/"><strong>Documentation</strong></a> -
-<a href="https://github.com/jovotech/jovo-cli"><strong>CLI </strong></a> - <a href="https://github.com/jovotech/jovo-framework-nodejs/blob/master/.github/CONTRIBUTING.md"><strong>Contributing</strong></a> - <a href="https://twitter.com/jovotech"><strong>Twitter</strong></a></p>
-<br/>
+## Quick Start
 
-# Template: Unit Testing
-
-This template comes with some sample unit tests that work for both Alexa Skills and Google Actions. You can find them in `sample-tests.js` file in the `test` folder.
+To use the Jovo Templates, you'll need the Jovo CLI. You can install it globally with NPM.
 
 ```sh
-$ jovo new <directory> --template unit-testing
-
-## Short version
-$ jovo new <directory> -t unit-testing
+$ npm install -g jovo-cli
 ```
 
-## Setup
-
-After downloading the template, go into the project's root directory and run the Jovo development server. You can then run the tests in a new tab.
+After successfully installing the Jovo CLI, you can install the template using one of the following commands:
 
 ```sh
-# Run development server
-$ jovo run
+$ jovo new <directory> --template unit-testing --language typescript
+```
 
-## In a new tab, run the mocha npm script
+> Read more about `jovo new` [here](https://www.jovo.tech/marketplace/jovo-cli#jovo-new).
+
+Change your working directory into your newly created project directory and run your voice app:
+
+```sh
+# Change working directory to your previously specified directory.
+$ cd <directory>
+
+# Run voice app, optionally with a --watch flag to restart on code changes.
+$ jovo run [-w]
+```
+
+> Read more about `jovo run` [here](https://www.jovo.tech/marketplace/jovo-cli#jovo-run).
+
+Now that your voice app is running, open another terminal inside your project folder and run the unit tests:
+
+```sh
 $ npm test
 ```
 
-Initially, there should be two tests that fail.
-If you then go into the `app/app.js` and remove the comments around the `"Unhandled"` intent block, it should work.
+![Debugger Example](../img/debugger.gif)
 
-Just change this:
+## Next Steps
 
-```javascript
-app.setHandler({
-    LAUNCH() {
-        return this.toIntent('HelloWorldIntent');
-    },
+Now that you got the template running on the Jovo Debugger, it is time to deploy your voice app! You can find a tutorial for building a complete Alexa skill [here](https://www.jovo.tech/tutorials/alexa-skill-tutorial-nodejs).
 
-    HelloWorldIntent() {
-        this.followUpState('IntroductionState')
-            .ask('Hello World! What\'s your name?', 'Please tell me your name.');
-    },
+To see what else you can do with the Jovo Framework, take a look at the [Jovo Documentation](https://www.jovo.tech/docs/).
 
-    IntroductionState: {
-        MyNameIsIntent() {
+## About Jovo
 
-            return this.toStatelessIntent('MyNameIsIntent');
-        },
+Jovo is the most popular development framework for voice, including platforms like Alexa, Google Assistant, mobile apps, and Raspberry Pi.
 
-        // Test fails if this is commented out
-        Unhandled() {
-            this.ask('What\'s your name?');
-        },
-    },
-
-    MyNameIsIntent() {
-        this.tell('Hey ' + this.$inputs.name.value + ', nice to meet you!');
-    },
-
-});
-```
-
-To that:
-
-```javascript
-app.setHandler({
-    LAUNCH() {
-        return this.toIntent('HelloWorldIntent');
-    },
-
-    HelloWorldIntent() {
-        this.followUpState('IntroductionState')
-            .ask('Hello World! What\'s your name?', 'Please tell me your name.');
-    },
-
-    IntroductionState: {
-        MyNameIsIntent() {
-
-            return this.toStatelessIntent('MyNameIsIntent');
-        },
-
-        // // Test fails if this is commented out
-        // Unhandled() {
-        //     this.ask('What\'s your name?');
-        // },
-    },
-
-    MyNameIsIntent() {
-        this.tell('Hey ' + this.$inputs.name.value + ', nice to meet you!');
-    },
-
-});
-```
+-   [Jovo Website](https://jovo.tech/)
+-   [Documentation](https://jovo.tech/docs/)
+-   [Marketplace](https://www.jovo.tech/marketplace/)
+-   [Twitter](https://twitter.com/jovotech/)
+-   [Forum](https://community.jovo.tech/)

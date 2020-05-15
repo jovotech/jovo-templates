@@ -11,6 +11,7 @@ const { FileDb } = require('jovo-db-filedb');
 
 const app = new App();
 
+// prettier-ignore
 app.use(
   new Alexa(), 
   new JovoDebugger(), 
@@ -22,31 +23,30 @@ app.use(
 // ------------------------------------------------------------------
 
 app.setHandler({
-	LAUNCH() {
+  LAUNCH() {
     const document = require(`./apl/main`);
-    
-		this.$alexaSkill.addDirective({
-			type: 'Alexa.Presentation.APL.RenderDocument',
-			version: '1.0',
-			document: document, // Insert plain "Hello World" template.
-			datasources: {},
-		});
+
+    this.$alexaSkill.addDirective({
+      type: 'Alexa.Presentation.APL.RenderDocument',
+      version: '1.0',
+      document: document, // Insert plain "Hello World" template.
+      datasources: {},
+    });
   },
-  
-	ShowTemplateIntent() {
-		const template = this.$inputs.template;
+
+  ShowTemplateIntent() {
+    const template = this.$inputs.template;
     // Retrieve document and datasources from respective folder.
     const document = require(`./apl/${template.id}/document.json`);
     const dataSources = require(`./apl/${template.id}/data-sources.json`);
 
-		
-		this.$alexaSkill.addDirective({
-			type: 'Alexa.Presentation.APL.RenderDocument',
-			version: '1.0',
-			document: document,
-			datasources: dataSources,
-		});
-	},
+    this.$alexaSkill.addDirective({
+      type: 'Alexa.Presentation.APL.RenderDocument',
+      version: '1.0',
+      document: document,
+      datasources: dataSources,
+    });
+  },
 });
 
 module.exports = { app };

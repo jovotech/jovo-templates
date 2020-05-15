@@ -6,29 +6,29 @@ import * as deDeTranslationFile from './i18n/de-DE.json';
 // ------------------------------------------------------------------
 
 const config = {
-	logging: true,
+  logging: true,
 
-	intentMap: {
-		'AMAZON.YesIntent': 'YesIntent',
-		'AMAZON.NoIntent': 'NoIntent',
-		'AMAZON.RepeatIntent': 'RepeatIntent',
-		'AMAZON.StopIntent': 'StopIntent',
-		'AMAZON.HelpIntent': 'HelpIntent',
-		'AMAZON.CancelIntent': 'CancelIntent',
-	},
+  intentMap: {
+    'AMAZON.YesIntent': 'YesIntent',
+    'AMAZON.NoIntent': 'NoIntent',
+    'AMAZON.RepeatIntent': 'RepeatIntent',
+    'AMAZON.StopIntent': 'StopIntent',
+    'AMAZON.HelpIntent': 'HelpIntent',
+    'AMAZON.CancelIntent': 'CancelIntent',
+  },
 
-	db: {
-		FileDb: {
-			pathToFile: './../../db/db.json',
-		},
-	},
+  db: {
+    FileDb: {
+      pathToFile: './../../db/db.json',
+    },
+  },
 
-	i18n: {
-		resources: {
-			'en-US': enUsTranslationFile,
-			'de-DE': deDeTranslationFile,
-		},
-	},
+  i18n: {
+    resources: {
+      'en-US': enUsTranslationFile,
+      'de-DE': deDeTranslationFile,
+    },
+  },
 };
 
 export = config;

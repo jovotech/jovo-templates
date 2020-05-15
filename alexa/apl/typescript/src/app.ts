@@ -9,6 +9,7 @@ import { FileDb } from 'jovo-db-filedb';
 
 const app = new App();
 
+// prettier-ignore
 app.use(
   new Alexa(), 
   new JovoDebugger(), 
@@ -23,28 +24,28 @@ app.setHandler({
   LAUNCH() {
     const document = require('./apl/main.json');
 
-		this.$alexaSkill!.addDirective({
-			type: 'Alexa.Presentation.APL.RenderDocument',
-			version: '1.0',
-			document: document, // Insert plain "Hello World" template.
-			datasources: {},
-		});
-	},
+    this.$alexaSkill!.addDirective({
+      type: 'Alexa.Presentation.APL.RenderDocument',
+      version: '1.0',
+      document: document, // Insert plain "Hello World" template.
+      datasources: {},
+    });
+  },
 
-	ShowTemplateIntent() {
+  ShowTemplateIntent() {
     // ToDo: IDs not working in Jovo Debugger?
-		const template = this.$inputs.template;
-		// Retrieve document and datasources from respective folder.
-		const document = require(`./apl/${template.id}/document.json`);
-		const dataSources = require(`./apl/${template.id}/data-sources.json`);
+    const template = this.$inputs.template;
+    // Retrieve document and datasources from respective folder.
+    const document = require(`./apl/${template.id}/document.json`);
+    const dataSources = require(`./apl/${template.id}/data-sources.json`);
 
-		this.$alexaSkill!.addDirective({
-			type: 'Alexa.Presentation.APL.RenderDocument',
-			version: '1.0',
-			document: document,
-			datasources: dataSources,
-		});
-	},
+    this.$alexaSkill!.addDirective({
+      type: 'Alexa.Presentation.APL.RenderDocument',
+      version: '1.0',
+      document: document,
+      datasources: dataSources,
+    });
+  },
 });
 
 export { app };

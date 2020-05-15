@@ -22,7 +22,7 @@
     "jest": "^26.0.1",
     "ts-jest": "^25.5.0",
     "tslint": "^6.1.2",
-    "typescript": "^3.3.4"
+    "typescript": "^3.9.2"
   },
   "scripts": {
     "test": "jest",

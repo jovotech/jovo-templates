@@ -11,6 +11,7 @@ const { FileDb } = require('jovo-db-filedb');
 
 const app = new App();
 
+// prettier-ignore
 app.use(
   new Alexa(), 
   new JovoDebugger(), 
@@ -22,17 +23,17 @@ app.use(
 // ------------------------------------------------------------------
 
 app.setHandler({
-	LAUNCH() {
-		return this.toIntent('HelloWorldIntent');
-	},
+  LAUNCH() {
+    return this.toIntent('HelloWorldIntent');
+  },
 
-	HelloWorldIntent() {
-		this.ask("Hello World! What's your name?", 'Please tell me your name.');
-	},
+  HelloWorldIntent() {
+    this.ask("Hello World! What's your name?", 'Please tell me your name.');
+  },
 
-	MyNameIsIntent() {
-		this.tell('Hey ' + this.$inputs.name.value + ', nice to meet you!');
-	},
+  MyNameIsIntent() {
+    this.tell('Hey ' + this.$inputs.name.value + ', nice to meet you!');
+  },
 });
 
 module.exports = { app };

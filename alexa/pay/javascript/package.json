@@ -20,16 +20,16 @@
   "author": "Jovo",
   "license": "Apache-2.0",
   "dependencies": {
-    "jovo-db-filedb": "^3.0.6",
-    "jovo-framework": "^3.0.6",
-    "jovo-platform-alexa": "^3.0.6",
-    "jovo-plugin-debugger": "^3.0.6"
+    "jovo-db-filedb": "^3.0.15",
+    "jovo-framework": "^3.0.16",
+    "jovo-platform-alexa": "^3.0.17",
+    "jovo-plugin-debugger": "^3.0.15"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-install": "^1.1.0",
     "gulp-run-command": "0.0.10",
     "gulp-zip": "^5.0.1",
-    "jest": "^24.9.0"
+    "jest": "^26.0.1"
   }
 }

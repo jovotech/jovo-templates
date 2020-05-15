@@ -1,9 +1,5 @@
 'use strict';
 
-// ------------------------------------------------------------------
-// APP INITIALIZATION
-// ------------------------------------------------------------------
-
 const { App } = require('jovo-framework');
 const { Alexa } = require('jovo-platform-alexa');
 const { JovoDebugger } = require('jovo-plugin-debugger');
@@ -11,14 +7,18 @@ const { FileDb } = require('jovo-db-filedb');
 
 const amazonPay = require('./amazonPay');
 
+// ------------------------------------------------------------------
+// APP INITIALIZATION
+// ------------------------------------------------------------------
+
 const app = new App();
 
+// prettier-ignore
 app.use(
   new Alexa(),
   new JovoDebugger(),
   new FileDb(),
 );
-
 
 // ------------------------------------------------------------------
 // APP LOGIC
@@ -29,14 +29,14 @@ app.setHandler({
     const options = {
       sellerId: 'YOUR SELLER ID', // TODO
       sandbox: true,
-      sandboxEmail: 'YOUR TEST ACCOUNT EMAIL' // TODO
+      sandboxEmail: 'YOUR TEST ACCOUNT EMAIL', // TODO
     };
 
     const response = await this.$alexaSkill.$user.getDefaultBuyerAddress(options);
     if (amazonPay.canShipToUser(response)) {
       return this.ask('Welcome to my store. Would you like to buy a t shirt for 19.99 Euro?');
     } else {
-      return this.tell('I\'m sorry, we don\'t ship to your location. Have a nice day.');
+      return this.tell("I'm sorry, we don't ship to your location. Have a nice day.");
     }
   },
 
@@ -46,7 +46,9 @@ app.setHandler({
   YesIntent() {
     if (this.$alexaSkill.isAmazonPayPermissionDenied()) {
       this.$alexaSkill.showAskForAmazonPayPermissionCard();
-      return this.tell('Please provide the permission to use Amazon Pay using the card I\'ve send to your Alexa app and restart the skill.');
+      return this.tell(
+        "Please provide the permission to use Amazon Pay using the card I've send to your Alexa app and restart the skill."
+      );
     } else {
       const setupDirective = {
         type: 'Connections.SendRequest',
@@ -68,13 +70,13 @@ app.setHandler({
               '@version': '2',
               storeName: 'Test store name',
               customInformation: 'Test custom information', // any kind of additional information you want to include
-            }
+            },
           },
           needAmazonShippingAddress: true,
           sandboxMode: true,
-          sandboxCustomerEmailId: 'YOUR TEST ACCOUNT EMAIL' // TODO
+          sandboxCustomerEmailId: 'YOUR TEST ACCOUNT EMAIL', // TODO
         },
-        token: 'token'
+        token: 'token',
       };
 
       return this.$alexaSkill.addDirective(setupDirective);
@@ -93,7 +95,9 @@ app.setHandler({
    */
   CancelOrderIntent() {
     this.showSimpleCard('Cancel Your Order', 'To cancel your order send an email to help@mail.com');
-    return this.tell('To cancel your order send an email to help at mail dot com with your order id. I\'ve send the details to your Alexa app');
+    return this.tell(
+      "To cancel your order send an email to help at mail dot com with your order id. I've send the details to your Alexa app"
+    );
   },
 
   /**
@@ -101,7 +105,9 @@ app.setHandler({
    */
   RefundOrderIntent() {
     this.showSimpleCard('Refund Your Order', 'To request a refund send an email to help@mail.com');
-    return this.tell('To request a refund send an email to help at mail dot com with your order id. I\'ve send the details to your Alexa app');
+    return this.tell(
+      "To request a refund send an email to help at mail dot com with your order id. I've send the details to your Alexa app"
+    );
   },
 
   /**
@@ -110,9 +116,11 @@ app.setHandler({
   ON_PURCHASE() {
     const request = this.$request.toJSON();
 
-    if (request.request.name === 'Setup') { // response to setup directive
+    if (request.request.name === 'Setup') {
+      // response to setup directive
       return amazonPay.handleSetupResponse(this);
-    } else if (request.request.name === 'Charge') { // response to charge directive
+    } else if (request.request.name === 'Charge') {
+      // response to charge directive
       return amazonPay.handleChargeResponse(this);
     } else {
       // In-Skill_Purchase responses are also routed to ON_PURCHASE.
@@ -121,5 +129,4 @@ app.setHandler({
   },
 });
 
-
-module.exports.app = app;
+module.exports = { app };

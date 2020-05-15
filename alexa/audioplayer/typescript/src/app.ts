@@ -9,6 +9,7 @@ import { FileDb } from 'jovo-db-filedb';
 
 const app = new App();
 
+// prettier-ignore
 app.use(
   new Alexa(), 
   new JovoDebugger(), 
@@ -22,55 +23,56 @@ app.use(
 const song = 'https://s3.amazonaws.com/jovo-songs/song1.mp3';
 
 app.setHandler({
-	LAUNCH() {
-		return this.toIntent('PlayIntent');
-	},
+  LAUNCH() {
+    return this.toIntent('PlayIntent');
+  },
 
-	PlayIntent() {
-		this.$alexaSkill!.$audioPlayer!
+  PlayIntent() {
+    // prettier-ignore
+    this.$alexaSkill!.$audioPlayer!
       .setOffsetInMilliseconds(0)
       .play(song, 'token')
       .tell('Hello World!');
-	},
+  },
 
-	PauseIntent() {
-		this.$alexaSkill!.$audioPlayer!.stop();
+  PauseIntent() {
+    this.$alexaSkill!.$audioPlayer!.stop();
 
-		// Save offset to database.
-		this.$user.$data.offset = this.$alexaSkill!.$audioPlayer!.getOffsetInMilliseconds();
-		this.tell('Paused!');
-	},
+    // Save offset to database.
+    this.$user.$data.offset = this.$alexaSkill!.$audioPlayer!.getOffsetInMilliseconds();
+    this.tell('Paused!');
+  },
 
-	ResumeIntent() {
-		this.$alexaSkill!.$audioPlayer!
-			.setOffsetInMilliseconds(this.$user.$data.offset)
-			.play(song, 'token')
-			.tell('Resuming!');
-	},
+  ResumeIntent() {
+	this.$alexaSkill!.$audioPlayer!
+	  .setOffsetInMilliseconds(this.$user.$data.offset)
+      .play(song, 'token')
+      .tell('Resuming!');
+  },
 
-	AUDIOPLAYER: {
-		'AlexaSkill.PlaybackStarted'() {
-			console.log('AlexaSkill.PlaybackStarted');
-		},
+  AUDIOPLAYER: {
+    'AlexaSkill.PlaybackStarted'() {
+      console.log('AlexaSkill.PlaybackStarted');
+    },
 
-		'AlexaSkill.PlaybackNearlyFinished'() {
-			console.log('AlexaSkill.PlaybackNearlyFinished');
-		},
+    'AlexaSkill.PlaybackNearlyFinished'() {
+      console.log('AlexaSkill.PlaybackNearlyFinished');
+    },
 
-		'AlexaSkill.PlaybackFinished'() {
+    'AlexaSkill.PlaybackFinished'() {
       console.log('AlexaSkill.PlaybackFinished');
-      
-			this.$alexaSkill!.$audioPlayer!.stop();
-		},
 
-		'AlexaSkill.PlaybackStopped'() {
-			console.log('AlexaSkill.PlaybackStopped');
-		},
+      this.$alexaSkill!.$audioPlayer!.stop();
+    },
 
-		'AlexaSkill.PlaybackFailed'() {
-			console.log('AlexaSkill.PlaybackFailed');
-		},
-	},
+    'AlexaSkill.PlaybackStopped'() {
+      console.log('AlexaSkill.PlaybackStopped');
+    },
+
+    'AlexaSkill.PlaybackFailed'() {
+      console.log('AlexaSkill.PlaybackFailed');
+    },
+  },
 });
 
 export { app };

@@ -35,11 +35,11 @@ $ jovo run [-w]
 
 If you now go to the [Jovo Debugger](https://www.jovo.tech/marketplace/jovo-plugin-debugger) by pressing `.` or clicking on the webhook url in the terminal, you can test your voice application right away.
 
-![Debugger Example](./debugger.gif)
+![Debugger Example](../img/debugger.gif)
 
 ## Next Steps
 
-Now that you got the template running on the Jovo Debugger, it is time to deploy your skill to the Alexa Skills Console. You can find a tutorial for building a complete skill [here](https://www.jovo.tech/tutorials/alexa-skill-tutorial-nodejs).
+Now that you got the template running on the Jovo Debugger, it is time to deploy your voice app! You can find a tutorial for building a complete Alexa skill [here](https://www.jovo.tech/tutorials/alexa-skill-tutorial-nodejs).
 
 To see what else you can do with the Jovo Framework, take a look at the [Jovo Documentation](https://www.jovo.tech/docs/).
 
