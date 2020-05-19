@@ -1,34 +1,62 @@
-[![Jovo Framework](https://www.jovo.tech/img/github-logo.png)](https://www.jovo.tech)
+# Jovo Template: i18n
 
-<p align="center">Templates for the <a href="https://github.com/jovotech/jovo-framework-nodejs">Jovo Framework</a> ⭐️</p>
+This template contains a Jovo Sample Voice App in TypeScript with a True-or-False-Quiz. It tells you different facts and you have to answer with "true" or "false". For every correct answer, you get a point, for every incorrect answer you lose one. Your total points will be saved and you can open the game again to collect more points.
 
-<p align="center">
-<a href="https://www.jovo.tech/framework/docs/"><strong>Documentation</strong></a> -
-<a href="https://github.com/jovotech/jovo-cli"><strong>CLI </strong></a> - <a href="https://github.com/jovotech/jovo-framework-nodejs/blob/master/CONTRIBUTING.md"><strong>Contributing</strong></a> - <a href="https://twitter.com/jovotech"><strong>Twitter</strong></a></p>
-<br/>
+---
 
-# Template: True-or-False Game
-## with i18n integration
+This project uses the Jovo i18n integration for supporting multiple languages. i18n works by separating the content (the text/speech) from the application logic. [Read more](https://www.jovo.tech/docs/v2/output/i18n#introduction-to-i18n "jovo docs i18n").
 
-Sample True-or-False Voice App
+## Quick Start
+
+To use the Jovo Templates, you'll need the Jovo CLI. You can install it globally with NPM.
 
 ```sh
-$ jovo new <directory> --template cms/i18n 
+$ npm install -g jovo-cli
 ```
 
-This project is a simple example for a True-or-False-Quiz.
-It tells you different facts and you have to answer with "true" or "false". For every correct answer, you get a point, for every incorrect answer you lose one. Your total points will be saved and you can open the game again to collect more points.
-___
+After successfully installing the Jovo CLI, you can install the template using one of the following commands:
 
-This project uses the jovo i18n integration for supporting multiple languages. 
-i18n works by separating the content (the text/speech) from the application logic. [Read more](https://www.jovo.tech/docs/v2/output/i18n#introduction-to-i18n "jovo docs i18n").
+```sh
+$ jovo new <directory>
 
-The speech responses are stored in the `/src/i18n/en.json` file. Add more languages through adding more json files like `en.json`, using the locale ID (e.g. `en-US.json`, `de-DE.json`, `en-GB.json`, etc.). `en.json` is for all english locale IDs.
-
-The answers for the true-or-false-questions are stored in the `/src/answers.json` file.
-
-With `this.t('REPROMPT')`, the key `REPROMPT` gets translated to its value, that is defined in `en.json`.  
-For example here:
-```javascript
-this.$reprompt.addText(this.t('REPROMPT'));
+## Alternative
+$ jovo new <directory> --template cms/i18n --language typescript
 ```
+
+> Read more about `jovo new` [here](https://www.jovo.tech/marketplace/jovo-cli#jovo-new).
+
+Change your working directory into your newly created project directory and run your voice app:
+
+```sh
+# Change working directory to your previously specified directory.
+$ cd <directory>
+
+# Install dependencies.
+$ npm install
+
+# Run voice app, optionally with a --watch flag to restart on code changes.
+$ jovo run [-w]
+```
+
+> Read more about `jovo run` [here](https://www.jovo.tech/marketplace/jovo-cli#jovo-run).
+
+If you now go to the [Jovo Debugger](https://www.jovo.tech/marketplace/jovo-plugin-debugger) by pressing `.` or clicking on the webhook url in the terminal, you can test your voice application right away.
+
+![Debugger Example](./img/debugger.gif)
+
+## Next Steps
+
+Now that you got the template running on the Jovo Debugger, you can enhance your voice app by taking a look at the [i18n documentation](https://www.jovo.tech/docs/output/i18n).
+
+To see what else you can do with the Jovo Framework, take a look at the [Jovo Documentation](https://www.jovo.tech/docs/).
+
+## About Jovo
+
+Jovo is the most popular development framework for voice, including platforms like Alexa, Google Assistant, mobile apps, and Raspberry Pi.
+
+- [Jovo Website](https://jovo.tech/)
+- [Documentation](https://jovo.tech/docs/)
+- [Marketplace](https://www.jovo.tech/marketplace/)
+- [Twitter](https://twitter.com/jovotech/)
+- [Forum](https://community.jovo.tech/)
+
