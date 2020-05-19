@@ -3,16 +3,15 @@
 // ------------------------------------------------------------------
 
 module.exports = {
-    logging: true,
- 
-    intentMap: {
-       'AMAZON.StopIntent': 'END',
+  logging: true,
+
+  intentMap: {
+    'AMAZON.StopIntent': 'END',
+  },
+
+  db: {
+    FileDb: {
+      pathToFile: '../db/db.json',
     },
- 
-    db: {
-         FileDb: {
-             pathToFile: '../db/db.json',
-         }
-     },
- };
- 
+  },
+};
