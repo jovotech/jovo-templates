@@ -1,18 +1,53 @@
-[![Jovo Framework](https://www.jovo.tech/img/github-logo.png)](https://www.jovo.tech)
+# Jovo Template: Handoff on Twilio Autopilot
 
-<p align="center">Templates for the <a href="https://github.com/jovotech/jovo-framework-nodejs">Jovo Framework</a> ⭐️</p>
+This template contains a Jovo Sample Autopilot Bot in TypeScript that can handoff the session to a human agent using Twilio Flex.
 
-<p align="center">
-<a href="https://www.jovo.tech/framework/docs/"><strong>Documentation</strong></a> -
-<a href="https://github.com/jovotech/jovo-cli"><strong>CLI </strong></a> - <a href="https://github.com/jovotech/jovo-framework-nodejs/blob/master/CONTRIBUTING.md"><strong>Contributing</strong></a> - <a href="https://twitter.com/jovotech"><strong>Twitter</strong></a></p>
-<br/>
+## Quick Start
 
-# Template: Handoff on Twilio Autopilot
-
-Jovo Sample Autopilot Bot that can handoff the session to a human agent using Twilio Flex.
+To use the Jovo Templates, you'll need the Jovo CLI. You can install it globally with NPM.
 
 ```sh
-$ jovo new <directory> --template autopilot/handoff
+$ npm install -g jovo-cli
 ```
 
-After that you have add your Workflow's ID to the marked section in the handler.
+After successfully installing the Jovo CLI, you can install the template using one of the following commands:
+
+```sh
+$ jovo new <directory> --template autopilot/handoff --language typescript
+```
+
+> Read more about `jovo new` [here](https://www.jovo.tech/marketplace/jovo-cli#jovo-new).
+
+Change your working directory into your newly created project directory and run your voice app:
+
+```sh
+# Change working directory to your previously specified directory.
+$ cd <directory>
+
+# Install dependencies.
+$ npm install
+```
+Before you actually run the voice app, you need to add your Workflow's ID to the marked section in the handler.
+
+```sh  
+# Run voice app, optionally with a --watch flag to restart on code changes.
+$ jovo run [-w]
+```
+
+> Read more about `jovo run` [here](https://www.jovo.tech/marketplace/jovo-cli#jovo-run).
+
+## Next Steps
+
+Now that you got the template running, it is time that you build your corresponding Autopilot bot! To get started, you can take a look at a tutorial [here](https://www.jovo.tech/tutorials/twilio-autopilot-hello-world).
+
+To see what else you can do with the Jovo Framework, take a look at the [Jovo Documentation](https://www.jovo.tech/docs/).
+
+## About Jovo
+
+Jovo is the most popular development framework for voice, including platforms like Alexa, Google Assistant, mobile apps, and Raspberry Pi.
+
+-   [Jovo Website](https://jovo.tech/)
+-   [Documentation](https://jovo.tech/docs/)
+-   [Marketplace](https://www.jovo.tech/marketplace/)
+-   [Twitter](https://twitter.com/jovotech/)
+-   [Forum](https://community.jovo.tech/)
