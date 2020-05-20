@@ -26,6 +26,9 @@ Change your working directory into your newly created project directory and run 
 # Change working directory to your previously specified directory.
 $ cd <directory>
 
+# Install dependencies.
+$ npm install
+
 # Run voice app, optionally with a --watch flag to restart on code changes.
 $ jovo run [-w]
 ```
@@ -60,7 +63,7 @@ config.default.remote.url=https://webhook.jovo.cloud/xxxxxxxx-xxxx-xxx-xxxx-xxxx
 
 To finally test your capsule, open the Bixby Simulator, which allows you to test your capsule in a variety of simulated scenarios and analyze the execution graph of your last tested utterance. You can launch it by going to `View` -> `Open Simulator` or by clicking on the Bixby Simulator button:
 
-![Bixby Simulator](../img/debugger.gif)
+![Bixby Simulator](./img/debugger.gif)
 
 Congrats, you just ran your first query in your capsule.
 

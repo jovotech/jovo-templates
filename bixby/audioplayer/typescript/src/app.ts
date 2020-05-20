@@ -11,7 +11,6 @@ import { FileDb } from 'jovo-db-filedb';
 
 const app = new App();
 
-// prettier-ignore
 app.use(
   new Alexa(), 
   new GoogleAssistant(), 
