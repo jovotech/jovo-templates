@@ -110,4 +110,4 @@ function parseBoolean(string) {
   }
 }
 
-module.exports.app = app;
+module.exports = { app };

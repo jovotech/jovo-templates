@@ -18,9 +18,6 @@ $ npm install -g jovo-cli
 After successfully installing the Jovo CLI, you can install the template using one of the following commands:
 
 ```sh
-$ jovo new <directory>
-
-## Alternative
 $ jovo new <directory> --template cms/plain --language typescript
 ```
 
