@@ -24,6 +24,9 @@ Change your working directory into your newly created project directory and run 
 # Change working directory to your previously specified directory.
 $ cd <directory>
 
+# Install dependencies.
+$ npm install
+
 # Run voice app, optionally with a --watch flag to restart on code changes.
 $ jovo run [-w]
 ```
@@ -36,7 +39,7 @@ Now that your voice app is running, open another terminal inside your project fo
 $ npm test
 ```
 
-![Debugger Example](../img/debugger.gif)
+![Debugger Example](./img/debugger.gif)
 
 ## Next Steps
 

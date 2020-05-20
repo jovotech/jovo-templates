@@ -10,7 +10,6 @@ import { GoogleAssistant } from 'jovo-platform-googleassistant';
 
 const app = new App();
 
-// prettier-ignore
 app.use(
   new Alexa(),
   new GoogleAssistant(),
