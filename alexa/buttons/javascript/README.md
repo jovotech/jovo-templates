@@ -28,6 +28,9 @@ Go into the project directory and build the platform-specific configuration for 
 # Change working directory to your previously specified directory.
 $ cd <directory>
 
+# Install dependencies.
+$ npm install
+
 # Build platform-specific files.
 $ jovo build --platform alexaSkill
 
@@ -66,7 +69,7 @@ $ jovo run [-w]
 
 If you now go to the [Alexa Developer Console](https://developer.amazon.com/alexa/console/ask), you can test your skill directly in the skill console. If you even happen to own Echo Buttons, you can test the skill on the device the buttons are paired with.
 
-![Debugger Example](../img/skills-console.gif)
+![Debugger Example](./img/skills-console.gif)
 
 ## Next Steps
 

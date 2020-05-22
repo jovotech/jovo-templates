@@ -3,15 +3,15 @@
 // ------------------------------------------------------------------
 
 module.exports = {
-    alexaSkill: {
-        nlu: 'alexa',
-        manifest: {
-            permissions: [
-                {
-                    name: 'payments:autopay_consent'
-                }
-            ]
+  alexaSkill: {
+    nlu: 'alexa',
+    manifest: {
+      permissions: [
+        {
+          name: 'payments:autopay_consent',
         },
+      ],
     },
-    endpoint: '${JOVO_WEBHOOK_URL}',
+  },
+  endpoint: '${JOVO_WEBHOOK_URL}',
 };

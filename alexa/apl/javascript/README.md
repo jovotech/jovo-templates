@@ -26,6 +26,9 @@ Change your working directory into your newly created project directory and run 
 # Change working directory to your previously specified directory.
 $ cd <directory>
 
+# Install dependencies.
+$ npm install
+
 # Run voice app, optionally with a --watch flag to restart on code changes.
 $ jovo run [-w]
 ```
@@ -34,7 +37,7 @@ $ jovo run [-w]
 
 If you now go to the [Jovo Debugger](https://www.jovo.tech/marketplace/jovo-plugin-debugger) by pressing `.` or clicking on the webhook url in the terminal, you can test your voice application right away.
 
-![Debugger Example](../img/debugger.gif)
+![Debugger Example](./img/debugger.gif)
 
 ## Next Steps
 
@@ -46,8 +49,8 @@ To see what else you can do with the Jovo Framework, take a look at the [Jovo Do
 
 Jovo is the most popular development framework for voice, including platforms like Alexa, Google Assistant, mobile apps, and Raspberry Pi.
 
--   [Jovo Website](https://jovo.tech/)
--   [Documentation](https://jovo.tech/docs/)
--   [Marketplace](https://www.jovo.tech/marketplace/)
--   [Twitter](https://twitter.com/jovotech/)
--   [Forum](https://community.jovo.tech/)
+- [Jovo Website](https://jovo.tech/)
+- [Documentation](https://jovo.tech/docs/)
+- [Marketplace](https://www.jovo.tech/marketplace/)
+- [Twitter](https://twitter.com/jovotech/)
+- [Forum](https://community.jovo.tech/)

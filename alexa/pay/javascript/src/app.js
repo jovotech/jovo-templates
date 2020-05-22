@@ -13,7 +13,6 @@ const amazonPay = require('./amazonPay');
 
 const app = new App();
 
-// prettier-ignore
 app.use(
   new Alexa(),
   new JovoDebugger(),

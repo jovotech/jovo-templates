@@ -11,7 +11,6 @@ const { FileDb } = require('jovo-db-filedb');
 
 const app = new App();
 
-// prettier-ignore
 app.use(
   new Alexa(), 
   new JovoDebugger(), 
@@ -30,7 +29,6 @@ app.setHandler({
   },
 
   PlayIntent() {
-    // prettier-ignore
     this.$alexaSkill.$audioPlayer
 	  .setOffsetInMilliseconds(0)
 	  .play(song, 'token')
