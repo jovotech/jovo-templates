@@ -13,7 +13,7 @@ $ npm install -g jovo-cli
 After successfully installing the Jovo CLI, you can install the template using one of the following commands:
 
 ```sh
-$ jovo new <directory> --template alexa/pay
+$ jovo new <directory> --template alexa/isp
 ```
 
 > Read more about `jovo new` [here](https://www.jovo.tech/marketplace/jovo-cli#jovo-new).
