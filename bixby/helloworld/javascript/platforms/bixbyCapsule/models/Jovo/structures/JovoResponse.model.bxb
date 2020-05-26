@@ -12,6 +12,12 @@ structure (JovoResponse) {
     min (Optional)
     max (One)
   }
+
+  property (_JOVO_TEXT_) {
+    type(JovoText)
+    min (Optional)
+    max (One)
+  }
   
   property (_JOVO_LAYOUT_) {
     type(JovoLayout)

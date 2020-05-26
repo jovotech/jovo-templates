@@ -4,6 +4,10 @@ result-view {
   }
 
   message {
-    template("#{value (response._JOVO_SPEECH_)}")
+     if (exists(response._JOVO_TEXT_) && exists(response._JOVO_SPEECH_)) {
+      template("#{value (response._JOVO_TEXT_)}") {
+        speech ("#{value (response._JOVO_SPEECH_)}")
+      }
+    }
   }
 }
