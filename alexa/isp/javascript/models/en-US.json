@@ -1,6 +1,54 @@
 {
   "invocation": "my money making test app",
-  "intents": [],
+  "intents": [
+    {
+      "name": "RefundSkillItemIntent",
+      "phrases": [
+        "return {productName}",
+        "refund {productName}",
+        "want a refund for {productName}",
+        "would like to return {productName}"
+      ],
+      "inputs": [
+        {
+          "name": "productName",
+          "type": "ProductName"
+        }
+      ]
+    },
+    {
+      "name": "BuySkillItemIntent",
+      "phrases": [
+        "buy",
+        "shop",
+        "buy {productName}",
+        "purchase {productName}",
+        "want {productName}",
+        "would like {productName}"
+      ],
+      "inputs": [
+        {
+          "name": "productName",
+          "type": "ProductName"
+        }
+      ]
+    }
+  ],
+  "inputTypes": [
+    {
+      "name": "ProductName",
+      "values": [
+        {
+          "id": "frozen_sword",
+          "value": "frozen sword"
+        },
+        {
+          "id": "premium_pass",
+          "value": "premium pass"
+        }
+      ]
+    }
+  ],
   "alexa": {
     "interactionModel": {
       "languageModel": {
@@ -16,57 +64,6 @@
           {
             "name": "AMAZON.StopIntent",
             "samples": []
-          },
-          {
-            "name": "RefundSkillItemIntent",
-            "samples": [
-              "return {ProductName}",
-              "refund {ProductName}",
-              "want a refund for {ProductName}",
-              "would like to return {ProductName}"
-            ],
-            "slots": [
-              {
-                "name": "ProductName",
-                "type": "PRODUCT_NAMES"
-              }
-            ]
-          },
-          {
-            "name": "BuySkillItemIntent",
-            "samples": [
-              "buy",
-              "shop",
-              "buy {ProductName}",
-              "purchase {ProductName}",
-              "want {ProductName}",
-              "would like {ProductName}"
-            ],
-            "slots": [
-              {
-                "name": "ProductName",
-                "type": "PRODUCT_NAMES"
-              }
-            ]
-          }
-        ],
-        "types": [
-          {
-            "name": "PRODUCT_NAMES",
-            "values": [
-              {
-                "id": "frozen_sword",
-                "name": {
-                  "value": "frozen sword"
-                }
-              },
-              {
-                "id": "premium_pass",
-                "name": {
-                  "value": "premium pass"
-                }
-              }
-            ]
           }
         ]
       }

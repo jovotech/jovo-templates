@@ -3,19 +3,19 @@
 // ------------------------------------------------------------------
 
 module.exports = {
-    alexaSkill: {
-        nlu: 'alexa',
-        manifest: {
-            apis: {
-                custom: {
-                    interfaces: [
-                        {
-                            type: 'ALEXA_PRESENTATION_APL',
-                        },
-                    ],
-                },
+  alexaSkill: {
+    nlu: 'alexa',
+    manifest: {
+      apis: {
+        custom: {
+          interfaces: [
+            {
+              type: 'ALEXA_PRESENTATION_APL',
             },
+          ],
         },
+      },
     },
-    endpoint: '${JOVO_WEBHOOK_URL}',
+  },
+  endpoint: '${JOVO_WEBHOOK_URL}',
 };

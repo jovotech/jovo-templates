@@ -3,15 +3,15 @@
 // ------------------------------------------------------------------
 
 module.exports = {
-    logging: true,
+  logging: true,
 
-    intentMap: {
-        'Default Fallback Intent': 'Unhandled',
-    },
+  intentMap: {
+    'Default Fallback Intent': 'Unhandled',
+  },
 
-    db: {
-        FileDb: {
-            pathToFile: '../db/db.json',
-        },
+  db: {
+    FileDb: {
+      pathToFile: '../db/db.json',
     },
+  },
 };

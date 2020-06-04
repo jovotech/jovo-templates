@@ -5,23 +5,23 @@
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "dependencies": {
-    "jovo-db-filedb": "^3.0.0",
-    "jovo-framework": "^3.0.0",
-    "jovo-platform-alexa": "^3.0.0",
-    "jovo-plugin-debugger": "^3.0.0"
+    "jovo-db-filedb": "^3.0.14",
+    "jovo-framework": "^3.0.15",
+    "jovo-platform-alexa": "^3.0.15",
+    "jovo-plugin-debugger": "^3.0.14"
   },
   "devDependencies": {
-    "@types/express": "^4.17.2",
-    "@types/jest": "^24.0.24",
+    "@types/express": "^4.17.6",
+    "@types/jest": "^25.2.1",
     "@types/socket.io-client": "^1.4.32",
     "gulp": "^4.0.2",
     "gulp-install": "^1.1.0",
     "gulp-run-command": "0.0.10",
     "gulp-zip": "^5.0.1",
-    "jest": "^24.9.0",
-    "ts-jest": "^24.2.0",
-    "typescript": "^3.7.4",
-    "tslint": "^5.20.1"
+    "jest": "^26.0.1",
+    "ts-jest": "^25.5.0",
+    "tslint": "^6.1.2",
+    "typescript": "^3.9.2"
   },
   "scripts": {
     "test": "jest",

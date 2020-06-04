@@ -1,8 +1,8 @@
-import {App} from 'jovo-framework';
-import {Alexa} from 'jovo-platform-alexa';
-import {JovoDebugger} from 'jovo-plugin-debugger';
-import {FileDb} from 'jovo-db-filedb';
-import {GoogleAssistant} from 'jovo-platform-googleassistant';
+import { App } from 'jovo-framework';
+import { Alexa } from 'jovo-platform-alexa';
+import { JovoDebugger } from 'jovo-plugin-debugger';
+import { FileDb } from 'jovo-db-filedb';
+import { GoogleAssistant } from 'jovo-platform-googleassistant';
 
 // ------------------------------------------------------------------
 // APP INITIALIZATION
@@ -10,30 +10,30 @@ import {GoogleAssistant} from 'jovo-platform-googleassistant';
 
 const app = new App();
 
+// prettier-ignore
 app.use(
-    new Alexa(),
-    new GoogleAssistant(),
-    new JovoDebugger(),
-    new FileDb(),
+  new Alexa(),
+  new GoogleAssistant(),
+  new JovoDebugger(),
+  new FileDb(),
 );
-
 
 // ------------------------------------------------------------------
 // APP LOGIC
 // ------------------------------------------------------------------
 
 app.setHandler({
-    LAUNCH() {
-        return this.toIntent('HelloWorldIntent');
-    },
+  LAUNCH() {
+    return this.toIntent('HelloWorldIntent');
+  },
 
-    HelloWorldIntent() {
-        this.ask(this.t('welcome.speech').toString(), this.t('welcome.reprompt'));
-    },
+  HelloWorldIntent() {
+    this.ask(this.t('welcome.speech').toString(), this.t('welcome.reprompt'));
+  },
 
-    MyNameIsIntent() {
-        this.tell(this.t('greeting.speech', {name: this.$inputs.name.value}).toString());
-    },
+  MyNameIsIntent() {
+    this.tell(this.t('greeting.speech', { name: this.$inputs.name.value }).toString());
+  },
 });
 
-export {app};
+export { app };

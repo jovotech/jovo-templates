@@ -14,7 +14,7 @@ for (const p of [new GoogleAssistant()]) {
 
             expect(
                 responseLaunchRequest.getSpeech() === undefined
-            ).toBe(true);
+            ).toBeTruthy()
 
             await conversation.clearDb();
         });

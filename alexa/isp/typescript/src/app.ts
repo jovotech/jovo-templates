@@ -44,7 +44,7 @@ app.setHandler({
     },
 
     async BuySkillItemIntent() {
-        let productName = this.$inputs.ProductName;
+        let productName = this.$inputs.productName;
         if (!productName) {
             return this.ask('You can choose either the "premium pass", or "frozen sword". Which are you interested in?');
         }
@@ -64,7 +64,7 @@ app.setHandler({
     },
 
     async RefundSkillItemIntent() {
-        let productName = this.$inputs.ProductName;
+        let productName = this.$inputs.productName;
         let productReferenceName = productName.id;
         let token = 'testToken';
 
