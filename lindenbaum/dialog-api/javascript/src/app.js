@@ -5,7 +5,7 @@
 // ------------------------------------------------------------------
 
 const { App } = require('jovo-framework');
-const { Lindenbaum } = require('jovo-platform-Lindenbaum');
+const { Lindenbaum } = require('jovo-platform-lindenbaum');
 const { NlpjsNlu } = require('jovo-nlu-nlpjs');
 const { JovoDebugger } = require('jovo-plugin-debugger');
 const { FileDb } = require('jovo-db-filedb');
