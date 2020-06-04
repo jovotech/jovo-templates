@@ -33,5 +33,8 @@
   "bugs": {
     "url": "https://github.com/jovotech/jovo-sample-voice-app-nodejs/issues"
   },
-  "homepage": "https://github.com/jovotech/jovo-sample-voice-app-nodejs#readme"
+  "homepage": "https://github.com/jovotech/jovo-sample-voice-app-nodejs#readme",
+  "jest": {
+    "testEnvironment": "node"
+  }
 }
