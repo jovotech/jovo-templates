@@ -12,11 +12,11 @@
     "jovo-plugin-debugger": "^3.0.6"
   },
   "devDependencies": {
-    "gulp": "^4.0.0",
+    "gulp": "^4.0.2",
     "gulp-install": "^1.1.0",
-    "gulp-run-command": "0.0.9",
-    "gulp-zip": "^4.2.0",
-    "jest": "^23.6.0"
+    "gulp-run-command": "0.0.10",
+    "gulp-zip": "^5.0.1",
+    "jest": "^26.0.1"
   },
   "scripts": {
     "tsc": "node -v",

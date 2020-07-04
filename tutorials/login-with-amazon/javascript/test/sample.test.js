@@ -14,7 +14,7 @@ for (const p of [new Alexa()]) {
             
             expect(
                 responseLaunchRequest.isTell('Please link your Account')
-            ).toBe(true);
+            ).toBeTruthy()
 
             await conversation.clearDb();
         });

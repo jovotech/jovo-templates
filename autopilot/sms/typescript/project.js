@@ -3,5 +3,5 @@
 // ------------------------------------------------------------------
 
 module.exports = {
-    endpoint: '${JOVO_WEBHOOK_URL}',
+  endpoint: '${JOVO_WEBHOOK_URL}',
 };

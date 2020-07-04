@@ -20,14 +20,14 @@
           {
             "name": "RefundSkillItemIntent",
             "samples": [
-              "return {ProductName}",
-              "refund {ProductName}",
-              "want a refund for {ProductName}",
-              "would like to return {ProductName}"
+              "return {productName}",
+              "refund {productName}",
+              "want a refund for {productName}",
+              "would like to return {productName}"
             ],
             "slots": [
               {
-                "name": "ProductName",
+                "name": "productName",
                 "type": "PRODUCT_NAMES"
               }
             ]
@@ -37,14 +37,14 @@
             "samples": [
               "buy",
               "shop",
-              "buy {ProductName}",
-              "purchase {ProductName}",
-              "want {ProductName}",
-              "would like {ProductName}"
+              "buy {productName}",
+              "purchase {productName}",
+              "want {productName}",
+              "would like {productName}"
             ],
             "slots": [
               {
-                "name": "ProductName",
+                "name": "productName",
                 "type": "PRODUCT_NAMES"
               }
             ]
