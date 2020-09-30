@@ -35,7 +35,7 @@ $ jovo run [-w]
 
 If you now go to the [Jovo Debugger](https://www.jovo.tech/marketplace/jovo-plugin-debugger) by pressing `.` or clicking on the webhook url in the terminal, you can test your voice application right away.
 
-![Debugger Example](./img/debugger.gif)
+![Debugger Example](img/debugger.gif)
 
 ## Next Steps
 
