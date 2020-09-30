@@ -1,10 +1,17 @@
 // ------------------------------------------------------------------
-// JOVO PROJECT CONFIGURATION
+// APP CONFIGURATION
 // ------------------------------------------------------------------
 
 module.exports = {
-  googleAction: {
-    projectId: '<PROJECT ID>',
+  logging: true,
+
+  intentMap: {
+    'AMAZON.StopIntent': 'END',
   },
-  endpoint: '${JOVO_WEBHOOK_URL}',
+
+  db: {
+    FileDb: {
+      pathToFile: '../db/db.json',
+    },
+  },
 };

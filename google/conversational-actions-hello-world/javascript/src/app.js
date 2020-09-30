@@ -1,7 +1,10 @@
-import { App } from 'jovo-framework';
-import { JovoDebugger } from 'jovo-plugin-debugger';
-import { FileDb } from 'jovo-db-filedb';
-import { GoogleAssistant } from 'jovo-platform-googleassistantconv';
+'use strict';
+
+const { App } = require('jovo-framework');
+const { Alexa } = require('jovo-platform-alexa');
+const { GoogleAssistant } = require('jovo-platform-googleassistantconv');
+const { JovoDebugger } = require('jovo-plugin-debugger');
+const { FileDb } = require('jovo-db-filedb');
 
 // ------------------------------------------------------------------
 // APP INITIALIZATION
@@ -9,11 +12,11 @@ import { GoogleAssistant } from 'jovo-platform-googleassistantconv';
 
 const app = new App();
 
-// prettier-ignore
 app.use(
+  new Alexa(),
   new GoogleAssistant(),
   new JovoDebugger(),
-  new FileDb(),
+  new FileDb()
 );
 
 // ------------------------------------------------------------------
@@ -34,4 +37,4 @@ app.setHandler({
   },
 });
 
-export { app };
+module.exports = { app };
