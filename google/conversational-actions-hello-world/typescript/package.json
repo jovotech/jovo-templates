@@ -7,7 +7,7 @@
   "dependencies": {
     "jovo-db-filedb":"^3.1.0",
     "jovo-framework":"^3.1.0",
-    "jovo-platform-googleassistantconv":"^3.1.0",
+    "jovo-platform-googleassistantconv":"^3.1.0-alpha.0",
     "jovo-plugin-debugger":"^3.1.0"
   },
   "devDependencies": {
