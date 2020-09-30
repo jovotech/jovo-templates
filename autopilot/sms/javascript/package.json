@@ -4,10 +4,10 @@
   "description": "A sample voice app that works with the Jovo Framework",
   "main": "src/index.js",
   "dependencies": {
-    "jovo-db-filedb": "^3.0.0",
-    "jovo-framework": "^3.0.0",
+    "jovo-db-filedb": "^3.0.15",
+    "jovo-framework": "^3.0.16",
     "jovo-platform-twilioautopilot": "^3.0.0",
-    "jovo-plugin-debugger": "^3.0.0",
+    "jovo-plugin-debugger": "^3.0.15",
     "twilio": "^3.40.0"
   },
   "devDependencies": {

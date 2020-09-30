@@ -1,55 +1,58 @@
-[![Jovo Framework](https://www.jovo.tech/img/github-logo.png)](https://www.jovo.tech)
+# Jovo Template: Google Spreadsheet
 
-<p align="center">Templates for the <a href="https://github.com/jovotech/jovo-framework-nodejs">Jovo Framework</a> ⭐️</p>
+This template contains a Jovo Sample Voice App in TypeScript with a True-or-False-Quiz. It tells you different facts and you have to answer with "true" or "false". For every correct answer, you get a point, for every incorrect answer you lose one. Your total points will be saved and you can open the game again to collect more points.
 
-<p align="center">
-<a href="https://www.jovo.tech/framework/docs/"><strong>Documentation</strong></a> -
-<a href="https://github.com/jovotech/jovo-cli"><strong>CLI </strong></a> - <a href="https://github.com/jovotech/jovo-framework-nodejs/blob/master/CONTRIBUTING.md"><strong>Contributing</strong></a> - <a href="https://twitter.com/jovotech"><strong>Twitter</strong></a></p>
-<br/>
+---
 
-# Template: True-or-False Game
-## with public Google Spreadsheet integration
+This project uses the Jovo Google Spreadsheet integration, the whole content/text is outsourced in a google spreadsheet. Take a look at it [here](https://docs.google.com/spreadsheets/d/1dSM_4n7zUgZwLevo8QwGS_ZKcWADHk1kvmscI0tEu24/edit#gid=0 "spreadsheet 'True or False Game'").
 
-Sample True-or-False Voice App
+## Quick Start
+
+To use the Jovo Templates, you'll need the Jovo CLI. You can install it globally with NPM.
 
 ```sh
-$ jovo new <directory> --template cms/google-sheets
+$ npm install -g jovo-cli
 ```
 
-This project is a simple example for a True-or-False-Quiz.
-It tells you different facts and you have to answer with "true" or "false". For every correct answer, you get a point, for every incorrect answer you lose one. Your total points will be saved and you can open the game again to collect more points.
-___
+After successfully installing the Jovo CLI, you can install the template using one of the following commands:
 
-This project uses the jovo Google Spreadsheet integration, the whole content/text is outsourced in a google spreadsheet. Take a look at it [here](https://docs.google.com/spreadsheets/d/1dSM_4n7zUgZwLevo8QwGS_ZKcWADHk1kvmscI0tEu24/edit#gid=0 "spreadsheet 'True or False Game'").
-
-More languages can be added by adding more columns to the sheet and name them by the locale ID (e.g. `en-US`, `de-DE`, `en-GB`, etc.).
-
-These are the `cms` configurations in `config.js`:
-```javascript
-cms: {
-        GoogleSheetsCMS: {
-            sheets: [
-                {
-                    spreadsheetId: '1dSM_4n7zUgZwLevo8QwGS_ZKcWADHk1kvmscI0tEu24',
-                    name: 'responses',
-                    access: 'public',
-                    type: 'Responses',
-                    position: 1,
-                },
-                {
-                    spreadsheetId: '1dSM_4n7zUgZwLevo8QwGS_ZKcWADHk1kvmscI0tEu24',
-                    name: 'answers',
-                    access: 'public',
-                    type: 'KeyValue',
-                    position: 2,
-                }
-            ]
-        }
-    },
+```sh
+$ jovo new <directory> --template cms/google-sheets --language typescript
 ```
-The spreadsheet ID can be found in its URL. This spreadsheet is public. 
-For using a private spreadsheet, follow our tutorial for private spreadsheet integration (coming soon).
 
-The `responses`-sheet has the `type: 'Responses'`. This sheet type is for translation to different languages, the `this.t('KEY')` function uses this one for translating the key. 
+> Read more about `jovo new` [here](https://www.jovo.tech/marketplace/jovo-cli#jovo-new).
 
-The `answers`-sheet has the `type: 'KeyValue'`. This one is just for getting the value of a certain key. In this case, it is used for storing the answers 'true' or 'false' for the statements.
+Change your working directory into your newly created project directory and run your voice app:
+
+```sh
+# Change working directory to your previously specified directory.
+$ cd <directory>
+
+# Install dependencies.
+$ npm install
+
+# Run voice app, optionally with a --watch flag to restart on code changes.
+$ jovo run [-w]
+```
+
+> Read more about `jovo run` [here](https://www.jovo.tech/marketplace/jovo-cli#jovo-run).
+
+If you now go to the [Jovo Debugger](https://www.jovo.tech/marketplace/jovo-plugin-debugger) by pressing `.` or clicking on the webhook url in the terminal, you can test your voice application right away.
+
+![Debugger Example](./img/debugger.gif)
+
+## Next Steps
+
+Now that you got the template running on the Jovo Debugger, you can take a look at the [GoogleSheets CMS Tutorial](https://www.jovo.tech/tutorials/google-sheets-cms).
+
+To see what else you can do with the Jovo Framework, take a look at the [Jovo Documentation](https://www.jovo.tech/docs/).
+
+## About Jovo
+
+Jovo is the most popular development framework for voice, including platforms like Alexa, Google Assistant, mobile apps, and Raspberry Pi.
+
+- [Jovo Website](https://jovo.tech/)
+- [Documentation](https://jovo.tech/docs/)
+- [Marketplace](https://www.jovo.tech/marketplace/)
+- [Twitter](https://twitter.com/jovotech/)
+- [Forum](https://community.jovo.tech/)

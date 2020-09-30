@@ -1,7 +1,7 @@
-import {App} from 'jovo-framework';
-import {Autopilot} from 'jovo-platform-twilioautopilot';
-import {JovoDebugger} from 'jovo-plugin-debugger';
-import {FileDb} from 'jovo-db-filedb';
+import { App } from 'jovo-framework';
+import { Autopilot } from 'jovo-platform-twilioautopilot';
+import { JovoDebugger } from 'jovo-plugin-debugger';
+import { FileDb } from 'jovo-db-filedb';
 
 // ------------------------------------------------------------------
 // APP INITIALIZATION
@@ -9,29 +9,29 @@ import {FileDb} from 'jovo-db-filedb';
 
 const app = new App();
 
+// prettier-ignore
 app.use(
-    new Autopilot(),
-    new JovoDebugger(),
-    new FileDb(),
+  new Autopilot(),
+  new JovoDebugger(),
+  new FileDb(),
 );
-
 
 // ------------------------------------------------------------------
 // APP LOGIC
 // ------------------------------------------------------------------
 
 app.setHandler({
-    LAUNCH() {
-        return this.toIntent('HelloWorldIntent');
-    },
+  LAUNCH() {
+    return this.toIntent('HelloWorldIntent');
+  },
 
-    HelloWorldIntent() {
-        this.ask('Hello World! What\'s your name?');
-    },
+  HelloWorldIntent() {
+    this.ask("Hello World! What's your name?");
+  },
 
-    MyNameIsIntent() {
-        this.tell('Hey ' + this.$inputs.name.value + ', nice to meet you!');
-    },
+  MyNameIsIntent() {
+    this.tell('Hey ' + this.$inputs.name.value + ', nice to meet you!');
+  },
 });
 
-export {app};
+export { app };
