@@ -12,8 +12,7 @@
         {
           "name": "name",
           "type": {
-            "alexa": "AMAZON.US_FIRST_NAME",
-            "googleAction": "NameInputType"
+            "googleAssistant": "NameInputType"
           }
         }
       ]
