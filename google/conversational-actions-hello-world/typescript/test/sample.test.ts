@@ -1,4 +1,4 @@
-import { GoogleAssistant } from 'jovo-platform-googleassistant';
+import { GoogleAssistant } from 'jovo-platform-googleassistantconv';
 
 jest.setTimeout(500);
 
