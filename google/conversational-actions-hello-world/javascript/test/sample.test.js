@@ -1,7 +1,7 @@
 'use strict';
 
 const { Alexa } = require('jovo-platform-alexa');
-const { GoogleAssistant } = require('jovo-platform-googleassistant');
+const { GoogleAssistant } = require('jovo-platform-googleassistantconv');
 
 jest.setTimeout(500);
 
