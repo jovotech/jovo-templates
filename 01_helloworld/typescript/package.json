@@ -20,7 +20,7 @@
     "gulp-run-command": "0.0.10",
     "gulp-zip": "^5.0.1",
     "jest": "^26.0.1",
-    "ts-jest": "^25.5.0",
+    "ts-jest": "^26.5.1",
     "tslint": "^6.1.2",
     "typescript": "^3.9.2"
   },
