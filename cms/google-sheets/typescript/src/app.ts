@@ -7,6 +7,8 @@ import { GoogleAssistant } from 'jovo-platform-googleassistant';
 import { Jovo } from 'jovo-core';
 import { GoogleActionSpeechBuilder } from 'jovo-platform-googleassistant/dist/src/core/GoogleActionSpeechBuilder';
 
+console.log('This template uses an outdated version of the Jovo Framework. We strongly recommend upgrading to Jovo v4. Learn more here: https://www.jovo.tech/docs/migration-from-v3');
+
 // ------------------------------------------------------------------
 // APP INITIALIZATION
 // ------------------------------------------------------------------

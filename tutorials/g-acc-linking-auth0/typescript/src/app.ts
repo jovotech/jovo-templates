@@ -4,6 +4,8 @@ import {FileDb} from 'jovo-db-filedb';
 import {GoogleAssistant} from 'jovo-platform-googleassistant';
 import * as rp from 'request-promise';
 
+console.log('This template uses an outdated version of the Jovo Framework. We strongly recommend upgrading to Jovo v4. Learn more here: https://www.jovo.tech/docs/migration-from-v3');
+
 // ------------------------------------------------------------------
 // APP INITIALIZATION
 // ------------------------------------------------------------------
