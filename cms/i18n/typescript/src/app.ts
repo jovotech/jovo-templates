@@ -8,6 +8,8 @@ import { Jovo } from 'jovo-core';
 
 const answers = require('./answers.json');
 
+console.log('This template uses an outdated version of the Jovo Framework. We strongly recommend upgrading to Jovo v4. Learn more here: https://www.jovo.tech/docs/migration-from-v3');
+
 // ------------------------------------------------------------------
 // APP INITIALIZATION
 // ------------------------------------------------------------------

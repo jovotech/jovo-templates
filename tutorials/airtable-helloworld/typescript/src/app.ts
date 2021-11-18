@@ -6,6 +6,9 @@ import {GoogleAssistant} from 'jovo-platform-googleassistant';
 import {AirtableCMS} from 'jovo-cms-airtable';
 
 console.log('Don\'t forget to update the `apiKey` and `baseId` in the config.js file! You can delete this prompt at the top of the app.js file after you\'re done');
+
+console.log('This template uses an outdated version of the Jovo Framework. We strongly recommend upgrading to Jovo v4. Learn more here: https://www.jovo.tech/docs/migration-from-v3');
+
 // ------------------------------------------------------------------
 // APP INITIALIZATION
 // ------------------------------------------------------------------

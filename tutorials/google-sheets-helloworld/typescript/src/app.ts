@@ -5,6 +5,8 @@ import {FileDb} from 'jovo-db-filedb';
 import {GoogleSheetsCMS} from 'jovo-cms-googlesheets';
 import {GoogleAssistant} from 'jovo-platform-googleassistant';
 
+console.log('This template uses an outdated version of the Jovo Framework. We strongly recommend upgrading to Jovo v4. Learn more here: https://www.jovo.tech/docs/migration-from-v3');
+
 // ------------------------------------------------------------------
 // APP INITIALIZATION
 // ------------------------------------------------------------------
