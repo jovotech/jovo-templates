@@ -1,13 +1,6 @@
-[![Jovo Framework](https://www.jovo.tech/img/github-logo.png)](https://www.jovo.tech)
+# Jovo v3 Templates
 
-<p align="center">Templates for the <a href="https://github.com/jovotech/jovo-framework-nodejs">Jovo Framework</a> ⭐️</p>
-
-<p align="center">
-<a href="https://www.jovo.tech/framework/docs/"><strong>Documentation</strong></a> -
-<a href="https://github.com/jovotech/jovo-cli"><strong>CLI </strong></a> - <a href="https://github.com/jovotech/jovo-framework-nodejs/blob/master/CONTRIBUTING.md"><strong>Contributing</strong></a> - <a href="https://twitter.com/jovotech"><strong>Twitter</strong></a></p>
-<br/>
-
-# Jovo Templates
+> This repository only contains templates for Jovo `v3`. You can find the Jovo `v4` templates here: [TypeScript](https://github.com/jovotech/jovo-v4-template), [JavaScript](https://github.com/jovotech/jovo-v4-template-js).
 
 The examples in this repository are a great starting point to learn about specific features of the [Jovo Framework](https://github.com/jovotech/jovo-framework-nodejs).
 
@@ -15,10 +8,10 @@ To access the templates, you first need to install the [Jovo CLI](https://github
 
 ```sh
 # Standard version
-$ jovo new <directory> --template <name>
+$ jovo3 new <directory> --template <name>
 
 # Short version
-$ jovo new <directory> -t <name>
+$ jovo3 new <directory> -t <name>
 ``` 
 
 The following templates are currently available:
